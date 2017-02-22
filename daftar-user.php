@@ -64,7 +64,7 @@
                         
                        <li class="dropdown users-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
+                                <i>MASTER</i>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
