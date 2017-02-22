@@ -45,7 +45,6 @@
 </head>
 <body>
 <body class="skin-black">
-<h1 align="center">SUPLIER</h1>
 	<header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -65,7 +64,8 @@
                         
                        <li class="dropdown users-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i >MASTER</i>
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -207,6 +207,9 @@
                             </ul>
                         </div>
                     </nav>
+
+                    
+<h1 align="center">SUPLIER</h1>
 
     <div class="content">
             <div class="container-fluid">
