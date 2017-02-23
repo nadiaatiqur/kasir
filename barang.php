@@ -44,8 +44,6 @@
           </style>
 </head>
 <body class="skin-black">
-
-<h1 align="text">BARANG</h1>
 	<header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -65,7 +63,8 @@
                         
                        <li class="dropdown users-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i>MASTER</i>
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -208,6 +207,10 @@
                         </div>
                     </nav>
 
+
+
+<h1 align="center">BARANG</h1>
+
     <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -253,7 +256,7 @@
                             <td><?php echo $row['harga_jual']; ?></td>
                             <td>
                                 <a href="update-barang.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="#" class="btn btn-danger">HAPUS</a>
+                                <a href="proses-deletebarang.php?id=<?php echo $row['id_barang'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>

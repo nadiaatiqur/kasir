@@ -45,7 +45,6 @@
 </head>
 <body>
 <body class="skin-black">
-<h1 align="center">SUPLIER</h1>
 	<header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -65,7 +64,8 @@
                         
                        <li class="dropdown users-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i >MASTER</i>
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -208,11 +208,14 @@
                         </div>
                     </nav>
 
+                    
+<h1 align="center">SUPLIER</h1>
+
     <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="input-barang.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Barang</a>
+                        <a href="input-.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Suplaiyer</a>
                     </div>  
                     <div class="col-md-5">
                         <form>
@@ -225,7 +228,8 @@
                         <tr>
                             <th>NO</th>
                             <TH>KODE</TH>
-                            <TH>NAMA</TH>
+                            <TH>NAMA BARANG</TH>
+                            <TH>SUPLAIYER</TH>
                             <TH>ALAMAT</TH>
                             <TH>TELEPON</TH>
                             <TH>EMAIL</TH>
@@ -238,22 +242,22 @@
                         include "koneksi.php";
 
                         $no=1;
-                        $result=mysqli_query($link, "SELECT * FROM barang");
+                        $result=mysqli_query($link, "SELECT * FROM penyuplai");
                         while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><?php echo $row['id_barang']; ?></td>
+                            <td><?php echo $row['id_penyuplai']; ?></td>
                             <td><?php echo $row['nama_barang']; ?></td>
-                            <td><?php echo $row['kategori']; ?></td>
-                            <td><?php echo $row['jumlah_barang']; ?></td>
-                            <td><?php echo $row['satuan']; ?></td>
-                            <td><?php echo $row['spesifikasi']; ?></td>
-                            <td><?php echo $row['harga_beli']; ?></td>
-                            <td><?php echo $row['harga_jual']; ?></td>
+                            <td><?php echo $row['nama_penyuplai']; ?></td>
+                            <td><?php echo $row['alamat']; ?></td>
+                            <td><?php echo $row['telpon']; ?></td>
+                            <td><?php echo $row['kontak']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['rekening']; ?></td>
+                            <td><?php echo $row['keterangan'];?></td>
                             <td>
-                                <a href="update-barang.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="#" class="btn btn-danger">HAPUS</a>
+                                <a href="update-barang.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>

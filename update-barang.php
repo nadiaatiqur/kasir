@@ -214,14 +214,13 @@
                         
                         <div class="row">
                             <form method="POST" action="proses-updatebarang.php">
-                            <?php  
-                            include "koneksi.php";
-
-                            $id=$_GET['id'];
-                            $result=mysqli_query($link, "SELECT * From barang WHERE id_barang='$id' ");
-                            $row=mysqli_fetch_array($result);
-                            ?>
                             <input type="hidden" name="id" value="<?=$_GET['id']?>">
+                             <?php  
+                                include "koneksi.php";
+                                $id=$_GET['id'];
+                                $result=mysqli_query($link, "SELECT * FROM barang where id_barang='$id' ");
+                                $row=mysqli_fetch_array($result);
+                            ?>
                             <div class="col-md-6">
                                  <div class="form-group">
                                 <label for="user">NAMA BARANG </label>
@@ -270,45 +269,9 @@
                                     <input type="text" class="form-control" name="harga_jual" placeholder="Harga Jual" value="<?php echo $row['harga_jual'];?>">
                                 </div>
                             </div>     
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>PENYUPLAI</label>
-                                    <input type="text" class="form-control" name="penyuplai" placeholder="nama penyuplia">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>ALAMAT PENYUPLAI</label>
-                                    <input type="text" class="form-control" name="alamat_penyuplai" placeholder="alamat penyuplai">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>telpon</label>
-                                    <input type="text" class="form-control" name="notelpon" placeholder="No.Telfon Instansi">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>KONTAK</label>
-                                <input type="text" class="form-control" name="kontak_pribadi" placeholder="kontak pribadi">
-                            </div>
-                            <div class="col-md-6">
-                                <label>EMAIL</label>
-                                <input type="text" class="form-control" name="email" placeholder="Email">
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label>KETERANGAN BARANG</label>
-                                <input type="text" class="form-control" name="keterangan" placeholder="Keterangan Barang yang datang">
-                            </div>
                         </div><br><br>
                         <div>
-                            <a href="#" class="btn btn-primary btn-lg" type="submit" name="update">Update</a>
+                            <input type="submit" name="update" class="btn btn-info btn-lg btn-block" value="Update">
                         </div>
                         </form>
                     </div>
