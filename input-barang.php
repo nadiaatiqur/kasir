@@ -100,7 +100,7 @@
                         </div><br>
                         <div>
                             <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
-                            <button type="submit" name="input" class="btn btn-default btn-lg">Keluar</button>
+                           <a href="barang.php" class="btn btn-default btn-lg">Keluar</a>
                         </div>
                         </form>
                     </div>
