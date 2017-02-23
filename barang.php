@@ -225,6 +225,7 @@
                 </div><br><br>
                 <table class="table table-striped table-bordered">
                     <form method="" action="">
+                    <input type="hidden" name="">
                         <tr>
                             <th>NO</th>
                             <TH>ID BARANG</TH>

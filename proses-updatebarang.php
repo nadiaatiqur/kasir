@@ -18,5 +18,5 @@ if (isset($_POST['update'])) {
 		echo "SALAH :".mysqli_error($link);
 }
 }
-mysqli_close($link);
+mysqli_close($link);/**/
 ?>
