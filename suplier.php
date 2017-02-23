@@ -215,7 +215,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="input-.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Suplaiyer</a>
+                        <a href="input-suplaiyer.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Suplaiyer</a>
                     </div>  
                     <div class="col-md-5">
                         <form>
