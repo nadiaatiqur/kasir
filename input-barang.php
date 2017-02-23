@@ -49,7 +49,7 @@
 
         <div class="content">
             <div class="container-fluid">
-            <center><h4 for="user">Input Barang</h4></center>
+            <center><h1 for="user">Input Barang</h1></center>
                 <div class="row">
                     <div class="col-md-3">
                     </div>
@@ -59,21 +59,21 @@
                             <form method="POST" action="proses-inputbarang.php">
                             <div class="col-md-6">
                                  <div class="form-group">
-                                <label for="user">NAMA BARANG </label>
-                                <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang">
+                                <label for="user">KODE</label>
+                                <input type="text" class="form-control" name="nama_barang" placeholder="Kode">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                <label for="user">KATEGORI</label>
-                                <input type="text" class="form-control" name="kategori" placeholder="Kategori">
+                                <label for="user">NAMA</label>
+                                <input type="text" class="form-control" name="kategori" placeholder="Nama">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user">JUMLAH</label>
+                                    <label for="user">STOK</label>
                                     <input type="text" class="form-control" name="jumlah_barang" placeholder="Jumlah">
                                 </div>  
                             </div>
@@ -83,14 +83,6 @@
                                     <input type="text" class="form-control" name="satuan" placeholder="Satuan Barang">
                                 </div>
                             </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="user">SPESIFIKASI</label>
-                                    <input type="text" class="form-control" name="spesifikasi" placeholder="Spesifikasi Barang">
-                                </div>        
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -105,45 +97,10 @@
                                     <input type="text" class="form-control" name="harga_jual" placeholder="Harga Jual">
                                 </div>
                             </div>     
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>PENYUPLAI</label>
-                                    <input type="text" class="form-control" name="penyuplai" placeholder="nama penyuplia">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>ALAMAT PENYUPLAI</label>
-                                    <input type="text" class="form-control" name="alamat_penyuplai" placeholder="alamat penyuplai">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>telpon</label>
-                                    <input type="text" class="form-control" name="notelpon" placeholder="No.Telfon Instansi">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>KONTAK</label>
-                                <input type="text" class="form-control" name="kontak_pribadi" placeholder="kontak pribadi">
-                            </div>
-                            <div class="col-md-6">
-                                <label>EMAIL</label>
-                                <input type="text" class="form-control" name="email" placeholder="Email">
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label>KETERANGAN BARANG</label>
-                                <input type="text" class="form-control" name="keterangan" placeholder="Keterangan Barang yang datang">
-                            </div>
-                        </div>
+                        </div><br>
                         <div>
-                            <button type="submit" name="input" class="btn btn-block btn-info">Input</button>
+                            <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
+                            <button type="submit" name="input" class="btn btn-default btn-lg">Keluar</button>
                         </div>
                         </form>
                     </div>
