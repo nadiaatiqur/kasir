@@ -1,7 +1,9 @@
+<?php  
+?>
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -56,11 +58,18 @@
                     <div class="col-md-6">
                         
                         <div class="row">
-                            <form method="POST" action="proses-inputpelanggan.php">
+                            <form method="POST" action="proses-updatepelanggan.php">
+                            <input type="hidden" name="id" value="<?=$_GET['id']?>">
+                            <?php  
+                                include "koneksi.php";
+                                $id=$_GET['id'];
+                                $result=mysqli_query($link, "SELECT * FROM user where id_user='$id' ");
+                                $row=mysqli_fetch_array($result);
+                            ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                 <label for="user">Nama</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Nama">
+                                <input type="text" class="form-control" name="nama" value="<?php echo $row['nama_pengguna'];?>">
                                 </div>
                             </div>
                         </div>
@@ -68,26 +77,26 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="user">Username</label>
-                                    <input type="text" class="form-control" name="username" placeholder="Username">
+                                    <input type="text" class="form-control" name="username" value="<?php echo $row['username'];?>">
                                 </div>  
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="user">Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" value="<?php echo $row['password'];?>">
                                 </div>
                             </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="user">Telepon</label>
-                                    <input type="text" class="form-control" name="telpon" placeholder="Telepon">
+                                    <input type="text" class="form-control" name="telpon" value="<?php echo $row['telpon']?>">
                                 </div>  
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="user">Alamat</label>
-                                    <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+                                    <input type="text" class="form-control" name="alamat" value="<?php echo $row['alamat'];?>">
                                 </div>
                             </div>    
                         </div>
@@ -102,7 +111,7 @@
                             </div>    
                         </div><br>
                         <div>
-                            <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
+                            <input type="submit" name="update" class="btn btn-info btn-lg" value="Update">
                            <a href="pelanggan.php" class="btn btn-default btn-lg">Keluar</a>
                         </div>
                         </form>

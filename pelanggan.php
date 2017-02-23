@@ -215,12 +215,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Barang</a>
+                        <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Pelanggan</a>
                     </div>  
                     <div class="col-md-5">
                         <form>
-                        <input type="text" class="form-control" placeholder="cari barang" name="cari">
-                        </form>
+                        <div class="form-group">
+                        <div class = "input-group">
+                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="cari">
+                             <span class = "input-group-btn">
+                                <input type="submit" name="cari" class= "btn btn-info btn-lg" value="Cari">
+                             </span>
+                        </div>
+                       </form>
                     </div>    
                 </div><br><br>
                 <table class="table table-striped table-bordered">
@@ -230,32 +236,35 @@
                             <TH>KODE</TH>
                             <TH>NAMA</TH>
                             <TH>ALAMAT</TH>
-                            <TH>TELEPON</TH>
-                            <TH>KETERANGAN</TH>
-                            <TH>RATING TRANSAKSI</TH>
-                            <TH>RATING AKUMULASI</TH>
+                            <TH>TELEFON</TH>
+                            <TH>STATUS</TH>
+                            <TH>USERNAME</TH>
+                            <TH>PASSWORD</TH>
+                            <th>RATING TRANSAKSI</th>
+                            <th>RATING AKUMULASI</th>
                             <th>OPSI</th>
                         </tr>
                         <?php  
                         include "koneksi.php";
 
                         $no=1;
-                        $result=mysqli_query($link, "SELECT * FROM barang");
+                        $result=mysqli_query($link, "SELECT id_user, nama_pengguna, alamat, telpon, level, username, password FROM user WHERE level='pelanggan' ");
                         while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><?php echo $row['id_barang']; ?></td>
-                            <td><?php echo $row['nama_barang']; ?></td>
-                            <td><?php echo $row['kategori']; ?></td>
-                            <td><?php echo $row['jumlah_barang']; ?></td>
-                            <td><?php echo $row['satuan']; ?></td>
-                            <td><?php echo $row['spesifikasi']; ?></td>
-                            <td><?php echo $row['harga_beli']; ?></td>
-                            <td><?php echo $row['harga_jual']; ?></td>
+                            <td><?php echo $row['id_user']; ?></td>
+                            <td><?php echo $row['nama_pengguna']; ?></td>
+                            <td><?php echo $row['alamat']; ?></td>
+                            <td><?php echo $row['telpon']; ?></td>
+                            <td><?php echo $row['level']; ?></td>
+                            <td><?php echo $row['username']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
                             <td>
-                                <a href="update-barang.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="#" class="btn btn-danger">HAPUS</a>
+                                <a href="update-pelanggan.php?id=<?php echo $row['id_user'];?>" class="btn btn-info">UPDATE</a>
+                                <a href="proses-deletepelanggan.php?id=<?php echo $row['id_user'];?>" class="btn btn-danger" onclick="return confirm ('Hapus <?php echo $row['nama_pengguna'];?> ?');"title="Hapus">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>
