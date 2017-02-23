@@ -218,9 +218,12 @@
                         <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Barang</a>
                     </div>  
                     <div class="col-md-5">
-                        <form>
+                        <div class="input-group">
                         <input type="text" class="form-control" placeholder="cari barang" name="cari">
-                        </form>
+                         <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Cari</button>
+                        </span>
+                        </div>
                     </div>    
                 </div><br><br>
                 <table class="table table-striped table-bordered">

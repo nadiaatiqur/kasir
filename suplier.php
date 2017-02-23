@@ -218,9 +218,12 @@
                         <a href="input-suplaiyer.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Suplaiyer</a>
                     </div>  
                     <div class="col-md-5">
-                        <form>
-                        <input type="text" class="form-control" placeholder="cari barang" name="cari">
-                        </form>
+                        <div class="input-group">
+                        <input type="text" class="form-control" placeholder="cari barang">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Cari</button>
+                        </span>
+                        </div>
                     </div>    
                 </div><br><br>
                 <table class="table table-striped table-bordered">
@@ -257,7 +260,7 @@
                             <td><?php echo $row['rekening']; ?></td>
                             <td><?php echo $row['keterangan'];?></td>
                             <td>
-                                <a href="update-barang.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
+                                <a href="update-suplier.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>

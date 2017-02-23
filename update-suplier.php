@@ -1,7 +1,7 @@
-  <!doctype html>
+<!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -49,67 +49,75 @@
 
         <div class="content">
             <div class="container-fluid">
-            <center><h1 for="user">Input Barang</h1></center>
-                <div class="row">
-                    <div class="col-md-3">
-                    </div>
-                    <div class="col-md-6">
+            <h1 for="user" align="center">UPDATE SUPLIER</h1><br><br>
                         
-                        <div class="row">
+
                             <form method="POST" action="proses-inputbarang.php">
-                            <div class="col-md-6">
+                            <div class="row">
+                            <div class="col-md-4">
                                  <div class="form-group">
-                                <label for="user">NAMA BARANG</label>
-                                <input type="text" class="form-control" name="nama_barang" placeholder="NAMA BARANG">
+                                <label for="user">Kode</label>
+                                <input type="text" class="form-control" name="nama_barang" placeholder="Kode">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                <label for="user">KATEGORI BARANG</label>
-                                <input type="text" class="form-control" name="kategori" placeholder="kategori barang">
+                                <label for="user">Nama Suplier</label>
+                                <input type="text" class="form-control" name="kategori" placeholder="Nama Suplier">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="user">JUMLAH BARANG</label>
-                                    <input type="text" class="form-control" name="jumlah_barang" placeholder="Jumlah Barang">
-                                </div>  
                             </div>
-                            <div class="col-md-6">
+                            <div class="row">
+                            <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="user">SATUAN BARANG</label>
-                                    <input type="text" class="form-control" name="satuan" placeholder="Satuan Barang">
+                                    <label for="user">Suplier</label>
+                                    <input type="text" class="form-control" placeholder="Suplier">
                                 </div>
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="user">HARGA BELI</label>
-                                    <input type="text" class="form-control" name="harga_beli" placeholder="Harga Beli">
+                                    <label>Rekening</label>
+                                    <input type="text" class="form-control" name="alamat_penyuplai" placeholder="Rekening">
                                 </div>
-                            </div> 
-                             <div class="col-md-6">
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="user">HARGA JUAL</label>
-                                    <input type="text" class="form-control" name="harga_jual" placeholder="Harga Jual">
+                                    <label for="user">Telepon</label>
+                                    <input type="text" class="form-control" name="satuan" placeholder="Telepon">
                                 </div>
-                            </div>     
-                        </div>
-                        <div class="row">
-                        <div class="col-md-12">
-                            <label for="user">SPESIFIKASI</label>
-                            <textarea class="form-control" placeholder="SPESIFIKASI"></textarea>
-                        </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="user">Email</label>
+                                    <input type="text" class="form-control" name="harga_jual" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Kontak Person</label>
+                                    <input type="text" class="form-control" name="penyuplai" placeholder="Kontak Person">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row"><div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="user">Alamat</label>
+                                    <textarea class="form-control" placeholder="Alamat" type="text"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>KETERANGAN</label>
+                                <textarea class="form-control" placeholder="Keterangan" type="text"></textarea>
+                            </div>
                         </div><br>
                         <div>
-                            <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
-                           <a href="barang.php" class="btn btn-default btn-lg">Keluar</a>
+                            <a href="#" class="btn btn-default btn-lg">Update</a>
                         </div>
                         </form>
-                    </div>
 
 <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
