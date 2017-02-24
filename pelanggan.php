@@ -218,14 +218,6 @@
                         <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Pelanggan</a>
                     </div>  
                     <div class="col-md-5">
-<<<<<<< HEAD
-                        <div class="input-group">
-                        <input type="text" class="form-control" placeholder="cari barang" name="cari">
-                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">Cari</button>
-                        </span>
-                        </div>
-=======
                         <form>
                         <div class="form-group">
                         <div class = "input-group">
@@ -235,7 +227,6 @@
                              </span>
                         </div>
                        </form>
->>>>>>> 26e33906a45690601f1c9ea704b1e905e2cba077
                     </div>    
                 </div><br><br>
                 <table class="table table-striped table-bordered">
