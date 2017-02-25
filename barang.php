@@ -218,12 +218,15 @@
                         <a href="input-barang.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Barang</a>
                     </div>  
                     <div class="col-md-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="cari barang">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">Cari</button>
-                        </span>
+                      <form method="POST" action="search-barang.php">
+                        <div class="form-group">
+                        <div class = "input-group">
+                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                             <span class = "input-group-btn">
+                                <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                             </span>
                         </div>
+                       </form>
                     </div>    
                 </div><br><br>
                 <table class="table table-striped table-bordered">

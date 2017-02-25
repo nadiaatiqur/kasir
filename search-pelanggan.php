@@ -209,21 +209,21 @@
                     </nav>
 
                     
-<h1 align="center">SUPLIER</h1>
+<h1 align="center">PELANGGAN</h1>
 
     <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="input-suplaiyer.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Suplaiyer</a>
+                        <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Pelanggan</a>
                     </div>  
                     <div class="col-md-5">
-                        <form method="POST" action="search-suplaiyer.php">
+                        <form method="POST" action="search-pelanggan.php">
                         <div class="form-group">
                         <div class = "input-group">
-                             <input type="text" class="form-control input-lg"" placeholder="cari suplaiyer" name="key">
+                             <input type="text" class="form-control input-lg"" placeholder="cari pelanggan" name="golek">
                              <span class = "input-group-btn">
-                                <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                                <input type="submit" name="cari" class= "btn btn-info btn-lg" value="Cari">
                              </span>
                         </div>
                        </form>
@@ -234,37 +234,38 @@
                         <tr>
                             <th>NO</th>
                             <TH>KODE</TH>
-                            <TH>NAMA BARANG</TH>
-                            <TH>SUPLAIYER</TH>
+                            <TH>NAMA</TH>
                             <TH>ALAMAT</TH>
-                            <TH>TELEPON</TH>
-                            <TH>EMAIL</TH>
-                            <TH>KONTAK</TH>
-                            <TH>REKENING</TH>
-                            <TH>KETERANGAN</TH>
+                            <TH>TELEFON</TH>
+                            <TH>STATUS</TH>
+                            <TH>USERNAME</TH>
+                            <TH>PASSWORD</TH>
+                            <th>RATING TRANSAKSI</th>
+                            <th>RATING AKUMULASI</th>
                             <th>OPSI</th>
                         </tr>
                         <?php  
-                        include "koneksi.php";
+                       include "koneksi.php";
 
-                        $no=1;
-                        $result=mysqli_query($link, "SELECT * FROM penyuplai");
-                        while ($row=mysqli_fetch_array($result)) {
+						$no=1;
+						$golek=$_POST['golek'];
+						$result=mysqli_query($link ,"SELECT * FROM user WHERE id_user LIKE '%$golek%' or nama_pengguna LIKE '%$golek%' or username LIKE '%$golek%' ");
+						while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><?php echo $row['id_penyuplai']; ?></td>
-                            <td><?php echo $row['nama_barang']; ?></td>
-                            <td><?php echo $row['nama_penyuplai']; ?></td>
+                            <td><?php echo $row['id_user']; ?></td>
+                            <td><?php echo $row['nama_pengguna']; ?></td>
                             <td><?php echo $row['alamat']; ?></td>
                             <td><?php echo $row['telpon']; ?></td>
-                            <td><?php echo $row['kontak']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['rekening']; ?></td>
-                            <td><?php echo $row['keterangan'];?></td>
+                            <td><?php echo $row['level']; ?></td>
+                            <td><?php echo $row['username']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
                             <td>
-                                <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
+                                <a href="update-pelanggan.php?id=<?php echo $row['id_user'];?>" class="btn btn-info">UPDATE</a>
+                                <a href="proses-deletepelanggan.php?id=<?php echo $row['id_user'];?>" class="btn btn-danger" onclick="return confirm ('Hapus <?php echo $row['nama_pengguna'];?> ?');"title="Hapus">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>

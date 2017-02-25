@@ -248,8 +248,9 @@
                         include "koneksi.php";
 
                         $no=1;
-                        $result=mysqli_query($link, "SELECT * FROM penyuplai");
-                        while ($row=mysqli_fetch_array($result)) {
+						$key=$_POST['key'];
+						$result=mysqli_query($link, "SELECT * FROM penyuplai WHERE id_penyuplai LIKE '%$key%' or nama_barang LIKE '%$key%' or nama_penyuplai LIKE '%$key%' ");
+						while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
@@ -263,8 +264,7 @@
                             <td><?php echo $row['rekening']; ?></td>
                             <td><?php echo $row['keterangan'];?></td>
                             <td>
-                                <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
+                                <a href="update-suplier.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
                             </td>
                         </tr>
                         <?php } ?>

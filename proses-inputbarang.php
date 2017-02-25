@@ -14,13 +14,14 @@ if (isset($_POST['input'])) {
 	$notelpon=$_POST['notelpon'];
 	$kontak=$_POST['kontak_pribadi'];
 	$email=$_POST['email'];
+	$rekening=$_POST['rekening'];
 	$keterangan=$_POST['keterangan'];
 
 	$result=mysqli_query($link, "INSERT INTO barang (id_barang, nama_barang, kategori, jumlah_barang, satuan, spesifikasi, harga_beli, harga_jual) VALUES (NULL, '$nama', '$kategori', '$jumlah', '$satuan', '$spesifikasi', '$hargabeli', '$hargajual')");
-	$sql=mysqli_query($link, "INSERT INTO penyuplai (id_penyuplai, nama_barang, nama_penyuplai, alamat, telpon, kontak, email, keterangan) VALUES (null, '$nama', '$penyuplai', '$alamat', '$notelpon', '$kontak', '$email', '$keterangan')");
+	$sql=mysqli_query($link, "INSERT INTO penyuplai (id_penyuplai, nama_barang, nama_penyuplai, alamat, telpon, kontak, email, rekening, keterangan) VALUES (null, '$nama', '$penyuplai', '$alamat', '$notelpon', '$kontak', '$email', '$rekening', '$keterangan')");
 
 	if ($result&& $sql) {
-		echo "berhasil";
+		header("location: barang.php");
 	} else{
 		echo "Error :".mysqli_error($link);
 	}

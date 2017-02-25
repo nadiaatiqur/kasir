@@ -218,10 +218,10 @@
                         <a href="input-pelanggan.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Input Pelanggan</a>
                     </div>  
                     <div class="col-md-5">
-                        <form>
+                        <form method="POST" action="search-pelanggan.php">
                         <div class="form-group">
                         <div class = "input-group">
-                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="cari">
+                             <input type="text" class="form-control input-lg"" placeholder="cari pelanggan" name="golek">
                              <span class = "input-group-btn">
                                 <input type="submit" name="cari" class= "btn btn-info btn-lg" value="Cari">
                              </span>
