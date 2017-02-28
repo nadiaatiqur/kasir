@@ -84,7 +84,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="backoffice.php">
                                         <h5>Backoffice</h5>
                                     </a>
                                 </li>
@@ -172,7 +172,8 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user fa-lg"></i>
+                                <i class="fa fa-user"></i>
+                                <span>User <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Account</li>
@@ -187,7 +188,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#">
+                                        <a href="user.php">
                                         <i class="fa fa-user fa-fw pull-right"></i>
                                             Profile
                                         </a>

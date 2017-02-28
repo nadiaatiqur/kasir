@@ -115,7 +115,7 @@
                             </div>
                         </div><br>
                         <div>
-                            <a href="#" class="btn btn-default btn-lg">Update</a>
+                            <a href="#" class="btn btn-primary btn-lg">Update</a>
                         </div>
                         </form>
 
