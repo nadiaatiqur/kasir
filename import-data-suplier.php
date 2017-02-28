@@ -1,7 +1,7 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+	 <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -44,7 +44,7 @@
           </style>
 </head>
 <body class="skin-black">
-        <!-- header logo: style can be found in header.less -->
+<!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -207,96 +207,85 @@
                         </div>
                     </nav>
                 </header>
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <div class="sidebar-collapse">
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            
-                              <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="#"><i class="fa fa-hand-o-down fa-fw"></i> Import Data Dari Excel
-                                    <span class="fa fa-hand-o-down fa-fw"></span></a>
-                                    <li>
-                                        <a href="import-data-barang.php">Import Data Barang</a>
-                                    </li>
-                                    <li>
-                                        <a href="import-data-suplier.php">Import Data Suplier</a>
-                                    </li>
-                                    <li>
-                                        <a href="import-data-pelanggan.php">Import Data Pelanggan</a>
-                                    </li>
-                                </li>
-                                <li class="active">
-                                    <a href="#"><i class="fa fa-hand-o-down fa-fw"></i> Eksport Ke Excel
-                                    <span class="fa fa-hand-o-down fa-fw"></span></a>
-                            <li>
-                                <a href="#">Eksport Data Barang</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Suplier</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Pembelian Global</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Pembelian Detail</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Penjualan Global</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Penjualan Detail</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Kas</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Hutang</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Piutang</a>
-                            </li>
-                            <li class="active">
-                                <a href="index.php"><span class="fa fa-home fa-fw"></span>EXIT</a>
-                            </li>
-                                </li>
 
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
-                    </div>
+                <div class="container">
+                <h1 align="center">Import Data Barang</h1>
+                		<section class="content">
+                		<a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
+                		</section>
+                		<form class="form-inline">
+                		<div class="col-md-4">
+                		<input type="text" class="form-control">
+                		</div>
+                		<a href="#" type="button" class="btn btn-info">Cari File di Excel</a>
+                		</form><br><br>
+                		<table class="table table-bordered">
+                		<thead>
+                			<tr class="danger">
+                				<th>Kode</th>
+                				<th>Nama</th>
+                				<th>Katerogi</th>
+                				<th>Satuan</th>
+                				<th>Harga Beli</th>
+                				<th>Harga Jual</th>
+                				<th>Jumlah</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                			</tr>
+                			<tr>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                				<td></td>
+                			</tr>
+                		</tbody>
+                		</table>
+                		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
 
-                    <aside class="right-side">
+							  <!-- Modal -->
+							 <div class="modal fade" id="myModal" role="dialog">
+							 <div class="modal-dialog">
+							 <!-- Modal content-->
+							  <div class="modal-content">
+							  <div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+							  </div>
+							  <div class="modal-body">
 
-                <!-- Main content -->
-                <section class="content">
-
-                    <div class="row" style="margin-bottom:5px;">
-
-
-                      </section>
-                  </div>
-              <!-- row end -->
-               </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
-
+							   <p> <img src="download.png">
+							   Apakah anda yakin untuk melakukan proses import data ?</p>
+							   </div>
+							    <div class="modal-footer">
+							    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+							    <button type="button" class="btn btn-info" data-dismiss="#">Yes</button>
+							    </div> 
+							    </div>
+							   </div>
+							   </div>
+							   <div class="col-md-8">
+                		<p>
+                			<h4>Proses Import Data Excel</h4>
+                			<h4>1. Buat dan simpanlah template file excel untuk di copy paste data anda</h4>
+                			<h4>2. Buka file excel anda yang sudah ada data yang akan di import</h4>
+                			<h4>3. Pilih sheet yang berisi data anda</h4>
+                			<h4>4. Pastikan semua data berada pada filed atau urutan yang benar</h4>
+                			<h4>5. Klik proses untuk mulai import anda</h4>
+                		</p>
+                		</div>
+                				<a href="backoffice.php" type="button" class="btn btn-primary btn-lg">Keluar</a>
+                				
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -390,6 +379,6 @@
 
             });
             // Chart.defaults.global.responsive = true;
-</script>
+</script>                
 </body>
 </html>
