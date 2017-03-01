@@ -207,95 +207,34 @@
                         </div>
                     </nav>
                 </header>
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <div class="sidebar-collapse">
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            
-                              <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="#"><i class="fa fa-hand-o-down fa-fw"></i> Import Data Dari Excel
-                                    <span class="fa fa-hand-o-down fa-fw"></span></a>
-                                    <li>
-                                        <a href="import-data-barang.php">Import Data Barang</a>
-                                    </li>
-                                    <li>
-                                        <a href="import-data-suplier.php">Import Data Suplier</a>
-                                    </li>
-                                    <li>
-                                        <a href="import-data-pelanggan.php">Import Data Pelanggan</a>
-                                    </li>
-                                </li>
-                                <li class="active">
-                                    <a href="#"><i class="fa fa-hand-o-down fa-fw"></i> Eksport Ke Excel
-                                    <span class="fa fa-hand-o-down fa-fw"></span></a>
-                            <li>
-                                <a href="#">Eksport Data Barang</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Suplier</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Pembelian Global</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Pembelian Detail</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Penjualan Global</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Penjualan Detail</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Kas</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Hutang</a>
-                            </li>
-                            <li>
-                                <a href="#">Eksport Data Piutang</a>
-                            </li>
-                            <li class="active">
-                                <a href="index.php"><span class="fa fa-home fa-fw"></span>EXIT</a>
-                            </li>
-                                </li>
-
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
+                
+                <h1 align="center">BACK OFFICE</h1>
+                <div class="container">
+                <div class="row">
+                        <div class="col-md-4">
+                        <h2>Import Data dari Excel</h2>
+                        <div class="form-group">
+                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Barang</a><br><br>
+                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Pelanggan</a><br><br>
+                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Suplier</a><br><br>
+                        </div>
+                        </div>
+                        
+                    <div class="col-md-4">
+                    <h1>Eksport ke Excel</h1>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Barang</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Suplier</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pelanggan</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pembelian Global</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pembelian Detail</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Penjualan Global</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Penjualan Detail</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Kas</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Hutang</a>
+                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Piutang</a>
+                        </div>
+                    <div class="col-md-4">
                     </div>
-
-                    <aside class="right-side">
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <div class="row" style="margin-bottom:5px;">
-
-
-                      </section>
-                  </div>
-              <!-- row end -->
-               </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
 
 
         <!-- jQuery 2.0.2 -->

@@ -1,179 +1,215 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="UTF-8">
+    <title>Toko Laris</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="Developed By M Abdur Rokib Promy">
+    <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
+    <!-- bootstrap 3.0.2 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <!-- Date Picker -->
+    <link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+    <!-- fullCalendar -->
+    <!-- <link href="css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" /> -->
+    <!-- Daterange picker -->
+    <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link href="css/iCheck/all.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <!-- <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Theme style -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
-	<title>Sistem Kasir</title>
-
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
 
 
-    <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+          <![endif]-->
 
-    <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+          <style type="text/css">
 
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-
-
-    <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+          </style>
 
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
-
-    <!--
-
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-
-    -->
-
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim-Z
+<div class="skin-black">
+   <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                Toko Laris
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </a>
-            </div>
-
-            <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.php">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="user.php">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="barang.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Barang</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
-            </ul>
-    	</div>
-    </div>
-
-    <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
+                <div class="navbar-left">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                       <li class="dropdown users-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
                             </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret"></b>
-                                    <span class="notification">5</span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="barang.php">
+                                        <h5>Barang</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="suplier.php">
+                                        <h5>Suplier</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pelanggan.php">
+                                        <h5>Pelanggan</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h5>Backoffice</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h5>Kalkulator</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h5>Pengaturan</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li><!-- end user -->
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-tasks"></i>
+                                <span class="label label-danger">9</span>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <div class="progress progress-striped xs">
+                                                    <div class="progress-bar progress-bar-success" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Create a nice theme
+                                                    <small class="pull-right">40%</small>
+                                                </h3>
+                                                <div class="progress progress-striped xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">40% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Some task I need to do
+                                                    <small class="pull-right">60%</small>
+                                                </h3>
+                                                <div class="progress progress-striped xs">
+                                                    <div class="progress-bar progress-bar-info" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Make beautiful transitions
+                                                    <small class="pull-right">80%</small>
+                                                </h3>
+                                                <div class="progress progress-striped xs">
+                                                    <div class="progress-bar progress-bar-warning" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">80% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
                         </li>
-                    </ul>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user"></i>
+                                <span>User <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Account</li>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                           <a href="">
-                               Account
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Dropdown
-                                    <b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Log out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
+                                    <li>
+                                        <a href="login.php">
+                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="user.php">
+                                        <i class="fa fa-user fa-fw pull-right"></i>
+                                            Profile
+                                        </a>
+                                        <a data-toggle="modal" href="#modal-user-settings">
+                                        <i class="fa fa-cog fa-fw pull-right"></i>
+                                            Settings
+                                        </a>
+                                        </li>
+
+                                        <li class="divider"></li>
+
+                                        <li>
+                                            <a href="#"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
 
         <div class="content">
             <div class="container-fluid">
@@ -245,86 +281,100 @@
                                 </div>
                             </div>
                         </div>
-                    </form>  
-                    <div class="col-md-3">
-                        
-                    </div>
-                </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim-Z</a>, made with love for a better web
-                </p>
-            </div>
-        </footer>
+                    </form>
 
-    </div>
-</div>
+        <!-- jQuery 2.0.2 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
 
+        <!-- jQuery UI 1.10.3 -->
+        <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-</body>
+        <script src="js/plugins/chart.js" type="text/javascript"></script>
 
-    <!--   Core JS Files   -->
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- datepicker
+        <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
+        <!-- Bootstrap WYSIHTML5
+        <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
+        <!-- iCheck -->
+        <script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <!-- calendar -->
+        <script src="js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
-    <!--  Checkbox, Radio & Switch Plugins -->
-    <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+        <!-- Director App -->
+        <script src="js/Director/app.js" type="text/javascript"></script>
 
-    <!--  Charts Plugin -->
-    <script src="assets/js/chartist.min.js"></script>
+        <!-- Director dashboard demo (This is only for demo purposes) -->
+        <script src="js/Director/dashboard.js" type="text/javascript"></script>
 
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-    <script src="assets/js/light-bootstrap-dashboard.js"></script>
-
-    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <script src="assets/js/demo.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            demo.initChartist();
-
-            $.notify({
-                icon: 'pe-7s-gift',
-                message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
+        <!-- Director for demo purposes -->
+        <script type="text/javascript">
+            $('input').on('ifChecked', function(event) {
+                // var element = $(this).parent().find('input:checkbox:first');
+                // element.parent().parent().parent().addClass('highlight');
+                $(this).parents('li').addClass("task-done");
+                console.log('ok');
+            });
+            $('input').on('ifUnchecked', function(event) {
+                // var element = $(this).parent().find('input:checkbox:first');
+                // element.parent().parent().parent().removeClass('highlight');
+                $(this).parents('li').removeClass("task-done");
+                console.log('not');
             });
 
-        });
-    </script>
+        </script>
+        <script>
+            $('#noti-box').slimScroll({
+                height: '400px',
+                size: '5px',
+                BorderRadius: '5px'
+            });
 
+            $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
+                checkboxClass: 'icheckbox_flat-grey',
+                radioClass: 'iradio_flat-grey'
+            });
+</script>
+<script type="text/javascript">
+    $(function() {
+                "use strict";
+                //BAR CHART
+                var data = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            fillColor: "rgba(220,220,220,0.2)",
+                            strokeColor: "rgba(220,220,220,1)",
+                            pointColor: "rgba(220,220,220,1)",
+                            pointStrokeColor: "#fff",
+                            pointHighlightFill: "#fff",
+                            pointHighlightStroke: "rgba(220,220,220,1)",
+                            data: [65, 59, 80, 81, 56, 55, 40]
+                        },
+                        {
+                            label: "My Second dataset",
+                            fillColor: "rgba(151,187,205,0.2)",
+                            strokeColor: "rgba(151,187,205,1)",
+                            pointColor: "rgba(151,187,205,1)",
+                            pointStrokeColor: "#fff",
+                            pointHighlightFill: "#fff",
+                            pointHighlightStroke: "rgba(151,187,205,1)",
+                            data: [28, 48, 40, 19, 86, 27, 90]
+                        }
+                    ]
+                };
+            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
+                responsive : true,
+                maintainAspectRatio: false,
+            });
+
+            });
+            // Chart.defaults.global.responsive = true;
+</script>
+</body>
 </html>
