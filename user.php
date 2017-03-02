@@ -57,77 +57,77 @@
                                 <a href="daftar-user.php" class="btn btn-info"><h4 class="title">Daftar User Profile</h4></a>
                             </div>
 
-                            <div class="content">
-                                <form method="POST" action="input-proses.php">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                               <label>Username</label>
-                                                <input type="text" class="form-control" name="username" placeholder="Username">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                               <label>No.Telfon</label>
-                                                <input type="text" class="form-control" name="telpon" placeholder="Nomor">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="password">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                         <div class="form-group">
-                                                <label>Alamat</label>
-                                                <textarea type="text" class="form-control" placeholder="Alamat"></textarea>
-                                         </div>
-                                    </div>
-                                    <div class="row">
-                                           <div class="form-group">
-                                                <label>Status</label>
-                                                <select class="form-control" name="level">
-                                                    <option>admin</option>
-                                                    <option>petugas</option>
-                                                    <option>pelanggan</option>
-                                                </select>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                         <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" id="exampleInputFile">
-                                        </div>
-                                    </div>
+                            <div class="container">
+                            <h1 align="center">Edit Profile</h1>
+                            <hr>
+                          <div class="row">
+                              <!-- left column -->
+                              <div class="col-md-3">
+                                <div class="text-center">
+                                  <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
                                 </div>
-                                    <button type="submit" name="input" class="btn btn-info btn-lg">Daftarkan</button>
-                                    <div class="clearfix"></div>
+                              </div>
+                              
+                              <!-- edit form column -->
+                              <div class="col-md-9 personal-info">
+                                <div class="alert alert-info alert-dismissable">
+                                  <a class="panel-close close" data-dismiss="alert">×</a> 
+                                  <i class="fa fa-coffee"></i>
+                                  This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                                </div>
+                                <h3>Personal info</h3>
+                                
+                                <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">Username:</label>
+                                    <div class="col-lg-8">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">No.telp:</label>
+                                    <div class="col-lg-8">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">Alamat:</label>
+                                    <div class="col-lg-8">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                  <label class="col-md-3 control-label">Status</label>
+                                  <div class="col-md-8">
+                                  <select class="form-control" name="level">
+                                  <option>admin</option>
+                                  <option>petugas</option>
+                                  <option>pelanggan</option>
+                                  </select>
+                                  </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-md-3 control-label">Password:</label>
+                                    <div class="col-md-8">
+                                      <input class="form-control" type="password">
+                                    </div>
+                                    <div class="row">
+                                    <label class="col-md-3 control-label">Uploud Photo</label>
+                                    <input type="file" class="col-md-3">
+                                    </div><br><br>
+                                  <div class="form-group">
+                                    <label class="col-md-3 control-label"></label>
+                                    <div class="col-md-8">
+                                      <button type="submit" name="input" class="btn btn-info">Daftarkan</button>
+                                      <span></span>
+                                      <input type="reset" class="btn btn-default" value="Cancel">
+                                    </div>
+                                  </div>
                                 </form>
-
+                              </div>
+                          </div>
                         </div>
-                    </div>
-                        <div class="col-md-4">
-                        <div class="card card-user">
-                            <div class="image">
-                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt=""/>
-                            </div>
-                            <div class="content">
-                                <div class="author">
-                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt=""/>
-
-                                      <h4 class="title">Mike Andrew<br />
-                                         <small>michael24</small>
-                                      </h4>
-                                    </a>
-                                </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                                    Your chick she so thirsty <br>
-                                                    I'm in that two seat Lambo"
-                                </p>
-                            </div>
+                            
                             <hr>
                             <div class="text-center">
                                 <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>

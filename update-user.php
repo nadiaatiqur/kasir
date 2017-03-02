@@ -48,6 +48,7 @@
 
 <div class="skin-black">
    <!-- header logo: style can be found in header.less -->
+         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
