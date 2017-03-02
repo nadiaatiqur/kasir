@@ -212,7 +212,7 @@
                 <div class="container">
                 <div class="row">
                         <div class="col-md-4">
-                        <h2>Import Data dari Excel</h2>
+                        <h1>Import Data dari Excel</h1>
                         <div class="form-group">
                             <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Barang</a><br><br>
                             <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Pelanggan</a><br><br>
@@ -220,20 +220,258 @@
                         </div>
                         </div>
                         
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                     <h1>Eksport ke Excel</h1>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Barang</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Suplier</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pelanggan</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pembelian Global</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Pembelian Detail</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Penjualan Global</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Penjualan Detail</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Kas</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Hutang</a>
-                            <a href="#" type="button" class="btn btn-primary btn-block btn-lg">Export Data Piutang</a>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal">Export Data Barang</a>
+                             <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- konten modal-->
+                                    <div class="modal-content">
+                                        <!-- heading modal -->
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title" align="center">Cetak Data Barang</h4>
+                                        </div>
+                                        <!-- body modal -->
+                                        <div class="modal-body">
+                                            <p>Cetak data versi Excel <a href="table-barang.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                        </div>
+                                        <!-- footer modal -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <a href="#" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal1">Export Data Penjualan Global</a>
+                                 <!-- Modal -->
+                                <div id="myModal1" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Penjualan Global</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal2">Export Data Suplier</a>
+                                <!-- Modal -->
+                                <div id="myModal2" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Supliyer</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="table-suplaiyer.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                <a href="" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal3">Export Data Penjualan Detail</a>
+                                <!-- Modal -->
+                                <div id="myModal3" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Penjualan Detail</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <a href="" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal4">Export Data Pelanggan</a>
+                                <!-- Modal -->
+                                <div id="myModal4" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Pelanggan</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="table-pelanggan.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <a href="" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal5">Export Data Kas</a>
+                                <!-- Modal -->
+                                <div id="myModal5" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Kas</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal6">Export Data Pembelian Global</a><!-- Modal -->
+                                <div id="myModal6" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Pembelian Global</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal7">Export Data Hutang</a>
+                                <!-- Modal -->
+                                <div id="myModal7" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Hutang</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                <a href="#" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal8">Export Data Pembelian Detail</a>
+                                <!-- Modal -->
+                                <div id="myModal8" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Pembelian Detail</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                <a href="#" type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#myModal9">Export Data Piutang</a>
+                                <!-- Modal -->
+                                <div id="myModal9" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- konten modal-->
+                                        <div class="modal-content">
+                                            <!-- heading modal -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Cetak Data Piutang</h4>
+                                            </div>
+                                            <!-- body modal -->
+                                            <div class="modal-body">
+                                                <p>Cetak data versi Excel <a href="#" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            </div>
+                                            <!-- footer modal -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                        
                     </div>
 
 
