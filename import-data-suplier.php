@@ -209,7 +209,7 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">Import Data Barang</h1>
+                <h1 align="center">Import Data Supliyer</h1>
                 		<section class="content">
                 		<a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
                 		</section>
@@ -223,32 +223,25 @@
                 		<thead>
                 			<tr class="danger">
                 				<th>Kode</th>
-                				<th>Nama</th>
-                				<th>Katerogi</th>
-                				<th>Satuan</th>
-                				<th>Harga Beli</th>
-                				<th>Harga Jual</th>
-                				<th>Jumlah</th>
+                                <th>Nama Barang</th>
+                				<th>Supliyer</th>
+                				<th>Alamat</th>
+                				<th>Telepon</th>
+                				<th>Kontak</th>
+                				<th>Email</th>
+                                <th>Keterangan</th>
                 			</tr>
                 		</thead>
                 		<tbody>
                 			<tr>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                			</tr>
-                			<tr>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                				<td>&nbsp</td>
+                                <td>&nbsp</td>
                 			</tr>
                 		</tbody>
                 		</table>

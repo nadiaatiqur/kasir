@@ -214,9 +214,9 @@
                         <div class="col-md-4">
                         <h1>Import Data dari Excel</h1>
                         <div class="form-group">
-                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Barang</a><br><br>
-                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Pelanggan</a><br><br>
-                            <a href="#" type="button" class="btn btn-info btn-block btn-lg">Import Data Suplier</a><br><br>
+                            <a href="import-data-barang.php" type="button" class="btn btn-info btn-block btn-lg">Import Data Barang</a><br><br>
+                            <a href="import-data-pelanggan.php" type="button" class="btn btn-info btn-block btn-lg">Import Data Pelanggan</a><br><br>
+                            <a href="import-data-suplier.php" type="button" class="btn btn-info btn-block btn-lg">Import Data Suplier</a><br><br>
                         </div>
                         </div>
                         
@@ -237,7 +237,7 @@
                                         </div>
                                         <!-- body modal -->
                                         <div class="modal-body">
-                                            <p>Cetak data versi Excel <a href="table-barang.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                            <p>Cetak data versi Excel <a href="table-barang.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="laporan-barang.php" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
                                         </div>
                                         <!-- footer modal -->
                                         <div class="modal-footer">
