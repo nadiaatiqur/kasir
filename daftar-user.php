@@ -173,19 +173,13 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-user fa-lg"></i>
+                                <span>User <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Account</li>
 
 
                                 <li class="divider"></li>
-
-                                <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
-
                                     <li>
                                         <a href="#">
                                         <i class="fa fa-user fa-fw pull-right"></i>
@@ -216,7 +210,6 @@
                 	<div class="card">
                 		 <div class="header">
                                 <a href="user.php" class="btn btn-info"><h4 class="title">Input User Profile</h4></a>
-                                <a href="daftar-user.php" class="btn btn-info"><h4 class="title" class="active">Daftar User Profile</h4></a>
                             </div>
                         <table class="table table-striped table-bordered">
                         <form method="POST" action="">

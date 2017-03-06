@@ -73,32 +73,54 @@
                                 <div class="alert alert-info alert-dismissable">
                                   <a class="panel-close close" data-dismiss="alert">×</a> 
                                   <i class="fa fa-coffee"></i>
-                                  This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                                  Isi kolom yang ada di bawah 
                                 </div>
                                 <h3>Personal info</h3>
-                                
+                                <table class="tabel table-bordered">
                                 <form class="form-horizontal" role="form">
+                                <tr>
+                                <th>
                                   <div class="form-group">
                                     <label class="col-lg-3 control-label">Username:</label>
-                                    <div class="col-lg-8">
+                                </th>
+                                <th>
+                                    <div class="col-lg-15">
                                       <input class="form-control" type="text">
                                     </div>
                                   </div>
+                                  </th>
+                                  </tr>
+                                  <tr>
                                   <div class="form-group">
+                                  <th>
                                     <label class="col-lg-3 control-label">No.telp:</label>
-                                    <div class="col-lg-8">
+                                    </th>
+                                    <th>
+                                    <div class="col-lg-15">
                                       <input class="form-control" type="text">
+                                      </th>
                                     </div>
                                   </div>
+                                  </tr>
+                                  <tr>
                                   <div class="form-group">
+                                  <th>
                                     <label class="col-lg-3 control-label">Alamat:</label>
-                                    <div class="col-lg-8">
+                                    </th>
+                                    <th>
+                                    <div class="col-lg-15">
                                       <input class="form-control" type="text">
                                     </div>
                                   </div>
+                                  </th>
+                                  </tr>
+                                  <tr>
                                   <div class="form-group">
+                                  <th>
                                   <label class="col-md-3 control-label">Status</label>
-                                  <div class="col-md-8">
+                                  </th>
+                                  <th>
+                                  <div class="col-md-">
                                   <select class="form-control" name="level">
                                   <option>admin</option>
                                   <option>petugas</option>
@@ -106,26 +128,46 @@
                                   </select>
                                   </div>
                                   </div>
+                                  </th>
+                                  </tr>
+                                  <tr>
                                   <div class="form-group">
+                                  <th>
                                     <label class="col-md-3 control-label">Password:</label>
-                                    <div class="col-md-8">
+                                    </th>
+                                    <th>
+                                    <div class="col-md-20">
                                       <input class="form-control" type="password">
                                     </div>
+                                    </div>
+                                    </th>
+                                    </tr>
+                                    <tr>
                                     <div class="row">
+                                    <th>
                                     <label class="col-md-3 control-label">Uploud Photo</label>
-                                    <input type="file" class="col-md-3">
-                                    </div><br><br>
+                                    </th>
+                                    <th>
+                                    <input type="file">
+                                    </div>
+                                    </th>
+                                    </tr>
+                                    <tr>
+                                    <td>
                                   <div class="form-group">
-                                    <label class="col-md-3 control-label"></label>
                                     <div class="col-md-8">
                                       <button type="submit" name="input" class="btn btn-info">Daftarkan</button>
-                                      <span></span>
-                                      <input type="reset" class="btn btn-default" value="Cancel">
                                     </div>
                                   </div>
+                                  </td>
+                                  <td>
+                                    <input type="reset" class="btn btn-default btn-block" value="Cancel">
+                                  </td>
+                                  </tr>
                                 </form>
                               </div>
                           </div>
+                          </table>
                         </div>
                             
                             <hr>
