@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -29,14 +29,6 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!-- ANIMATE  CSS -->
-    <link href="css/animate.css" rel="stylesheet" />
-    <!-- PRETTY PHOTO  CSS -->
-    <link href="css/prettyPhoto.css" rel="stylesheet" />
-    <!--  STYLE SWITCHER CSS -->
-    <link href="css/styleSwitcher.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bola.css">
 
 
 
@@ -52,7 +44,7 @@
           </style>
 </head>
 <body class="skin-black">
- <!-- header logo: style can be found in header.less -->
+<!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -140,131 +132,89 @@
                         </div>
                     </nav>
                 </header>
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
-                                </div>
-                                <div class="pull-left info">
-                                    <p>Hello, Jane</p>
 
-                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                                </div>
-                            </div>
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="tampilan.html">
-                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
-                                    </a>
-                                </li>
+                <div class="container">
+                <h1 align="center">PEMBELIAN KASIR</h1>
+                	<div class="row">
+                		<div class="col-md-4">
+                		<label>Tanggal</label>
+                			<input type="date" class="form-control" name="date">
+                		<label>No.Faktur</label>
+                			<input type="text" class="form-control">
+                		<label>Tunai/Kredit</label>
+                			<select class="form-control">
+                				<option class="form-control" value="Tunai">Tunai</option>
+                				<option class="form-control" value="1 Minggu">1 Minggu</option>
+                				<option class="form-control" value="2 Minggu">2 Minggu</option>
+                				<option class="form-control" value="3 Minggu">4 Minggu</option>
+                				<option class="form-control" value="1 Bulan">1 Bulan</option>
+                				<option class="form-control" value="Custom">Custom</option>
+                			</select>		
+			            <label>Kode Suplier</label>
+			               <div class="input-group">
+					      <input type="text" class="form-control">
+					      <span class="input-group-btn">
+					        <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">+</button>
+					      </span>
+					    </div>
 
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Bayar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
-
-                    <aside class="right-side">
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <div class="row" style="margin-bottom:5px;">
-
-                    <h1 align="center">PEMBELIAN</h1>
-            <div id="home-sec">
-        <div class="overlay">            
-            <div class="container">
-              	    <div class="col-lg-2 col-md-2 col-sm-2 text-center">
-                    <a href="pembelian-kasir.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
-                            <i class="fa fa-briefcase icon-round icon-round-active"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".2s">Pembelian Kasir</h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".3s">
-                            <i class="fa fa-briefcase icon-round"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".4s">Tabel Pembelian</h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".5s">
-                            <i class="fa fa-briefcase icon-round icon-round-active"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".6s">Retur Pembelian </h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".7s">
-                            <i class="fa fa-briefcase icon-round"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".8s">Tabel Retur Pembelian</h3>
-                        </a>
-                    </div>
-            </div>
-            </div>
-            </div>
-                      </section>
-                  </div>
-              </div>
-              <!-- row end -->
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
+						  <!-- Modal -->
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">Kode Suplier</h4>
+						        </div>
+						        <div class="modal-body">
+						        <table class="table tabel-bordered">
+						          	<thead>
+						          		<tr>
+						          			<th>Kode</th>
+						          			<th>Nama</th>
+						          			<th>Alamat</th>
+						          		</tr>
+						          	</thead>
+						          	<tbody>
+						          		<tr>
+						          			<td></td>
+						          		</tr>
+						          	</tbody>
+						          </table>
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						  <label>Kode</label>
+						  <input type="text" class="form-control">
+						  <label>Jumlah</label>
+						  <input type="text" class="form-control">
+                		</div>
+                	</div>
+                	<table class="table tabel-bordered">
+						  	<thead>
+						  		<tr class="warning">
+						  					<th>Kode</th>
+						          			<th>Nama</th>
+						          			<th>Jumlah</th>
+						          			<th>Satuan</th>
+						          			<th>Harga Beli</th>
+						          			<th>Diskon</th>
+						          			<th>Harga Bersih</th>
+						          			<th>Total</th>
+						  		</tr>
+						  	</thead>
+						  </table>
+                </div>
 
 
 
-		<!-- jQuery 2.0.2 -->
+<!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
 
