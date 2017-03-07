@@ -213,12 +213,13 @@
                 		<section class="content">
                 		<a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
                 		</section>
-                		<form class="form-inline">
-                		<div class="col-md-4">
-                		<input type="text" class="form-control">
-                		</div>
-                		<a href="#" type="button" class="btn btn-info">Cari File di Excel</a>
-                		</form><br><br>
+                		<form class="form-inline" method="POST" action="">
+                            <div class="col-md-4">
+                                <input type="file" name="file" class="form-control" id="file" size="150">
+                                <p class="help-block">Hanya File Excel yang di Import.</p>
+                            </div>
+                            <input type="submit" class="btn btn-info" name="" value="Upload">
+                        </form><br><br>
                 		<table class="table table-bordered">
                 		<thead>
                 			<tr class="danger">

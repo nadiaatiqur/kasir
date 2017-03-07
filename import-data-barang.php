@@ -211,46 +211,47 @@
                 <div class="container">
                 <h1 align="center">Import Data Barang</h1>
                 		<section class="content">
-                		<a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
+                		  <a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
                 		</section>
-                		<form class="form-inline">
-                		<div class="col-md-4">
-                		<input type="text" class="form-control">
-                		</div>
-                		<a href="#" type="button" class="btn btn-info">Cari File di Excel</a>
+                		<form class="form-inline" enctype="multipart/form-data" method="POST" action="importbarang-proses.php">
+                    		<div class="col-md-4">
+                        		<input type="file" id="filebarang" name="filebarang" class="form-control" size="150">
+                                <p class="help-block">Hanya File Excel yang di Import.</p>
+                    		</div>
+                            <input type="submit" class="btn btn-info" name="submit" value="Upload">
                 		</form><br><br>
-                		<table class="table table-bordered">
+                		<table class="table table-striped table-bordered">
                 		<thead>
                 			<tr class="danger">
-                				<th>Kode</th>
-                				<th>Nama</th>
-                				<th>Katerogi</th>
-                				<th>Satuan</th>
-                				<th>Harga Beli</th>
-                				<th>Harga Jual</th>
-                				<th>Jumlah</th>
+                				<TH>ID BARANG</TH>
+                                <TH>NAMA BARANG</TH>
+                                <TH>KATEGORI</TH>
+                                <TH>JUMLAH</TH>
+                                <TH>SATUAN</TH>
+                                <TH>SPESIFIKASI</TH>
+                                <TH>HARGA BELI</TH>
+                                <TH>HARGA JUAL</TH>
                 			</tr>
                 		</thead>
+                        <?php  
+                        include "koneksi.php";
+
+                        $result=mysqli_query($link, "SELECT * FROM barang");
+                        while ($row=mysqli_fetch_array($result)) {
+                        ?>
                 		<tbody>
                 			<tr>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                			</tr>
-                			<tr>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
-                				<td></td>
+                				<td><?php echo $row['id_barang']; ?></td>
+                                <td><?php echo $row['nama_barang']; ?></td>
+                                <td><?php echo $row['kategori']; ?></td>
+                                <td><?php echo $row['jumlah_barang']; ?></td>
+                                <td><?php echo $row['satuan']; ?></td>
+                                <td><?php echo $row['spesifikasi']; ?></td>
+                                <td><?php echo $row['harga_beli']; ?></td>
+                                <td><?php echo $row['harga_jual']; ?></td>
                 			</tr>
                 		</tbody>
+                        <?php } ?>
                 		</table>
                 		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
 
