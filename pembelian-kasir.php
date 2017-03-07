@@ -136,7 +136,7 @@
                 <div class="container">
                 <h1 align="center">PEMBELIAN KASIR</h1>
                 	<div class="row">
-                		<div class="col-md-4">
+                		<div class="col-xs-2">
                 		<label>Tanggal</label>
                 			<input type="date" class="form-control" name="date">
                 		<label>No.Faktur</label>
@@ -214,7 +214,7 @@
 						  	</tbody>
 						  </table><br><br><br>
 						  <div class="row">
-						  	<div class="col-md-3">
+						  	<div class="col-xs-2">
 						  	<label>Subtotal</label>
 						  		<input type="text" class="form-control" name="">
 						  	<label>Diskon</label>
