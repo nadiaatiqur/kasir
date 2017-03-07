@@ -195,7 +195,7 @@
 						  <label>Jumlah</label>
 						  <input type="text" class="form-control">
                 		</div>
-                	</div>
+                	</div><br><br>
                 	<table class="table tabel-bordered">
 						  	<thead>
 						  		<tr class="warning">
@@ -209,7 +209,27 @@
 						          			<th>Total</th>
 						  		</tr>
 						  	</thead>
-						  </table>
+						  	<tbody>
+
+						  	</tbody>
+						  </table><br><br><br>
+						  <div class="row">
+						  	<div class="col-md-3">
+						  	<label>Subtotal</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Diskon</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Grand Total</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Final</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Kembali</label>
+						  		<input type="text" class="form-control" name="">
+						  	</div>
+						  </div><br><br>
+						  <a href="#" type="button" class="btn btn-primary">Simpan</a>
+						  	<a href="#" type="button" class="btn btn-info">Cetak</a>
+						  	<a href="pembelian.php" type="button" class="btn btn-default">Keluar</a>
                 </div>
 
 

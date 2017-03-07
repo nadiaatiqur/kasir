@@ -226,7 +226,7 @@
                 <!-- Main content -->
                 <section class="content">
 
-                    <div class="row" style="margin-bottom:5px;">
+                    <div style="margin-bottom:5px;">
 
                     <h1 align="center">PEMBELIAN</h1>
             <div id="home-sec">
