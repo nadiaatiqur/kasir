@@ -1,49 +1,36 @@
 <?php  
 require "fpdf181/fpdf.php";
 
-class PDF extends FPDF
-{
-// Page header
-function Header()
-{
-    // Arial bold 15
-    $this->SetFont('Arial','B',15);
-    // Move to the right
-    $this->Cell(80);
-    // Title
-    $this->Cell(30,10,'Title',1,0,'C');
-    // Line break
-    $this->Ln(20);
-}
-
-// Page footer
-function Footer()
-{
-    // Position at 1.5 cm from bottom
-    $this->SetY(-15);
-    // Arial italic 8
-    $this->SetFont('Arial','I',8);
-    // Page number
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-}
-}
-
-
-$pdf= new FPDF('L','mm',array(297,210)); ;
+$pdf= new FPDF('L','cm',array(30,20));
 $pdf->AddPage();
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(80);
-$pdf->Cell(30,10,'LAPORAN BARANG YANG MASUK',0,0,'C');
+$pdf->SetFont('Arial','B',15);
+$pdf->Image('img/logo_kecil.jpg',1,1,2,2); 
+$pdf->SetX(3); 
+$pdf->MultiCell(19.5,0.5,'www.MasCitra.com',0,'L'); 
+$pdf->SetX(3); 
+$pdf->MultiCell(19.5,0.5,'Pemerintah Kota Jember, Jawa Timur',0,'L'); 
+$pdf->SetFont('Arial','B',10); 
+$pdf->SetX(3); 
+$pdf->MultiCell(19.5,0.5,'JL. Mengkubumi No. 1, Telpon : 0411400000',0,'L'); 
+$pdf->SetX(3); 
+$pdf->MultiCell(19.5,0.5,'website : www.MasCitra.com email : MasCitra12@gmail.com',0,'L'); 
+$pdf->Line(1,3.1,30,3.1); 
+$pdf->SetLineWidth(0.1); 
+$pdf->Line(1,3.2,30,3.2); 
+$pdf->SetLineWidth(0);
+
 $pdf->Ln();
+
 $pdf->SetFont('times','B',8);
-$pdf->Cell(15,7,"id_barang",1,0,"C");
-$pdf->Cell(35,7,"nama_barang",1,0,"C");
-$pdf->Cell(20,7,"kategori",1,0,"C");
-$pdf->Cell(20,7,"jumlah_barang",1,0,"C");
-$pdf->Cell(10,7,"satuan",1,0,"C");
-$pdf->Cell(74,7,"spesifikasi",1,0,"C");
-$pdf->Cell(20,7,"harga_beli",1,0,"C");
-$pdf->Cell(20,7,"harga_jual",1,0,"C");
+$pdf->Cell(1.5,1,"id_barang",1,0,"C");
+$pdf->Cell(3.5,1,"nama_barang",1,0,"C");
+$pdf->Cell(2,1,"kategori",1,0,"C");
+$pdf->Cell(2,1,"jumlah_barang",1,0,"C");
+$pdf->Cell(1,1,"satuan",1,0,"C");
+$pdf->Cell(7.4,1,"spesifikasi",1,0,"C");
+$pdf->Cell(2,1,"harga_beli",1,0,"C");
+$pdf->Cell(2,1,"harga_jual",1,0,"C");
+
 $pdf->Ln();
 
     include "koneksi.php";
@@ -57,14 +44,14 @@ $pdf->Ln();
         $spesifikasi=$row['spesifikasi'];
         $beli=$row['harga_beli'];
         $jual=$row['harga_jual'];
-        $pdf->Cell(15,7,$id,1,0,"C");
-        $pdf->Cell(35,7,$barang,1,0,"C");
-        $pdf->Cell(20,7,$kategori,1,0,"C");
-        $pdf->Cell(20,7,$jumlah,1,0,"C");
-        $pdf->Cell(10,7,$satuan,1,0,"C");
-        $pdf->Cell(74,7,$spesifikasi,1,0,"C");
-        $pdf->Cell(20,7,$beli,1,0,"C");
-        $pdf->Cell(20,7,$jual,1,0,"C");
+        $pdf->Cell(1.5,1,$id,1,0,"C");
+        $pdf->Cell(3.5,1,$barang,1,0,"C");
+        $pdf->Cell(2,1,$kategori,1,0,"C");
+        $pdf->Cell(2,1,$jumlah,1,0,"C");
+        $pdf->Cell(1,1,$satuan,1,0,"C");
+        $pdf->Cell(7.4,1,$spesifikasi,1,0,"C");
+        $pdf->Cell(2,1,$beli,1,0,"C");
+        $pdf->Cell(2,1,$jual,1,0,"C");
         $pdf->Ln();
     }
     $pdf->Output('data-barang','I');
