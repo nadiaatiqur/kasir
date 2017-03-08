@@ -139,8 +139,6 @@
                 		<div class="col-xs-2">
                 		<label>Tanggal</label>
                 			<input type="date" class="form-control" name="date">
-                		<label>No.Faktur</label>
-                			<input type="text" class="form-control">
                 		<label>Tunai/Kredit</label>
                 			<select class="form-control">
                 				<option class="form-control" value="Tunai">Tunai</option>
@@ -149,54 +147,60 @@
                 				<option class="form-control" value="3 Minggu">4 Minggu</option>
                 				<option class="form-control" value="1 Bulan">1 Bulan</option>
                 				<option class="form-control" value="Custom">Custom</option>
-                			</select>		
-			            <label>Kode Suplier</label>
-			               <div class="input-group">
-					      <input type="text" class="form-control">
-					      <span class="input-group-btn">
-					        <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">+</button>
-					      </span>
-					    </div>
-
-						  <!-- Modal -->
-						  <div class="modal fade" id="myModal" role="dialog">
-						    <div class="modal-dialog">
-						    
-						      <!-- Modal content-->
-						      <div class="modal-content">
-						        <div class="modal-header">
-						          <button type="button" class="close" data-dismiss="modal">&times;</button>
-						          <h4 class="modal-title">Kode Suplier</h4>
-						        </div>
-						        <div class="modal-body">
-						        <table class="table tabel-bordered">
-						          	<thead>
-						          		<tr>
-						          			<th>Kode</th>
-						          			<th>Nama</th>
-						          			<th>Alamat</th>
-						          		</tr>
-						          	</thead>
-						          	<tbody>
-						          		<tr>
-						          			<td></td>
-						          		</tr>
-						          	</tbody>
-						          </table>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <label>Kode</label>
-						  <input type="text" class="form-control">
-						  <label>Jumlah</label>
-						  <input type="text" class="form-control">
+                			</select>
                 		</div>
+                        <div class="col-xs-2">
+                            <label>No.Faktur</label>
+                            <input type="text" class="form-control">        
+                            <label>Kode Suplier</label>
+                           <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">+</button>
+                              </span>
+                            </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Kode Suplier</h4>
+                                </div>
+                                <div class="modal-body">
+                                <table class="table tabel-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama</th>
+                                            <th>Alamat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <label>Kode</label>
+                            <input type="text" class="form-control">
+                            <label>Jumlah</label>
+                            <input type="text" class="form-control">
+                        </div>
                 	</div><br><br>
-                	<table class="table tabel-bordered">
+                	<table class="table table-striped table-bordered">
 						  	<thead>
 						  		<tr class="warning">
 						  					<th>Kode</th>
@@ -210,7 +214,16 @@
 						  		</tr>
 						  	</thead>
 						  	<tbody>
-
+                                <tr>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td> 
+                                </tr>
 						  	</tbody>
 						  </table><br><br><br>
 						  <div class="row">
