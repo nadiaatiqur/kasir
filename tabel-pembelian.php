@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -29,14 +29,6 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!-- ANIMATE  CSS -->
-    <link href="css/animate.css" rel="stylesheet" />
-    <!-- PRETTY PHOTO  CSS -->
-    <link href="css/prettyPhoto.css" rel="stylesheet" />
-    <!--  STYLE SWITCHER CSS -->
-    <link href="css/styleSwitcher.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bola.css">
 
 
 
@@ -48,11 +40,70 @@
           <![endif]-->
 
           <style type="text/css">
+          	.w3-theme {color:#fff !important;background-color:#4CAF50 !important;}
+    .w3-btn {background-color:#4CAF50 ;margin-bottom:4px;}
+    .w3-code{border-left:4px solid #4CAF50}
+    @media only screen and (max-width: 601px) {.w3-top{position:static;} #main{margin-top:0px !important}}
 
+
+    .tbl th.header { 
+        background-image: url(js/table.sorter/themes/blue/bg.gif);
+        cursor: pointer; 
+        font-weight: bold; 
+        background-repeat: no-repeat; 
+        background-position: center left; 
+        padding-left: 20px; 
+        margin-left: -1px; 
+    }
+
+    .tbl th.headerSortUp { 
+      background-image: url(js/table.sorter/themes/blue/asc.gif);
+      cursor: pointer; 
+        font-weight: bold; 
+        background-repeat: no-repeat; 
+        background-position: center left; 
+        padding-left: 20px; 
+        margin-left: -1px; 
+
+    } 
+    .tbl th.headerSortDown { 
+      background-image: url(js/table.sorter/themes/blue/desc.gif);
+      cursor: pointer; 
+        font-weight: bold; 
+        background-repeat: no-repeat; 
+        background-position: center left; 
+        padding-left: 20px; 
+        margin-left: -1px; 
+    }
+    #flash {
+        position:absolute;
+        top:0px;
+        left:0px;
+        z-index:5000;
+        width:100%;
+        height:500px;
+        background-color:#c00;
+        display:none;
+    }
+
+    #left-nav {
+        overflow: hidden;
+    }
+ 
+    .ui-datepicker {
+        font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+        font-size: 80.5%;
+    }
+    .ui-tooltip-content {
+        font-size: 80.5%;
+    }
+    ui-autocomplete {
+        font-size: 80%;
+    }
           </style>
 </head>
 <body class="skin-black">
- <!-- header logo: style can be found in header.less -->
+<!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -140,131 +191,94 @@
                         </div>
                     </nav>
                 </header>
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
-                                </div>
-                                <div class="pull-left info">
-                                    <p>Hello, Jane</p>
 
-                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <div class="container">
+                	<h1 align="center">Data Pembelian</h1>
+                	<div style="margin-left:250px;">
+    <div id="main" class="w3-container" style="margin-top:110px">
+        <div class='w3-container w3-small w3-pale-green w3-leftbar w3-border-green'>
+                <h4 style='margin-bottom:0;padding-bottom:0;'>Form Transaksi Pembelian</h4>
+                <p style='margin-top:0;padding-top:0;'><i>Input Data Pembelian Barang</i></p>
+            </div><div class='w3-row-padding'>
+                <div class='w3-col s3 w3-card'>
+                    Input Barang
+                    <div style='border-bottom:1px dashed #ccc;'></div><br>
+                    <table class="table table-bordered">
+                    <tr>
+                    <div class='w3-card-2 w3-light-blue col-xs-4'>
+                        <form action='mod/pembelian/act_pembelian.php?mod=pembelian&act=add' method='POST' class='w3-container'>
+                            <input type='hidden' name='harga2' id='harga2'>
+                            <br><input type='text' name='barang' id='barang' placeholder='ketik nama barang ...' class="form-control" required>
+
+                            <label class='w3-label w3-text-black'>Harga Beli (Rp):</label>
+                            <input type='text' name='harga' id='harga' class="form-control" required>
+                            <p>
+                            <div class='w3-row'>
+                                <div class='w3-col s8'><label class='w3-label w3-text-black w3-right'>QTY:</label></div>
+                                <div class='w3-col s4 col-xs-4'>
+                                    <input type='text' name='qty' placeholder='0' id='qty' class="form-control" required>
                                 </div>
+                                </form>
+                                </div>
+                                </div></tr>
+                                </table>
                             </div>
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="tampilan.html">
-                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
-                                    </a>
-                                </li>
+                            </p>
 
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Bayar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
-
-                    <aside class="right-side">
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <div style="margin-bottom:5px;">
-
-                    <h1 align="center">PEMBELIAN</h1>
-            <div id="home-sec">
-        <div class="overlay">            
-            <div class="container">
-              	    <div class="col-lg-2 col-md-2 col-sm-2 text-center">
-                        <a href="pembelian-kasir.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
-                            <i class="fa fa-briefcase icon-round icon-round-active"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".2s">Pembelian Kasir</h3>
-                        </a>
-                        <a href="tabel-pembelian.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".3s">
-                            <i class="fa fa-briefcase icon-round"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".4s">Tabel Pembelian</h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".5s">
-                            <i class="fa fa-briefcase icon-round icon-round-active"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".6s">Retur Pembelian </h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".7s">
-                            <i class="fa fa-briefcase icon-round"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".8s">Tabel Retur Pembelian</h3>
-                        </a>
+                            <p><button class="btn btn-warning" onclick="return confirm('Klik OK untuk melanjutkan');"><i class='fa fa-cart-plus'></i> Tambah Barang</button></p>
+                        </form>
                     </div>
+
+                    <br>
+                </div>
+                <div class='w3-col s4'>
+                    Data Pembelian
+                    <div style='border-bottom:1px dashed #ccc;'></div><br>
+                    <table class='w3-table w3-tiny w3-hoverable w3-bordered tbl table table-bordered'>
+                        <thead>
+                        <tr class='w3-blue'>
+                            <th>#</th>
+                            <th>KODE</th>
+                            <th>BARANG</th>
+                            <th>HARGA</th>
+                            <th colspan='2'>SUB TOTAL</th>
+                        </tr>
+                        </thead>
+
+                        <tbody><tr>
+                            <td colspan='5'><i>Tidak ada pembelian</a><td>
+                        </tr></tbody>
+                        <tfoot>
+                        <tr class='w3-light-grey'>
+                            <td colspan='4'><b>TOTAL</td>
+                            <td colspan='2'>Rp. 0</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class='w3-row-padding'>
+                        <div class='w3-col s7'>&nbsp;</div>
+                        <div class='w3-col s5 col-xs-4'>
+                            <form action='mod/pembelian/act_pembelian.php?mod=pembelian&act=simpan' method='POST'>
+                                <input type='text' name='no_faktur' id='no_faktur' class="form-control" placeholder='Nomor Faktur ...' required>
+
+                                <input type='text' name='supplier' id='supplier' class="form-control" placeholder='ketik Nama Supplier ...' required>
+
+                                <label class='w3-label w3-tiny'>Tanggal Beli :</label>
+                                <input type="date" name='tglbeli' class="form-control" required>
+
+                                <input type='text' name='kasir' id='kasir' class="form-control" placeholder='Nama Kasir ...' required><br>
+
+                                <p><button class="btn btn-info" onclick="return confirm('Klik OK untuk melanjutkan');"><i class='fa fa-save'></i> Simpan Pembelian</button></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-            </div>
-                      </section>
-                  </div>
-              </div>
-              <!-- row end -->
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
+                </div>
 
 
-
-		<!-- jQuery 2.0.2 -->
+<!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
 
