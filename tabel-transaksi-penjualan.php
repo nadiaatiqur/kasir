@@ -134,7 +134,7 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
+                <h1 align="center">Tabel Data Transaksi Penjualan</h1><br><br>
                 	<div class="row">
                     <div class="col-xs-3">
                     <div class="input-group">

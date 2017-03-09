@@ -174,13 +174,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="pembelian.php">
                                         <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="penjualan.php">
                                         <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
                                     </a>
                                 </li>
@@ -241,13 +241,9 @@
                             <i class="fa fa-briefcase icon-round"></i>
                             <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".4s">Tabel Pembelian</h3>
                         </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".5s">
+                        <a href="tabel-transaksi-pembelian.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".5s">
                             <i class="fa fa-briefcase icon-round icon-round-active"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".6s">Retur Pembelian </h3>
-                        </a>
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".7s">
-                            <i class="fa fa-briefcase icon-round"></i>
-                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".8s">Tabel Retur Pembelian</h3>
+                            <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".6s">Tabel Transaksi Pembelian </h3>
                         </a>
                     </div>
             </div>

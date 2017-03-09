@@ -92,11 +92,6 @@
                                         <h5>Kalkulator</h5>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Pengaturan</h5>
-                                    </a>
-                                </li>
                             </ul>
                         </li><!-- end user -->
                         <!-- User Account: style can be found in dropdown.less -->
@@ -134,66 +129,144 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
+                <h1 align="center">PENJUALAN KASIR</h1>
                 	<div class="row">
-                    <div class="col-xs-3">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                     </div>
-                    </div>
-                        <a href="#" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
-                		<table class="table">
-                			<thead>
-                				<tr class="warning">
-                					<th>No<span class="caret"></span></th>
-                					<th>No.Faktur</th>
-                					<th>Nama Toko</th>
-                					<th>Tanggal Beli</th>
-                					<th>Nama Kasir</th>
-                					<th>Petugas</th>
-                					<th>Total</th>
-                					<th>#</th>
-                				</tr>
-                			</thead>
-                			<tbody>
-                				<tr>
-                					<td>1</td>
-                					<td>16918</td>
-                					<td>sujai</td>
-                					<td>12092017</td>
-                					<td>mumun</td>
-                					<td>mimiim</td>
-                					<td>fdes</td>
-                					<td><a href="#" type="button" class="btn btn-danger">
-                						<span class="fa fa-eraser"></span></a>
-                					</td>
-                				</tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>16918</td>
-                                    <td>sujai</td>
-                                    <td>12092017</td>
-                                    <td>mumun</td>
-                                    <td>mimiim</td>
-                                    <td>fdes</td>
-                                    <td><a href="#" type="button" class="btn btn-danger">
-                                        <span class="fa fa-eraser"></span></a>
-                                    </td>
-                                </tr>
-                			</tbody>
-                		</table><br>
-                        <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="jhgh">ajkj</option>
-                            <option value="jhgjh">hgkj</option>
-                        </select>
+                		<div class="col-xs-2">
+                		<label>Tanggal</label>
+                			<input type="date" class="form-control" name="date">
+                		<label>Tunai/Kredit</label>
+                			<select class="form-control">
+                				<option class="form-control" value="Tunai">Tunai</option>
+                				<option class="form-control" value="1 Minggu">1 Minggu</option>
+                				<option class="form-control" value="2 Minggu">2 Minggu</option>
+                				<option class="form-control" value="3 Minggu">4 Minggu</option>
+                				<option class="form-control" value="1 Bulan">1 Bulan</option>
+                				<option class="form-control" value="Custom">Custom</option>
+                			</select>
+                		</div>
+                        <div class="col-xs-2">       
+                            <label>Kode Suplier</label>
+                           <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">Tabel</button>
+                              </span>
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#Tambah">+</button>
+                              </span>
+                            </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title" align="center">Tabel Data Pelangganq</h4>
+                                </div>
+                                <div class="modal-body">
+                                <table class="table tabel-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama</th>
+                                            <th>Telepon</th>
+                                            <th>Alamat</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
-                	</div>
+                	</div><br><br>
+                    <div class="modal fade" id="Tambah" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Input Data Pelanggan</h4>
+                                </div>
+                                <div class="modal-body">
+                                <label>Kode</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Telepon</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Keterangan</label>
+                                <textarea type="text" class="form-control"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-info">Simpan</a>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div><br><br>
+                	<table class="table table-striped table-bordered">
+						  	<thead>
+						  		<tr class="warning">
+						  					<th>Kode</th>
+						          			<th>Nama</th>
+						          			<th>Jumlah</th>
+						          			<th>Satuan</th>
+						          			<th>Harga Beli</th>
+						          			<th>Diskon</th>
+						          			<th>Netto</th>
+						          			<th>Total</th>
+						  		</tr>
+						  	</thead>
+						  	<tbody>
+                                <tr>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td>
+                                   <td>&nbsp</td> 
+                                </tr>
+						  	</tbody>
+						  </table><br><br><br>
+						  <div class="row">
+						  	<div class="col-xs-2">
+						  	<label>Subtotal</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Diskon</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Grand Total</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Final</label>
+						  		<input type="text" class="form-control" name="">
+						  	<label>Kembali</label>
+						  		<input type="text" class="form-control" name="">
+						  	</div>
+						  </div><br><br>
+						  <a href="#" type="button" class="btn btn-primary">Simpan</a>
+						  	<a href="#" type="button" class="btn btn-info">Cetak</a>
+						  	<a href="pembelian.php" type="button" class="btn btn-default">Keluar</a>
                 </div>
+
 
 
 <!-- jQuery 2.0.2 -->
