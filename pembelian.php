@@ -233,11 +233,11 @@
         <div class="overlay">            
             <div class="container">
               	    <div class="col-lg-2 col-md-2 col-sm-2 text-center">
-                        <a href="pembelian-kasir.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
+                        <a href="tabel-pembelian.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
                             <i class="fa fa-briefcase icon-round icon-round-active"></i>
                             <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".2s">Pembelian Kasir</h3>
                         </a>
-                        <a href="tabel-pembelian.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".3s">
+                        <a href="pembelian-kasir.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".3s">
                             <i class="fa fa-briefcase icon-round"></i>
                             <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".4s">Tabel Pembelian</h3>
                         </a>
