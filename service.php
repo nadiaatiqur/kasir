@@ -29,22 +29,14 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+  
+  
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-          <![endif]-->
-
-          <style type="text/css">
-
-          </style>
 </head>
 <body class="skin-black">
-<!-- header logo: style can be found in header.less -->
+
+	 <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -133,67 +125,146 @@
                     </nav>
                 </header>
 
+                 <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Bayar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
                 <div class="container">
-                <h1 align="center">Tabel Data Transaksi Penjualan</h1><br><br>
-                	<div class="row">
-                    <div class="col-xs-3">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                     </div>
-                    </div>
-                        <a href="#" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
-                		<table class="table">
-                			<thead>
-                				<tr class="warning">
-                					<th>No<span class="caret"></span></th>
-                					<th>No.Faktur</th>
-                					<th>Nama Toko</th>
-                					<th>Tanggal Beli</th>
-                					<th>Nama Kasir</th>
-                					<th>Petugas</th>
-                					<th>Total</th>
-                					<th>#</th>
-                				</tr>
-                			</thead>
-                			<tbody>
-                				<tr>
-                					<td>1</td>
-                					<td>16918</td>
-                					<td>sujai</td>
-                					<td>12092017</td>
-                					<td>mumun</td>
-                					<td>mimiim</td>
-                					<td>fdes</td>
-                					<td><a href="#" type="button" class="btn btn-danger">
-                						<span class="glyphicon glyphicon-trash"></span></a>
-                					</td>
-                				</tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>16918</td>
-                                    <td>sujai</td>
-                                    <td>12092017</td>
-                                    <td>mumun</td>
-                                    <td>mimiim</td>
-                                    <td>fdes</td>
-                                    <td><a href="#" type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-trash"></span></a>
-                                    </td>
-                                </tr>
-                			</tbody>
-                		</table><br>
-                        <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="jhgh">ajkj</option>
-                            <option value="jhgjh">hgkj</option>
-                        </select>
-                        </div>
-                        <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
+                	<h1 align="center">SERVICE</h1>
+                	<a href="#" class="btn btn-info btn-lg">DAFTAR</a>
+                	<a href="#" class="btn btn-warning btn-lg">TERIMA</a>
+                	<a href="#" class="btn btn-success btn-lg">AMBIL</a>
+                	<table class="table">
+                		<thead>
+                			<tr>
+                				<th>No</th>
+                				<th>Faktur</th>
+                				<th>Tanggal</th>
+                				<th>Pelanggan Kode</th>
+                				<th>Pelanggan Nama</th>
+                				<th>Deskripsi</th>
+                				<th>Uang Muka</th>
+                				<th>Status Ambil</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr>
+                				<td>1</td>
+                				<td>dgdsd</td>
+                				<td>23092018</td>
+                				<td>345</td>
+                				<td>Mimun</td>
+                				<td>gchghfvgh</td>
+                				<td>80000</td>
+                				<td>sudah</td>
+                			</tr>
+                		</tbody>
+                	</table>
+                	<div class="col-xs-3">
+                	<select class="form-control">
+                		<option value="SEMUA">SEMUA</option>
+                		<option value="SUDAH">SUDAH</option>
+                		<option value="BELUM">BELUM</option>
+                	</select>
                 	</div>
+                	<a href="penjualan.php" class="btn btn-default">Keluar</a>
                 </div>
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+                <div class="footer-main">
+                    Copyright &copy Director, 2014
+                </div>
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 <!-- jQuery 2.0.2 -->
@@ -299,6 +370,6 @@
 
             });
             // Chart.defaults.global.responsive = true;
-</script>
+</script> 
 </body>
 </html>

@@ -168,7 +168,7 @@
                 					<td>mimiim</td>
                 					<td>fdes</td>
                 					<td><a href="#" type="button" class="btn btn-danger">
-                						<span class="fa fa-eraser"></span></a>
+                						<span class="glyphicon glyphicon-trash"></span></a>
                 					</td>
                 				</tr>
                                 <tr>
@@ -180,7 +180,7 @@
                                     <td>mimiim</td>
                                     <td>fdes</td>
                                     <td><a href="#" type="button" class="btn btn-danger">
-                                        <span class="fa fa-eraser"></span></a>
+                                        <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                 			</tbody>
