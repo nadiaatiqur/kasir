@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+		 <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -29,6 +29,14 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- ANIMATE  CSS -->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- PRETTY PHOTO  CSS -->
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <!--  STYLE SWITCHER CSS -->
+    <link href="css/styleSwitcher.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bola.css">
 
 
 
@@ -44,7 +52,7 @@
           </style>
 </head>
 <body class="skin-black">
-        <!-- header logo: style can be found in header.less -->
+ <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -183,7 +191,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="hutang.php">
+                                    <a href="#">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
                                     </a>
                                 </li>
@@ -220,7 +228,56 @@
 
                     <div class="row" style="margin-bottom:5px;">
 
-                    <h1 align="center">Selamat Datang di Toko Laris Jaya :v</h1>
+                    <h1 align="center">HUTANG</h1>
+
+                    <div class="col-md-3">
+                    	<label>Mulai Dengan</label>
+                    		<input type="date" class="form-control" name="">
+                    	<label>Sampai Dengan</label>
+                    		<input type="date" class="form-control" name="">
+                    	<label>Suplier</label>
+                    		<select class="form-control">
+                    			<option value="semua">semua</option>
+                    		</select><br><br>
+                    	<div class="container">
+                    		<table class="table table-bordered">
+                    			<thead>
+                    				<tr class="primary">
+                    					<th>No</th>
+                    					<th>Faktur</th>
+                    					<th>Tanggal</th>
+                    					<th>Tempo</th>
+                    					<th>Jatuh Tempo</th>
+                    					<th>Kode Suplier</th>
+                    					<th>Nama Suplier</th>
+                    					<th>Hitung Awal</th>
+                    					<th>Telah Dibayar</th>
+                    					<th>Sisa Hutang</th>
+                    					<th>Keterangan</th>
+                    					<th>Operator</th>
+                    				</tr>
+                    			</thead>
+                    			<tbody>
+                    				<tr>
+                    					<td>1</td>
+                    					<td>dfa</td>
+                    					<td>ds</td>
+                    					<td>dsf</td>
+                    					<td>sf</td>
+                    					<td>dsfa</td>
+                    					<td>df</td>
+                    					<td>dfs</td>
+                    					<td>dssad</td>
+                    					<td>afds</td>
+                    					<td>asdf</td>
+                    					<td>DSGSD</td>
+                    				</tr>
+                    			</tbody>
+                    		</table>
+                    	</div>
+                    	<a href="#" class="btn btn-primary">Bayar</a>
+                    	<a href="daftar-angsuran.php" class="btn btn-warning">Daftar Angsuran</a>
+                    </div>
                         
                       </section>
                   </div>
@@ -235,7 +292,7 @@
         </div><!-- ./wrapper -->
 
 
-        <!-- jQuery 2.0.2 -->
+<!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
 
@@ -262,6 +319,17 @@
 
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.easing.min.js"></script>
+	    <!--  WOW ANIMATION SCRIPTS -->
+	    <script src="js/wow.min.js"></script>
+	    <!-- EASY PIE CHART SCRIPTS -->
+	    <script src="js/jquery.easypiechart.min.js"></script>
+	    <!-- PRETTY PHOTO SCRIPTS -->
+	    <script src="js/jquery.prettyPhoto.js"></script>
+	    <!--  STYLE SWITCHER SCRIPTS -->
+	    <script src="js/styleSwitcher.js"></script>
+	    <!--  CUSTOM SCRIPTS -->
+	    <script src="js/custom.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">
