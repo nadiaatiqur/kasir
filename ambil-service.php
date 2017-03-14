@@ -213,9 +213,9 @@
 
                 <div class="container">
                 	<h1 align="center"> TERIMA SERVICE</h1>
-                	<a href="service.php" class="btn btn-info btn-lg">DAFTAR</a>
-                	<a href="terima-service.php" class="btn btn-warning btn-lg">TERIMA</a>
-                	<a href="ambil-service.php" class="btn btn-success btn-lg">AMBIL</a><br><br>
+                	<a href="service.php" class="btn btn-info btn-lg active">DAFTAR</a>
+                	<a href="terima-service.php" class="btn btn-warning btn-lg active">TERIMA</a>
+                	<a href="ambil-service.php" class="btn btn-success btn-lg active">AMBIL</a><br><br>
                 	<div class="col-xs-4">       
                             <label>Kode Suplier</label>
                            <div class="input-group">
@@ -303,9 +303,13 @@
                 	  <input type="text" class="form-control" name="">
                 	  	<label>Deskripsi</label>
                 	  <textarea class="form-control" type="text"></textarea>
+                	  	<label>Ref/Faktur</label>
+                	  <input type="text" class="form-control" name="">
                 	  	<label>Total Biaya</label>
                 	  <input type="text" class="form-control" name="">
                 	  	<label>Uang Muka</label>
+                	  <input type="text" class="form-control" name="">
+                	  	<label>Pelunasan</label>
                 	  <input type="text" class="form-control" name=""><br><br>
                 	  <div>
                 	<a href="#" class="btn btn-primary" type="button">Simpan</a>
