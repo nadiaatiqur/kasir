@@ -32,11 +32,9 @@
   
   
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
-
 </head>
 <body class="skin-black">
-
-	 <!-- header logo: style can be found in header.less -->
+<!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -214,46 +212,115 @@
                     <div class="row" style="margin-bottom:5px;">
 
                 <div class="container">
-                	<h1 align="center">SERVICE</h1>
-                	<a href="#" class="btn btn-info btn-lg">DAFTAR</a>
+                	<h1 align="center"> TERIMA SERVICE</h1>
+                	<a href="service.php" class="btn btn-info btn-lg">DAFTAR</a>
                 	<a href="terima-service.php" class="btn btn-warning btn-lg">TERIMA</a>
-                	<a href="ambil-service.php" class="btn btn-success btn-lg">AMBIL</a>
-                	<table class="table">
-                		<thead>
-                			<tr>
-                				<th>No</th>
-                				<th>Faktur</th>
-                				<th>Tanggal</th>
-                				<th>Pelanggan Kode</th>
-                				<th>Pelanggan Nama</th>
-                				<th>Deskripsi</th>
-                				<th>Uang Muka</th>
-                				<th>Status Ambil</th>
-                			</tr>
-                		</thead>
-                		<tbody>
-                			<tr>
-                				<td>1</td>
-                				<td>dgdsd</td>
-                				<td>23092018</td>
-                				<td>345</td>
-                				<td>Mimun</td>
-                				<td>gchghfvgh</td>
-                				<td>80000</td>
-                				<td>sudah</td>
-                			</tr>
-                		</tbody>
-                	</table>
-                	<div class="col-xs-3">
-                	<select class="form-control">
-                		<option value="SEMUA">SEMUA</option>
-                		<option value="SUDAH">SUDAH</option>
-                		<option value="BELUM">BELUM</option>
+                	<a href="ambil-service.php" class="btn btn-success btn-lg">AMBIL</a><br><br>
+                	<div class="col-xs-4">       
+                            <label>Kode Suplier</label>
+                           <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">Tabel</button>
+                              </span>
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#Tambah">+</button>
+                              </span>
+                            </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title" align="center">Tabel Data Pelanggan</h4>
+                                </div>
+                                <div class="modal-body">
+                                <table class="table tabel-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama</th>
+                                            <th>Telepon</th>
+                                            <th>Alamat</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                	</div><br><br>
+                    <div class="modal fade" id="Tambah" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Input Data Pelanggan</h4>
+                                </div>
+                                <div class="modal-body">
+                                <label>Kode</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Telepon</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="">
+                                <label>Keterangan</label>
+                                <textarea type="text" class="form-control"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-info">Simpan</a>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-xs-4">
+                        <label>Nama</label>
+                	  <input type="text" class="form-control" name="">
+                	  	<label>Telepon</label>
+                	  <input type="text" class="form-control" name="">
+                	  	<label>Alamat</label>
+                	  <input type="text" class="form-control" name="">
+                	  	<label>Deskripsi</label>
+                	  <textarea class="form-control" type="text"></textarea>
+                	  	<label>Total Biaya</label>
+                	  <input type="text" class="form-control" name="">
+                	  	<label>Uang Muka</label>
+                	  <input type="text" class="form-control" name=""><br><br>
+                	  <div>
+                	<a href="#" class="btn btn-primary" type="button">Simpan</a>
+                	<a href="#" class="btn btn-warning" type="button">Cetak</a>
+                	<a href="#" class="btn btn-info" type="button">Baru</a>
+                	</div><br><br>
+                	  <select class="form-control">
+                		<option value="BESAR">BESAR</option>
+                		<option value="SEDANG">SEDANG</option>
+                		<option value="KECIL">KECIL</option>
                 	</select>
-                	</div>
-                	<a href="penjualan.php" class="btn btn-default">Keluar</a>
+                	  </div>
+                	  </div>
+                    </div>
                 </div>
-                        
                       </section>
                   </div>
               </div>
@@ -265,6 +332,7 @@
             </aside><!-- /.right-side -->
 
         </div><!-- ./wrapper -->
+
 
 
 <!-- jQuery 2.0.2 -->
@@ -370,6 +438,6 @@
 
             });
             // Chart.defaults.global.responsive = true;
-</script> 
+</script>
 </body>
 </html>
