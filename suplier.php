@@ -235,14 +235,12 @@
                         <tr>
                             <th>NO</th>
                             <TH>KODE</TH>
-                            <TH>NAMA BARANG</TH>
                             <TH>SUPLAIYER</TH>
                             <TH>ALAMAT</TH>
                             <TH>TELEPON</TH>
                             <TH>EMAIL</TH>
                             <TH>KONTAK</TH>
                             <TH>REKENING</TH>
-                            <TH>KETERANGAN</TH>
                             <th>OPSI</th>
                         </tr>
                         <?php  
@@ -255,14 +253,12 @@
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row['id_penyuplai']; ?></td>
-                            <td><?php echo $row['nama_barang']; ?></td>
                             <td><?php echo $row['nama_penyuplai']; ?></td>
                             <td><?php echo $row['alamat']; ?></td>
                             <td><?php echo $row['telpon']; ?></td>
                             <td><?php echo $row['kontak']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['rekening']; ?></td>
-                            <td><?php echo $row['keterangan'];?></td>
                             <td>
                                 <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">UPDATE</a>
                                 <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
@@ -271,7 +267,7 @@
                         <?php } ?>
                     </form>
                 </table>
-                <a href="index.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
+                <a href="tampilan.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
 
     </div>
 </div>

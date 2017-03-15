@@ -59,7 +59,7 @@
                         
                         <div class="row">
                             <form method="POST" action="proses-updatepelanggan.php">
-                            <input type="hidden" name="id" value="<?=$_GET['id']?>">
+                            <input type="hidden" name="id" value="<?=$_GET['id'];?>">
                             <?php  
                                 include "koneksi.php";
                                 $id=$_GET['id'];

@@ -1,3 +1,5 @@
+<?php  
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,58 +136,67 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
+                <h1 align="center">PEMBELIAN KASIR</h1>
                 	<div class="row">
-                    <div class="col-xs-3">
-                    <form method="POST" action="search-transaksipembelian.php">
-                    <div class="input-group">
-                        <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat btn-primary"><i class="fa fa-search"></i></button>
-                            </span>
-                     </div>
-                    </form>
-                    </div>
-                        <a href="tabel-pembelian.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
-                		<table class="table">
-                			<thead>
-                				<tr class="warning">
-                					 <th>#</th>
-                                    <th>ID BELI</th>
-                                    <th>NO FAKTUR</th>
-                                    <th>ID PENYUPLAI</th>
+                        <div class="col-md-2">
+                        <div class="form-group">
+                            <a href="tabel-pembelian.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Tambah</a>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <form method="POST" action="">
+                            <div class="form-group">
+                            <div class = "input-group">
+                                 <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                                 <span class = "input-group-btn">
+                                    <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                                 </span>
+                            </div>
+                       </form>
+                        </div>
+                        <div class="col-md-4">
+                            
+                        </div>
+                	</div><br><br>
+                	<table class="table table-striped table-bordered">
+						  	<thead>
+						  		<tr class="warning">
+                                    <th>#</th>
+						  			<th>ID BELI</th>
+						          	<th>NO FAKTUR</th>
+						          	<th>ID PENYUPLAI</th>
                                     <th>NAMA PENYUPLAI</th>
-                                    <th>TANGGAL BELI</th>
-                                    <th>UANG PEMBAYARAN</th>
+						          	<th>TANGGAL BELI</th>
+						          	<th>UANG PEMBAYARAN</th>
                                     <TH>AKSI</TH>
-                				</tr>
-                			</thead>
+						  		</tr>
+						  	</thead>
                             <?php  
                             include "koneksi.php";
 
                             $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM pembelian");
+                            $result=mysqli_query($link, "SELECT * FROM transaksi_beli_detail WHERE id_beli LIKE '%$_POST[kunci]%' or faktur LIKE '%$_POST[kunci]%' or id_barang LIKE '%$_POST[kunci]%' or nama_barang LIKE '%$_POST[kunci]%' ");
                             while ($row=mysqli_fetch_array($result)) {
                                 ?>
-                			<tbody>
-                				<tr>
-                                    <td><?= $no++; ?></td>
+						  	<tbody>
+                                <tr>
+                                     <td><?= $no++; ?></td>
                                    <td><?= $row['id_beli'];?></td>
                                    <td><?= $row['faktur'];?></td>
-                                   <td><?= $row['id_penyuplai'];?></td>
-                                   <td><?= $row['nama_penyuplai'];?></td>
+                                   <td><?= $row['id_barang'];?></td>
+                                   <td><?= $row['nama_barang'];?></td>
                                    <td><?= $row['tanggal_beli'];?></td>
-                                   <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-                					<td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                						<span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                					</td>
-                				</tr>
-                			</tbody>
+                                   <td><?php echo number_format($row['harga_beli'],0,',','.');?></td>
+                                   <td><?= $row['jumlah_beli'];?></td>
+                                   <td><?= $row['total'];?></td>
+                                   <td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>HAPUS</a></td>
+                                </tr>
+						  	</tbody>
                             <?php } ?>
-                		</table><br>
-                        <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
-                	</div>
+						  </table><br><br><br>
+                          <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
                 </div>
+
 
 
 <!-- jQuery 2.0.2 -->

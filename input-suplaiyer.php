@@ -50,28 +50,16 @@
         <div class="content">
             <div class="container-fluid">
             <h1 for="user" align="center">INPUT SUPLIER</h1><br><br>
-                        
-
-                            <form method="POST" action="proses-inputbarang.php">
-                            <div class="row">
-                            <div class="col-md-4">
-                                 <div class="form-group">
-                                <label for="user">Kode</label>
-                                <input type="text" class="form-control" name="nama_barang" placeholder="Kode">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                <label for="user">Nama Suplier</label>
-                                <input type="text" class="form-control" name="kategori" placeholder="Nama Suplier">
-                                </div>
-                            </div>
-                            </div>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8">
+                    <form method="POST" action="proses-inputsuplier.php">
                             <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="user">Suplier</label>
-                                    <input type="text" class="form-control" placeholder="Suplier">
+                                    <input type="text" name="nama_penyuplai" class="form-control" placeholder="Suplier">
                                 </div>
                             </div>
                             </div>
@@ -79,13 +67,13 @@
                               <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rekening</label>
-                                    <input type="text" class="form-control" name="alamat_penyuplai" placeholder="Rekening">
+                                    <input type="text" class="form-control" name="rekening" placeholder="Rekening">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Telepon</label>
-                                    <input type="text" class="form-control" name="satuan" placeholder="Telepon">
+                                    <input type="text" class="form-control" name="telepon" placeholder="Telepon">
                                 </div>
                             </div>
                             </div>
@@ -93,32 +81,35 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Email</label>
-                                    <input type="text" class="form-control" name="harga_jual" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Kontak Person</label>
-                                    <input type="text" class="form-control" name="penyuplai" placeholder="Kontak Person">
+                                    <input type="text" class="form-control" name="kontak" placeholder="Kontak Person">
                                 </div>
                             </div>
                             </div>
-                            <div class="row"><div class="col-md-4">
+                            <div class="row">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="user">Alamat</label>
-                                    <textarea class="form-control" placeholder="Alamat" type="text"></textarea>
+                                    <textarea class="form-control" placeholder="alamat" name="alamat" type="text"></textarea>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label>KETERANGAN</label>
-                                <textarea class="form-control" placeholder="Keterangan" type="text"></textarea>
                             </div>
                         </div><br>
                         <div>
-                            <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
+                            <input type="submit" name="input" class="btn btn-info btn-lg" value="Simpan">
                             <a href="suplier.php" class="btn btn-default btn-lg">Keluar</a>
                         </div>
-                        </form>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            </div>
+        </div>               
 
 <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

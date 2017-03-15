@@ -87,22 +87,24 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user">HARGA BELI</label>
-                                    <input type="text" class="form-control" name="harga_beli" placeholder="Harga Beli">
+                                    <label for="user">HARGA BELI PERSATUAN</label>
+                                    <input type="text" class="form-control" name="harga_beli" placeholder="Harga Beli Persatuan">
                                 </div>
                             </div> 
                              <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user">HARGA JUAL</label>
-                                    <input type="text" class="form-control" name="harga_jual" placeholder="Harga Jual">
+                                    <label for="user">HARGA JUAL PERSATUAN</label>
+                                    <input type="text" class="form-control" name="harga_jual" placeholder="Harga Jual Persatuan">
                                 </div>
                             </div>     
                         </div>
                         <div class="row">
-                        <div class="col-md-12">
-                            <label for="user">SPESIFIKASI BARANG</label>
-                            <textarea class="form-control" name="spesifikasi" placeholder="SPESIFIKASI"></textarea>
-                        </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="user">SPESIFIKASI</label>
+                                    <input type="text" class="form-control" name="spesifikasi" placeholder="Spesifikasi Barang">
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -111,50 +113,6 @@
                                     <input type="text" class="form-control" name="penyuplai" placeholder="Suplier"> 
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="user">NO.TELEFON</label>
-                                    <input type="text" class="form-control" name="notelpon" placeholder="No.telefon">
-                                </div>
-                            </div>
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="user">EMAIL</label>
-                                    <input type="text" class="form-control" name="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="user">KONTAK PRIBADI</label>
-                                    <input type="text" class="form-control" name="kontak_pribadi" placeholder="Kontak Pribadi">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="user">ALAMAT</label>
-                                    <textarea class="form-control" name="alamat_penyuplai" placeholder="Alamat"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="user">NO.REKENING</label>
-                                    <input type="text" class="form-control" name="rekening" placeholder="No.Rekening">
-                                </div> 
-                            </div>                           
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="user">KETERANGAN</label>
-                                    <input type="text" class="form-control" name="keterangan" placeholder="keterangan barang datang">
-                                </div> 
-                            </div>                           
                         </div>
                         <div>
                             <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>

@@ -1,3 +1,4 @@
+<?php $tanggal= date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,7 +101,7 @@
     ui-autocomplete {
         font-size: 80%;
     }
-          </style>
+    </style>
 </head>
 <body class="skin-black">
 <!-- header logo: style can be found in header.less -->
@@ -193,87 +194,147 @@
                 </header>
 
                 <div class="container">
+
+        <div class='w3-row-padding'>
                 	<h1 align="center">Data Pembelian</h1>
                 	<div style="margin-left:250px;">
     <div id="main" class="w3-container" style="margin-top:110px">
         <div class='w3-container w3-small w3-pale-green w3-leftbar w3-border-green'>
-                <h4 style='margin-bottom:0;padding-bottom:0;'>Form Transaksi Pembelian</h4>
-                <p style='margin-top:0;padding-top:0;'><i>Input Data Pembelian Barang</i></p>
-            </div><div class='w3-row-padding'>
+        <a href="pembelian.php" class="btn btn-danger"><i class="glyphicon glyphicon-share-alt"></i>back</a>
+            <h4 style='margin-bottom:0;padding-bottom:0;'>Form Transaksi Pembelian</h4>
+            <p style='margin-top:0;padding-top:0;'><i>Input Data Pembelian Barang</i></p>
+        </div>
                 <div class='w3-col s3 w3-card'>
                     Input Barang
                     <div style='border-bottom:1px dashed #ccc;'></div><br>
+                    <form action='beli-barang.php' method='POST' class='w3-container'>
                     <table class="table table-bordered">
                     <tr>
-                    <div class='w3-card-2 w3-light-blue col-xs-4'>
-                        <form action='mod/pembelian/act_pembelian.php?mod=pembelian&act=add' method='POST' class='w3-container'>
-                            <input type='hidden' name='harga2' id='harga2'>
-                            <br><input type='text' name='barang' id='barang' placeholder='ketik nama barang ...' class="form-control" required>
+                        <div class='w3-card-2 w3-light-blue col-xs-4'>
+                            <label class='w3-label w3-text-black w3-right'>Date :</label>
+                            <input type="text" name="tgl" value="<?php echo $tanggal?>"><br>
+                            <input type='hidden' name='harga2' id='harga2'><br>
+                            <input type="text" name="id" class="form-control" placeholder="ketik id barang ..." required><br>
+                            <input type='text' name='barang' id='barang' placeholder='ketik nama barang ...' class="form-control" required>
 
                             <label class='w3-label w3-text-black'>Harga Beli (Rp):</label>
-                            <input type='text' name='harga' id='harga' class="form-control" required>
+                            <input type='text' name='hargabeli' id='harga' class="form-control" required>
                             <p>
                             <div class='w3-row'>
-                                <div class='w3-col s8'><label class='w3-label w3-text-black w3-right'>QTY:</label></div>
+                                <div class='w3-col s8'>
+                                    <label class='w3-label w3-text-black w3-right'>JUMLAH:</label>
+                                </div>
                                 <div class='w3-col s4 col-xs-4'>
-                                    <input type='text' name='qty' placeholder='0' id='qty' class="form-control" required>
+                                    <input type='text' name='jumlah' placeholder='0' id='qty' class="form-control" required>
                                 </div>
-                                </form>
-                                </div>
-                                </div></tr>
-                                </table>
+                            </div>
+                        </div>
+                    </tr>
+                    </table>
+                            <p><!--<button class="btn btn-warning" onclick="return confirm('Klik OK untuk melanjutkan');"><i class='fa fa-cart-plus'></i> Tambah Barang</button>--><input type="submit" name="submit" class="btn btn-warning fa fa-cart-plus" value="Tambah Barang" onclick="return confirm('Klik OK untuk melanjutkan');"></p>
+                    </form>
                             </div>
                             </p>
-
-                            <p><button class="btn btn-warning" onclick="return confirm('Klik OK untuk melanjutkan');"><i class='fa fa-cart-plus'></i> Tambah Barang</button></p>
                         </form>
                     </div>
 
                     <br>
                 </div>
-                <div class='w3-col s4'>
-                    Data Pembelian
-                    <div style='border-bottom:1px dashed #ccc;'></div><br>
-                    <table class='w3-table w3-tiny w3-hoverable w3-bordered tbl table table-bordered'>
-                        <thead>
-                        <tr class='w3-blue'>
-                            <th>#</th>
-                            <th>KODE</th>
-                            <th>BARANG</th>
-                            <th>HARGA</th>
-                            <th colspan='2'>SUB TOTAL</th>
-                        </tr>
-                        </thead>
 
-                        <tbody><tr>
-                            <td colspan='5'><i>Tidak ada pembelian</a><td>
-                        </tr></tbody>
-                        <tfoot>
-                        <tr class='w3-light-grey'>
-                            <td colspan='4'><b>TOTAL</td>
-                            <td colspan='2'>Rp. 0</td>
-                        </tr>
-                        </tfoot>
-                    </table>
+                <form method="POST" action="proses-pembelianbarang.php">
+                        <div class="row">
+                        <h4>DATA PEMBELIAN</h4>
+                            <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <TH>#</TH>
+                                    <th>ID BELI</th>
+                                    <th>ID BARANG</th>
+                                    <th>BARANG</th>
+                                    <th>TANGGAL BELI</th>
+                                    <th>JUMLAH BELI</th>
+                                    <th>HARGA BELI</th>
+                                    <th>SUB TOTAL</th>
+                                    <TH>AKSI</TH>
+                                </tr>
+                            </thead>
+                            <?php  
+                            include "koneksi.php";
 
-                    <div class='w3-row-padding'>
-                        <div class='w3-col s7'>&nbsp;</div>
-                        <div class='w3-col s5 col-xs-4'>
-                            <form action='mod/pembelian/act_pembelian.php?mod=pembelian&act=simpan' method='POST'>
-                                <input type='text' name='no_faktur' id='no_faktur' class="form-control" placeholder='Nomor Faktur ...' required>
+                            $no=1;
+                            $result=mysqli_query($link, "SELECT * FROM transaksi_beli");
+                            $subtotal=0;
+                            while ($row=mysqli_fetch_array($result)) {
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $row['id_beli']; ?></td>
+                                <td><?php echo $row['id_barang']; ?>
+                                    <input type="hidden" name="id_barang" id="id_barang" value="<?php echo $row['id_barang']; ?>">
+                                </td>
+                                <td><?php echo $row['nama_barang']; ?>
+                                    <input type="hidden" name="nama_barang" id="nama_barang" value="<?php echo $row['nama_barang']; ?>">
+                                </td>
+                                <td><?php echo $row['tanggal_beli']; ?></td>
+                                <td>Rp.<?php echo number_format($row['harga_beli'],0,',','.'); ?>
+                                    <input type="hidden" name="harga_beli" value="<?php echo $row['harga_beli']; ?>">
+                                </td>
+                                <TD><?php echo $row['jumlah_beli']." UNIT"; ?>
+                                    <input type="hidden" name="jumlah_beli" value="<?php echo $row['jumlah_beli'];?>">
+                                </TD>
+                                <td>Rp.<?php echo number_format($row['total'],0,',','.'); ?>
+                                    <input type="hidden" name="total" value="<?php echo $row['total']; ?>">
+                                </td>
+                                <TD>
+                                    <a href="proses-deletetabelpembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
+                                </TD>
+                            </tr>
+                            </tbody>
+                            <?php } ?>
+                            <?php  
+                            include "koneksi.php";
 
-                                <input type='text' name='supplier' id='supplier' class="form-control" placeholder='ketik Nama Supplier ...' required>
+                            $result1=mysqli_query($link, "SELECT SUM(total) FROM transaksi_beli");
+                            while ($q=mysqli_fetch_array($result1)) {
+                            ?>
+                            <tfoot>
+                            <tr>
+                            <td colspan='7'><b>TOTAL</td>
+                            <td colspan='2'>Rp.<?php echo number_format($q['SUM(total)'],0,',','.'); ?><input type="hidden" name="subtotal" value="<?php echo number_format($q['SUM(total)'],0,',','.'); ?>"></td>      
+                            </tr>
+                            </tfoot>
+                                    <?php } ?>
+                            </table>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                 <div class="form-group">
+                                    <input type='text' name='no_faktur' id='no_faktur' class="form-control" placeholder='Nomor Faktur ...' required>
+                                 </div>
+                                 <div class="form-group">
+                                    <input type='text' name='id_suplier' id='id_suplier' class="form-control" placeholder='ketik ID Supplier ...' required>
+                                 </div>
+                                 <div class="form-group">
+                                    <input type='text' name='suplier' id='suplier' class="form-control" placeholder='ketik Nama Supplier ...' required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="user">Tanggal Beli :</label>
+                                    <input type='text' name='tglbeli' class="form-control" value='<?php echo $tanggal= date("Y-m-d");?>' required>
+                                 </div>
+                                 <div class="form-group">
+                                    <input type='text' name='pembayaran' id='pembayaran' class="form-control" placeholder='Uang yang dibayarkan ...' required>
 
-                                <label class='w3-label w3-tiny'>Tanggal Beli :</label>
-                                <input type="date" name='tglbeli' class="form-control" required>
-
-                                <input type='text' name='kasir' id='kasir' class="form-control" placeholder='Nama Kasir ...' required><br>
-
-                                <p><button class="btn btn-info" onclick="return confirm('Klik OK untuk melanjutkan');"><i class='fa fa-save'></i> Simpan Pembelian</button></p>
-                            </form>
+                                    <p><input type="submit" name="simpan" class="form-control btn btn-info fa fa-save" onclick=\"return confirm('Klik OK untuk melanjutkan');\" value="Simpan Pembelian"></p>
+                            
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </form>
+
             </div>
                 </div>
 

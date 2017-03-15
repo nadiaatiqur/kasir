@@ -270,7 +270,7 @@
                         <?php } ?>
                     </form>
                 </table>
-                <a href="index.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
+                <a href="barang.php" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
 
     </div>
 </div>

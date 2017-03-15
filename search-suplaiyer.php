@@ -234,14 +234,12 @@
                         <tr>
                             <th>NO</th>
                             <TH>KODE</TH>
-                            <TH>NAMA BARANG</TH>
                             <TH>SUPLAIYER</TH>
                             <TH>ALAMAT</TH>
                             <TH>TELEPON</TH>
                             <TH>EMAIL</TH>
                             <TH>KONTAK</TH>
                             <TH>REKENING</TH>
-                            <TH>KETERANGAN</TH>
                             <th>OPSI</th>
                         </tr>
                         <?php  
@@ -249,20 +247,18 @@
 
                         $no=1;
 						$key=$_POST['key'];
-						$result=mysqli_query($link, "SELECT * FROM penyuplai WHERE id_penyuplai LIKE '%$key%' or nama_barang LIKE '%$key%' or nama_penyuplai LIKE '%$key%' ");
+						$result=mysqli_query($link, "SELECT * FROM penyuplai WHERE id_penyuplai LIKE '%$key%' or nama_penyuplai LIKE '%$key%' ");
 						while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row['id_penyuplai']; ?></td>
-                            <td><?php echo $row['nama_barang']; ?></td>
                             <td><?php echo $row['nama_penyuplai']; ?></td>
                             <td><?php echo $row['alamat']; ?></td>
                             <td><?php echo $row['telpon']; ?></td>
                             <td><?php echo $row['kontak']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['rekening']; ?></td>
-                            <td><?php echo $row['keterangan'];?></td>
                             <td>
                                 <a href="update-suplier.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
                             </td>
@@ -270,7 +266,7 @@
                         <?php } ?>
                     </form>
                 </table>
-                <a href="index.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
+                <a href="suplier.php" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
 
     </div>
 </div>

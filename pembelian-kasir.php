@@ -134,115 +134,67 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">PEMBELIAN KASIR</h1>
+                <h1 align="center">PEMBELIAN BARANG KASIR</h1>
                 	<div class="row">
-                		<div class="col-xs-2">
-                		<label>Tanggal</label>
-                			<input type="date" class="form-control" name="date">
-                		<label>Tunai/Kredit</label>
-                			<select class="form-control">
-                				<option class="form-control" value="Tunai">Tunai</option>
-                				<option class="form-control" value="1 Minggu">1 Minggu</option>
-                				<option class="form-control" value="2 Minggu">2 Minggu</option>
-                				<option class="form-control" value="3 Minggu">4 Minggu</option>
-                				<option class="form-control" value="1 Bulan">1 Bulan</option>
-                				<option class="form-control" value="Custom">Custom</option>
-                			</select>
-                		</div>
-                        <div class="col-xs-2">
-                            <label>No.Faktur</label>
-                            <input type="text" class="form-control">        
-                            <label>Kode Suplier</label>
-                           <div class="input-group">
-                              <input type="text" class="form-control">
-                              <span class="input-group-btn">
-                                <button class="btn btn-secondary btn-info" type="button" data-toggle="modal" data-target="#myModal">+</button>
-                              </span>
-                            </div>
-
-                          <!-- Modal -->
-                          <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-                            
-                              <!-- Modal content-->
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title">Kode Suplier</h4>
-                                </div>
-                                <div class="modal-body">
-                                <table class="table tabel-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="col-md-2">
+                        <div class="form-group">
+                            <a href="tabel-pembelian.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Tambah</a>
                         </div>
-                        <div class="col-xs-2">
-                            <label>Kode</label>
-                            <input type="text" class="form-control">
-                            <label>Jumlah</label>
-                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                        <form method="POST" action="search-pembeliankasir.php">
+                            <div class="form-group">
+                            <div class = "input-group">
+                                 <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                                 <span class = "input-group-btn">
+                                    <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                                 </span>
+                            </div>
+                       </form>
+                        </div>
+                        <div class="col-md-4">
+                            
                         </div>
                 	</div><br><br>
                 	<table class="table table-striped table-bordered">
 						  	<thead>
 						  		<tr class="warning">
-						  					<th>Kode</th>
-						          			<th>Nama</th>
-						          			<th>Jumlah</th>
-						          			<th>Satuan</th>
-						          			<th>Harga Beli</th>
-						          			<th>Diskon</th>
-						          			<th>Harga Bersih</th>
-						          			<th>Total</th>
+                                    <th>#</th>
+						  			<th>ID BELI</th>
+						          	<th>NO FAKTUR</th>
+						          	<th>ID BARANG</th>
+                                    <th>NAMA BARANG</th>
+						          	<th>TANGGAL BELI</th>
+                                    <TH>HARGA BELI</TH>
+                                    <TH>JUMLAH BELI</TH>
+						          	<th>TOTAL</th>
+                                    <TH>AKSI</TH>
 						  		</tr>
 						  	</thead>
+                            <?php  
+                            include "koneksi.php";
+
+                            $no=1;
+                            $result=mysqli_query($link, "SELECT * FROM transaksi_beli_detail");
+                            while ($row=mysqli_fetch_array($result)) {
+                                ?>
 						  	<tbody>
                                 <tr>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td> 
+                                    <td><?= $no++; ?></td>
+                                   <td><?= $row['id_beli'];?></td>
+                                   <td><?= $row['faktur'];?></td>
+                                   <td><?= $row['id_barang'];?></td>
+                                   <td><?= $row['nama_barang'];?></td>
+                                   <td><?= $row['tanggal_beli'];?></td>
+                                   <td><?php echo number_format($row['harga_beli'],0,',','.');?></td>
+                                   <td><?= $row['jumlah_beli'];?></td>
+                                   <td><?= $row['total'];?></td>
+                                   <td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>HAPUS</a></td>
                                 </tr>
 						  	</tbody>
+                            <?php } ?>
 						  </table><br><br><br>
-						  <div class="row">
-						  	<div class="col-xs-2">
-						  	<label>Subtotal</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Diskon</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Grand Total</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Final</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Kembali</label>
-						  		<input type="text" class="form-control" name="">
-						  	</div>
-						  </div><br><br>
-						  <a href="#" type="button" class="btn btn-primary">Simpan</a>
-						  	<a href="#" type="button" class="btn btn-info">Cetak</a>
-						  	<a href="pembelian.php" type="button" class="btn btn-default">Keluar</a>
+                          <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
                 </div>
 
 

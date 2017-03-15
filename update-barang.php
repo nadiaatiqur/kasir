@@ -274,6 +274,7 @@
                             <input type="submit" name="update" class="btn btn-info btn-lg btn-block" value="Update">
                         </div>
                         </form>
+                        <a href="barang.php" type="submit" class="btn btn-danger btn-lg btn-block">Kembali</a>
                     </div>
 
 <!-- jQuery 2.0.2 -->

@@ -10,17 +10,12 @@ if (isset($_POST['input'])) {
 	$hargabeli=$_POST['harga_beli'];
 	$hargajual=$_POST['harga_jual'];
 	$penyuplai=$_POST['penyuplai'];
-	$alamat=$_POST['alamat_penyuplai'];
-	$notelpon=$_POST['notelpon'];
-	$kontak=$_POST['kontak_pribadi'];
-	$email=$_POST['email'];
-	$rekening=$_POST['rekening'];
-	$keterangan=$_POST['keterangan'];
 
-	$result=mysqli_query($link, "INSERT INTO barang (id_barang, nama_barang, kategori, jumlah_barang, satuan, spesifikasi, harga_beli, harga_jual) VALUES (NULL, '$nama', '$kategori', '$jumlah', '$satuan', '$spesifikasi', '$hargabeli', '$hargajual')");
-	$sql=mysqli_query($link, "INSERT INTO penyuplai (id_penyuplai, nama_barang, nama_penyuplai, alamat, telpon, kontak, email, rekening, keterangan) VALUES (null, '$nama', '$penyuplai', '$alamat', '$notelpon', '$kontak', '$email', '$rekening', '$keterangan')");
+	
+	$result=mysqli_query($link, "INSERT INTO barang(id_barang, nama_barang, kategori, jumlah_barang, satuan, spesifikasi, harga_beli, harga_jual, nama_penyuplai) VALUES (NULL, '$nama', '$kategori', '$jumlah', '$satuan', '$spesifikasi', '$hargabeli', '$hargajual', '$penyuplai')");
 
-	if ($result&& $sql) {
+
+	if ($result) {
 		header("location: barang.php");
 	} else{
 		echo "Error :".mysqli_error($link);

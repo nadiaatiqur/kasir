@@ -1,3 +1,4 @@
+<?php  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +138,7 @@
                 <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
                 	<div class="row">
                     <div class="col-xs-3">
-                    <form method="POST" action="search-transaksipembelian.php">
+                    <form method="POST" action="">
                     <div class="input-group">
                         <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
@@ -164,7 +165,7 @@
                             include "koneksi.php";
 
                             $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM pembelian");
+                            $result=mysqli_query($link, "SELECT * FROM pembelian WHERE id_beli LIKE '%$_POST[kunci]%' or faktur LIKE '%$_POST[kunci]%' or id_penyuplai LIKE '%$_POST[kunci]%' or nama_penyuplai LIKE '%$_POST[kunci]%' ");
                             while ($row=mysqli_fetch_array($result)) {
                                 ?>
                 			<tbody>
@@ -176,7 +177,7 @@
                                    <td><?= $row['nama_penyuplai'];?></td>
                                    <td><?= $row['tanggal_beli'];?></td>
                                    <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-                					<td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                					<td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
                 						<span class="glyphicon glyphicon-trash"></span>Hapus</a>
                 					</td>
                 				</tr>
