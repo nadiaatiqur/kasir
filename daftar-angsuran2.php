@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		 <meta charset="UTF-8">
+         <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -191,12 +191,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
                                     </a>
                                 </li>
@@ -228,57 +228,47 @@
 
                     <div class="row" style="margin-bottom:5px;">
 
-                    <h1 align="center">PIUTANG</h1>
+                    <h1 align="center">HISTORY ANGSURAN PIUTANG</h1>
 
                     <div class="col-md-3">
-                    	<label>Mulai Dengan</label>
-                    		<input type="date" class="form-control" name="">
-                    	<label>Sampai Dengan</label>
-                    		<input type="date" class="form-control" name="">
-                    	<label>Suplier</label>
-                    		<select class="form-control">
-                    			<option value="semua">semua</option>
-                    		</select><br><br>
-                    	<div class="container">
-                    		<table class="table table-bordered">
-                    			<thead>
-                    				<tr class="primary">
-                    					<th>No</th>
-                    					<th>Faktur</th>
-                    					<th>Tanggal</th>
-                    					<th>Tempo</th>
-                    					<th>Jatuh Tempo</th>
-                    					<th>Kode Pelanggan</th>
-                    					<th>Nama Pelanggan</th>
-                    					<th>Piutang Awal</th>
-                    					<th>Telah Dibayar</th>
-                    					<th>Sisa Piutang</th>
-                    					<th>Keterangan</th>
-                    					<th>Operator</th>
-                                        <th>Status</th>
-                    				</tr>
-                    			</thead>
-                    			<tbody>
-                    				<tr>
-                    					<td>1</td>
-                    					<td>dfa</td>
-                    					<td>ds</td>
-                    					<td>dsf</td>
-                    					<td>sf</td>
-                    					<td>dsfa</td>
-                    					<td>df</td>
-                    					<td>dfs</td>
-                    					<td>dssad</td>
-                    					<td>afds</td>
-                    					<td>asdf</td>
-                    					<td>DSGSD</td>
-                                        <td>eouxbws</td>
-                    				</tr>
-                    			</tbody>
-                    		</table>
-                    	</div>
-                    	<a href="#" class="btn btn-primary">Bayar</a>
-                    	<a href="daftar-angsuran2.php" class="btn btn-warning">Daftar Angsuran</a>
+                        <label>Mulai Dengan</label>
+                            <input type="date" class="form-control" name="">
+                        <label>Sampai Dengan</label>
+                            <input type="date" class="form-control" name="">
+                        <label>Suplier</label>
+                            <select class="form-control">
+                                <option value="semua">semua</option>
+                            </select><br><br>
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="primary">
+                                        <th>No</th>
+                                        <th>Faktur</th>
+                                        <th>Tanggal</th>
+                                        <th>Faktur Hutang</th>
+                                        <th>Kode Pelanggan</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Tunai</th>
+                                        <th>Operator</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>dfa</td>
+                                        <td>ds</td>
+                                        <td>dsf</td>
+                                        <td>sf</td>
+                                        <td>dsfa</td>
+                                        <td>df</td>
+                                        <td>DSGSD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-primary">Cetak</a>
+                        <a href="piutang.php" class="btn btn-default">Kembali</a>
                     </div>
                         
                       </section>
@@ -322,16 +312,16 @@
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
-	    <!--  WOW ANIMATION SCRIPTS -->
-	    <script src="js/wow.min.js"></script>
-	    <!-- EASY PIE CHART SCRIPTS -->
-	    <script src="js/jquery.easypiechart.min.js"></script>
-	    <!-- PRETTY PHOTO SCRIPTS -->
-	    <script src="js/jquery.prettyPhoto.js"></script>
-	    <!--  STYLE SWITCHER SCRIPTS -->
-	    <script src="js/styleSwitcher.js"></script>
-	    <!--  CUSTOM SCRIPTS -->
-	    <script src="js/custom.js"></script>
+        <!--  WOW ANIMATION SCRIPTS -->
+        <script src="js/wow.min.js"></script>
+        <!-- EASY PIE CHART SCRIPTS -->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!-- PRETTY PHOTO SCRIPTS -->
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <!--  STYLE SWITCHER SCRIPTS -->
+        <script src="js/styleSwitcher.js"></script>
+        <!--  CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">
