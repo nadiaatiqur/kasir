@@ -29,6 +29,14 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- ANIMATE  CSS -->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- PRETTY PHOTO  CSS -->
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <!--  STYLE SWITCHER CSS -->
+    <link href="css/styleSwitcher.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bola.css">
 
 
 
@@ -92,6 +100,11 @@
                                         <h5>Kalkulator</h5>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="#">
+                                        <h5>Pengaturan</h5>
+                                    </a>
+                                </li>
                             </ul>
                         </li><!-- end user -->
                         <!-- User Account: style can be found in dropdown.less -->
@@ -127,77 +140,156 @@
                         </div>
                     </nav>
                 </header>
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
 
-                <div class="container">
-                <h1 align="center">PENJUALAN KASIR</h1>
-                	<div class="row">
-                		<div class="col-xs-2">
-                		<label>Tanggal</label>
-                			<input type="date" class="form-control" name="date">
-                		<label>Tunai/Kredit</label>
-                			<select class="form-control">
-                				<option class="form-control" value="Tunai">Tunai</option>
-                				<option class="form-control" value="1 Minggu">1 Minggu</option>
-                				<option class="form-control" value="2 Minggu">2 Minggu</option>
-                				<option class="form-control" value="3 Minggu">4 Minggu</option>
-                				<option class="form-control" value="1 Bulan">1 Bulan</option>
-                				<option class="form-control" value="Custom">Custom</option>
-                			</select>
-                		</div>
-                        <div class="col-xs-2">       
-                            <label>Kode Suplier</label>
-                           <div class="input-group">
-                              <input type="text" class="form-control">
-                              <span class="input-group-btn">
-                                <a href="input-suplaiyer.php" class="btn btn-primary" type="submit">+</a>
-                              </span>
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
                             </div>
-                    </div><br><br>
-                	<table class="table table-striped table-bordered">
-						  	<thead>
-						  		<tr class="warning">
-						  					<th>Kode</th>
-						          			<th>Nama</th>
-						          			<th>Jumlah</th>
-						          			<th>Satuan</th>
-						          			<th>Harga Beli</th>
-						          			<th>Diskon</th>
-						          			<th>Netto</th>
-						          			<th>Total</th>
-						  		</tr>
-						  	</thead>
-						  	<tbody>
-                                <tr>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td> 
-                                </tr>
-						  	</tbody>
-						  </table><br><br><br>
-						  <div class="row">
-						  	<div class="col-xs-2">
-						  	<label>Subtotal</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Diskon</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Grand Total</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Final</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Kembali</label>
-						  		<input type="text" class="form-control" name="">
-						  	</div>
-						  </div><br><br>
-						  <a href="#" type="button" class="btn btn-primary">Simpan</a>
-						  	<a href="#" type="button" class="btn btn-info">Cetak</a>
-						  	<a href="pembelian.php" type="button" class="btn btn-default">Keluar</a>
-                </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
 
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <h1 align="center">BIAYA</h1>
+
+                    <div class="col-md-3">
+                    	<label>Mulai Dengan</label>
+                    		<input type="date" class="form-control" name="">
+                    	<label>Sampai Dengan</label>
+                    		<input type="date" class="form-control" name="">
+                    	<label>Suplier</label>
+                    		<select class="form-control">
+                    			<option value="semua">semua</option>
+                    		</select><br><br>
+                    	<div class="container">
+                    		<table class="table table-bordered">
+                    			<thead>
+                    				<tr class="primary">
+                    					<th>No</th>
+                    					<th>Faktur</th>
+                    					<th>Tanggal</th>
+                    					<th>Tempo</th>
+                    					<th>Jatuh Tempo</th>
+                    					<th>Kode Suplier</th>
+                    					<th>Nama Suplier</th>
+                    					<th>Hitung Awal</th>
+                    					<th>Telah Dibayar</th>
+                    					<th>Sisa Hutang</th>
+                    					<th>Keterangan</th>
+                    					<th>Operator</th>
+                    				</tr>
+                    			</thead>
+                    			<tbody>
+                    				<tr>
+                    					<td>1</td>
+                    					<td>dfa</td>
+                    					<td>ds</td>
+                    					<td>dsf</td>
+                    					<td>sf</td>
+                    					<td>dsfa</td>
+                    					<td>df</td>
+                    					<td>dfs</td>
+                    					<td>dssad</td>
+                    					<td>afds</td>
+                    					<td>asdf</td>
+                    					<td>DSGSD</td>
+                    				</tr>
+                    			</tbody>
+                    		</table>
+                    	</div>
+                    	<a href="#" class="btn btn-primary">Bayar</a>
+                    	<a href="daftar-angsuran.php" class="btn btn-warning">Daftar Angsuran</a>
+                    </div>
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+                <div class="footer-main">
+                    Copyright &copy Director, 2014
+                </div>
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 <!-- jQuery 2.0.2 -->
@@ -304,5 +396,6 @@
             });
             // Chart.defaults.global.responsive = true;
 </script>
+
 </body>
 </html>
