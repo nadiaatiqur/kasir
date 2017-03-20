@@ -134,16 +134,18 @@
                 		<div class="col-xs-2">
                 		<label>Tanggal</label>
                 			<input type="date" class="form-control" name="date">
-                		<label>Tunai/Kredit</label>
-                			<select class="form-control">
-                				<option class="form-control" value="Tunai">Tunai</option>
-                				<option class="form-control" value="1 Minggu">1 Minggu</option>
-                				<option class="form-control" value="2 Minggu">2 Minggu</option>
-                				<option class="form-control" value="3 Minggu">4 Minggu</option>
-                				<option class="form-control" value="1 Bulan">1 Bulan</option>
-                				<option class="form-control" value="Custom">Custom</option>
-                			</select>
                 		</div>
+                        <div class="col-xs-2">
+                        <label>Tunai/Kredit</label>
+                            <select class="form-control">
+                                <option class="form-control" value="Tunai">Tunai</option>
+                                <option class="form-control" value="1 Minggu">1 Minggu</option>
+                                <option class="form-control" value="2 Minggu">2 Minggu</option>
+                                <option class="form-control" value="3 Minggu">4 Minggu</option>
+                                <option class="form-control" value="1 Bulan">1 Bulan</option>
+                                <option class="form-control" value="Custom">Custom</option>
+                            </select>
+                        </div>
                         <div class="col-xs-2">       
                             <label>Kode Suplier</label>
                            <div class="input-group">
@@ -151,8 +153,8 @@
                               <span class="input-group-btn">
                                 <a href="input-suplaiyer.php" class="btn btn-primary" type="submit">+</a>
                               </span>
-                            </div>
-                    </div><br><br>
+                            </div><br><br>
+                    </div>
                 	<table class="table table-striped table-bordered">
 						  	<thead>
 						  		<tr class="warning">

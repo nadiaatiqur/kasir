@@ -163,7 +163,7 @@
                                     <div class="modal-content">
                                         <!-- heading modal -->
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title" align="center">Cetak Data Barang</h4>
                                         </div>
                                         <!-- body modal -->
@@ -187,8 +187,8 @@
                                         <div class="modal-content">
                                             <!-- heading modal -->
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title" align="center">Cetak Data Penjualan Global</h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                   <h4 class="modal-title" align="center">Cetak Data Penjualan Global</h4>
                                             </div>
                                             <!-- body modal -->
                                             <div class="modal-body">

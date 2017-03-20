@@ -191,27 +191,27 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="biaya.php">
                                         <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="kas.php">
                                         <i class="fa fa-money fa-lg"></i> <span>Kas</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="laporan.php">
                                         <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
                                     </a>
                                 </li>
@@ -235,26 +235,100 @@
                     		<input type="date" class="form-control" name="">
                     	<label>Sampai Dengan</label>
                     		<input type="date" class="form-control" name="">
-                    	<label>Suplier</label>
+                    </div>
+                    	<div class="col-md-8">
+                    		<div class="row">
+                    		<div class="col-md-4">
+                    	<label>Kategori</label>
                     		<select class="form-control">
                     			<option value="semua">semua</option>
-                    		</select><br><br>
-                    	<div class="container">
+                    			<option value="Biaya Listrik">Biaya Listrik</option>
+                    			<option value="Biaya Pegawai">Biaya Pegawai</option>
+                    			<option value="Biaya Kebersihan">Biaya Kebersihan</option>
+                    			<option value="Biaya PDAM">Biaya PDAM</option>
+                    			<option value="Biaya Pengemis dan Pengamen">Biaya Pengemis & Pengamen</option>
+                    			<option value="Biaya Minta Sumbangan">Biaya Minta Sumbangan</option>
+                    		</select>
+                    	<label>Operator</label>
+                    			<select class="form-control">
+                    				<option value="SEMUA">SEMUA</option>
+                    				<option value="MASTER">MASTER</option>
+                    			</select><br><br>
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    	 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Tambah <span class="glyphicon glyphicon-file"></span></button>
+
+						  <!-- Modal -->
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">Tambahkan</h4>
+						        </div>
+						        <div class="modal-body">
+						          <div class="container">
+						          <div class="col-md-5">
+						          	<table class="table">
+						          		<tr>
+						          			<td>
+							          			<label>Tanggal</label>
+							          			<input type="text" class="form-control" name="">
+						          			</td>
+						          		</tr>
+						          		<tr>
+						          			<td>
+						          				<label>Faktur Biaya</label>
+						          				<input type="text" class="form-control" name="">
+						          			</td>
+						          		</tr>
+						          		<tr>
+						          			<td>
+						          				<label>Kategori</label>
+						          				<input type="text" class="form-control" name="">
+						          			</td>
+						          		</tr>
+						          		<tr>
+						          			<td>
+						          				<label>Keterangan</label>
+						          				<textarea type="text" class="form-control"></textarea>
+						          			</td>
+						          		</tr>
+						          		<tr>
+						          			<td>
+						          				<label>Total Biaya Rp</label>
+						          				<input type="text" class="form-control" name="">
+						          			</td>
+						          		</tr>
+						          	</table>
+						          	</div>
+						          </div>
+						        </div>
+						        <div class="modal-footer">
+						        	<button type="submit" class="btn btn-info">Simpan</button>
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+
+                    	<div class="fluid-container">
                     		<table class="table table-bordered">
                     			<thead>
-                    				<tr class="primary">
+                    				<tr class="success">
                     					<th>No</th>
                     					<th>Faktur</th>
                     					<th>Tanggal</th>
-                    					<th>Tempo</th>
-                    					<th>Jatuh Tempo</th>
-                    					<th>Kode Suplier</th>
-                    					<th>Nama Suplier</th>
-                    					<th>Hitung Awal</th>
-                    					<th>Telah Dibayar</th>
-                    					<th>Sisa Hutang</th>
+                    					<th>Jenis</th>
+                    					<th>Kategori</th>
+                    					<th>Total Biaya Rp.</th>
                     					<th>Keterangan</th>
                     					<th>Operator</th>
+                    					<th></th>
                     				</tr>
                     			</thead>
                     			<tbody>
@@ -267,17 +341,74 @@
                     					<td>dsfa</td>
                     					<td>df</td>
                     					<td>dfs</td>
-                    					<td>dssad</td>
-                    					<td>afds</td>
-                    					<td>asdf</td>
-                    					<td>DSGSD</td>
-                    				</tr>
-                    			</tbody>
-                    		</table>
-                    	</div>
-                    	<a href="#" class="btn btn-primary">Bayar</a>
-                    	<a href="daftar-angsuran.php" class="btn btn-warning">Daftar Angsuran</a>
-                    </div>
+                    					<td>
+                    						<button type="submit" class="btn btn-danger">
+                    							<span class="glyphicon glyphicon-trash"></span>
+                    						</button>
+                    						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit">
+                    							<span class="glyphicon glyphicon-pencil"></span>
+                    						</button>
+                    						<!-- Modal -->
+											  <div class="modal fade" id="edit" role="dialog">
+											    <div class="modal-dialog">
+											    
+											      <!-- Modal content-->
+											      <div class="modal-content">
+											        <div class="modal-header">
+											          <button type="button" class="close" data-dismiss="modal">&times;</button>
+											          <h4 class="modal-title">Edit</h4>
+											        </div>
+											        <div class="modal-body">
+											          <div class="container">
+											          <div class="col-md-5">
+											          	<table class="table">
+											          		<tr>
+											          			<td>
+												          			<label>Tanggal</label>
+												          			<input type="text" class="form-control" name="">
+											          			</td>
+											          		</tr>
+											          		<tr>
+											          			<td>
+											          				<label>Faktur Biaya</label>
+											          				<input type="text" class="form-control" name="">
+											          			</td>
+											          		</tr>
+											          		<tr>
+											          			<td>
+											          				<label>Kategori</label>
+											          				<input type="text" class="form-control" name="">
+											          			</td>
+											          		</tr>
+											          		<tr>
+											          			<td>
+											          				<label>Keterangan</label>
+											          				<textarea type="text" class="form-control"></textarea>
+											          			</td>
+											          		</tr>
+											          		<tr>
+											          			<td>
+											          				<label>Total Biaya Rp</label>
+											          				<input type="text" class="form-control" name="">
+											          			</td>
+											          		</tr>
+											          	</table>
+											          	</div>
+											          </div>
+											        </div>
+											        <div class="modal-footer">
+											        	<button type="submit" class="btn btn-info">Edit</button>
+											          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											        </div>
+											      </div>
+											    </div>
+											  </div>
+					                    	</td>
+					                    </tr>
+					                  </tbody>
+					               </table>
+					             </div>
+					         </div>
                         
                       </section>
                   </div>
