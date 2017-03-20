@@ -206,11 +206,6 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="kas.php">
-                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="laporan.php">
                                         <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
                                     </a>
