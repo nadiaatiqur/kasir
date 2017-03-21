@@ -87,16 +87,6 @@
                                         <h5>Backoffice</h5>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Kalkulator</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Pengaturan</h5>
-                                    </a>
-                                </li>
                             </ul>
                         
                         <!-- User Account: style can be found in dropdown.less -->

@@ -88,16 +88,6 @@
                                         <h5>Backoffice</h5>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">    8y
-                                        <h5>Kalkulator</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Pengaturan</h5>
-                                    </a>
-                                </li>
                             </ul>
                         </li><!-- end user -->
                         <li class="dropdown tasks-menu">
