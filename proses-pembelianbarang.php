@@ -70,7 +70,7 @@ if (isset($_POST['simpan'])) {
 			else
 			{
 				commit();
-				echo"Berhasil transaksi!";
+				header("location: tabel-pembelian.php");
 			}
 		}
 		else

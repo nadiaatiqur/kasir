@@ -218,7 +218,7 @@
         <div class="overlay">            
             <div class="container">
               	    <div class="col-lg-2 col-md-2 col-sm-2 text-center">
-                        <a href="#" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
+                        <a href="tabel-penjualan.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
                             <i class="fa fa-briefcase icon-round icon-round-active"></i>
                             <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".2s">Penjualan Kasir</h3>
                         </a>

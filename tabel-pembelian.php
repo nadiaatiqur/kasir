@@ -287,7 +287,7 @@
                                     <input type="hidden" name="total" value="<?php echo $row['total']; ?>">
                                 </td>
                                 <TD>
-                                    <a href="proses-deletetabelpembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
+                                    <a href="proses-deletetabelpembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                 </TD>
                             </tr>
                             </tbody>
