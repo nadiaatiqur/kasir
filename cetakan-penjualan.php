@@ -187,6 +187,7 @@
 	                <th>TOTAL</th>
 	                </tr>
 			</thead>
+            <tbody>
             <?php  
             include "koneksi.php";
 
@@ -198,9 +199,8 @@
                 $total_bayar = $total_ = $harga_disc * $res['jumlah_jual'];
                 $kembalian=$res['jumlah_bayar'] - $res['total_bayar'];
             ?>
-            <tbody>
-	        	<tr>
-	            	<td><?php echo $no++ ;?></td>
+                <tr>
+                    <td><?php echo $no++ ;?></td>
 	                <td align="center"><?php echo $res['id_barang']; ?></td>
 	                <td align="center"><?php echo $res['nama_barang']; ?></td>
 	                <td align="right">Rp.<?php echo number_format($res['harga_jual'],0,'.',','); ?></td>
@@ -208,32 +208,23 @@
 	                <td align="center"><?php echo $res['disc']; ?>%</td>
 	                <td align="right">Rp. <?php echo number_format($total_,0,'.',','); ?></td>
 				</tr>
-			</tbody>
-            <tfoot>
-				<tr>
-                	<td colspan="6">TOTAL HARGA</td>
-                	<td colspan="1" align="right">Rp. <?php echo number_format($total_,0,'.',','); ?></td>
-                </tr>
-                <tr>
-                	<td colspan="6">POTONGAN</td>
-                	<td colspan="1" align="right">Rp.<?php echo number_format($res['potongan'],0,'.',','); ?></td>
-				</tr>
-                <tr>
-                	<td colspan="6">TOTAL BAYAR</td>
-                	<td colspan="1" align="right">Rp.<?php echo number_format($res['total_bayar']); ?></td>
-				</tr>
-				<tr>
-					<td colspan="6">YANG DIBAYAR</td>
-					<td colspan="1" align="right">Rp.<?php echo number_format($res['jumlah_bayar']); ?></td>
-				</tr>
-				<tr>
-                	<td colspan="6">KEMBALIAN</td>
-                	<td colspan="1" align="right"><b>Rp.<?php echo number_format($kembalian); ?></b></td>
-				</tr>
-			</tfoot>
 			<?php } ?>
+            </tbody>
+            <tfoot>
+                    <td colspan="6">KEMBALIAN</td>
+                    <td colspan="1" align="right"><b>Rp.<?php echo number_format($kembalian); ?></b></td>
+                </tr>
+            </tfoot>
     		</table>
 		</div>
+        <div class="row">
+            <p>
+                * Barang yang sudah dibeli tidak dapat dikembalikan<br>
+                * Barang-barang yang diservice, apabila tidak diambil dalam jangka 3 bulan, resiko kehilangan bukan menjadi tanggung jawab kami
+            <br>
+            
+            </p>
+        </div>
 	</div>
 </div>
 </body>

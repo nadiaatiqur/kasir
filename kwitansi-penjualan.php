@@ -207,6 +207,7 @@
                 		$id=$_GET['id'];
                 		$res=mysqli_query($link, "SELECT * FROM penjualan WHERE no_transaksi='$id' ");
                 		$row=mysqli_fetch_array($res);
+                        $kembalian=$row['jumlah_bayar'] - $row['total_bayar'];
                 		?>
                 			<table>
                 				<tr style='border-bottom:1px dashed #ccc;'>
@@ -244,6 +245,11 @@
                 					<td width="10px">:</td>
                 					<td>Rp.<b><?php echo number_format($row['potongan'],0,'.',','); ?></b></td>
                 				</tr>
+                                <tr style="border-bottom:1px dashed #ccc;">
+                                    <td width="150px">KEMBALIAN</td>
+                                    <td width="10px">:</td>
+                                    <td>Rp.<b><?php echo number_format($kembalian,0,'.',','); ?></b></td>
+                                </tr>
                 				<tr style="border-bottom:1px dashed #ccc;">
                 					<td width="150px">STATUS</td>
                 					<td width="10px">:</td>
@@ -265,6 +271,7 @@
 	                					<th>TOTAL</th>
 	                				</tr>
 	                			</thead>
+                                <tbody>
                 				<?php  
                 				include "koneksi.php";
 
@@ -272,11 +279,10 @@
                 				$no=1;
                 				$sql=mysqli_query($link, "SELECT a.*, b.total_bayar, b.jumlah_bayar, b.potongan FROM transaksi_jual_detail as a LEFT JOIN penjualan as b ON a.id_pelanggan = b.id_pelanggan WHERE a.no_transaksi='$id' ") or die(mysqli_error($link));
                 				while ($res=mysqli_fetch_array($sql)) {
-                					$harga_disc = $res['harga_jual'] - (($res['harga_jual'] * $res['disc']) / 100);
-                					$total_bayar = $total_ = $harga_disc * $res['jumlah_jual'];
-                					$kembalian=$res['jumlah_bayar'] - $res['total_bayar'];
-                				?>
-                				<tbody>
+                                    $harga_disc = $res['harga_jual'] - (($res['harga_jual'] * $res['disc']) / 100);
+                                    $total_bayar = $total_ = $harga_disc * $res['jumlah_jual'];
+                                    $kembalian=$res['jumlah_bayar'] - $res['total_bayar'];
+                            	?>
 	                				<tr>
 	                					<td><?php echo $no++ ;?></td>
 	                					<td align="center"><?php echo $res['id_barang']; ?></td>
@@ -286,36 +292,20 @@
 	                					<td align="center"><?php echo $res['disc']; ?>%</td>
 	                					<td align="right">Rp. <?php echo number_format($total_,0,'.',','); ?></td>
 	                				</tr>
-                				</tbody>
-                				<tfoot>
-                					<tr>
-                						<td colspan="6">TOTAL HARGA</td>
-                						<td colspan="1" align="right">Rp. <?php echo number_format($total_,0,'.',','); ?></td>
-                					</tr>
-                					<tr>
-                						<td colspan="6">POTONGAN</td>
-                						<td colspan="1" align="right">Rp.<?php echo number_format($res['potongan'],0,'.',','); ?></td>
-                					</tr>
-                					<tr>
-                						<td colspan="6">TOTAL BAYAR</td>
-                						<td colspan="1" align="right">Rp.<?php echo number_format($res['total_bayar']); ?></td>
-                					</tr>
-                					<tr>
-                						<td colspan="6">YANG DIBAYAR</td>
-                						<td colspan="1" align="right">Rp.<?php echo number_format($res['jumlah_bayar']); ?></td>
-                					</tr>
-                					<tr>
-                						<td colspan="6">KEMBALIAN</td>
-                						<td colspan="1" align="right"><b>Rp.<?php echo number_format($kembalian); ?></b></td>
-                					</tr>
-                				</tfoot>
-                			</table>
-                		</div>
-                		<a href="penjualan.php" class="btn btn-danger"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
-                		<a href="tabel-penjualan.php" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>Transaksi Baru</a>
-                		<a href="cetakan-penjualan.php?id_transaksi=<?php echo $res['no_transaksi'] ;?>" onclick="return confirm ('Cetak <?php echo $res['no_transaksi'];?> dengan nama <?php echo $res['nama_pelanggan']; ?> ?');"title="Cetak" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Cetak</a>
-                		<?php } ?>
-                	</div>
+                                <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6">KEMBALIAN</td>
+                                        <td colspan="1" align="right">Rp. <?php echo number_format($kembalian,0,'.',','); ?></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <a href="penjualan.php" class="btn btn-danger"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
+                        <a href="tabel-penjualan.php" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>Transaksi Baru</a>
+                        <a href="cetakan-penjualan.php?id_transaksi=<?php echo $id ;?>" onclick="return confirm ('Cetak <?php echo $id;?> ?');"title="Cetak" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Cetak</a>
+                    </div>
                 </div>
 </body>
 </html>
