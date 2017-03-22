@@ -280,7 +280,9 @@
                                         <tr>
                                            <td><?php $no++ ?></td>
                                            <td><?php echo $row['id_jual']; ?></td>
-                                           <td><?php echo $row['id_barang']; ?></td>
+                                           <td><?php echo $row['id_barang']; ?>
+                                               <input type="hidden" name="id_barang" value="<?php echo $row['id_barang']; ?>">
+                                           </td>
                                            <td><?php echo $row['nama_barang']; ?></td>
                                            <td><?php echo $row['kategori']; ?></td> 
                                            <td>Rp.<?php echo number_format($row['harga_jual'],0,'.',','); ?></td>

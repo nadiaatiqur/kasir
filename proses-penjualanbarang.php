@@ -1,6 +1,8 @@
 <?php 
 $link=mysqli_connect('localhost','root','','db_kasir');
 if (isset($_POST['simpan'])) {
+	$id_barang=$_POST['id_barang'];
+
 	$no_transaksi =$_POST['transaksi'];
 	$idpelanggan=$_POST['id_pelanggan'];
 	$pelanggan=$_POST['pelanggan'];
@@ -57,7 +59,8 @@ if (isset($_POST['simpan'])) {
 				{
 					foreach ($chart as $row) {
 						$qsimpandetail = mysqli_query($link, "INSERT INTO transaksi_jual_detail(id_jual, no_transaksi, id_pelanggan, id_barang, nama_barang, kategori, jumlah_jual, tanggal_jual, disc, harga_jual) VALUES(null, '$no_transaksi', '$kode_pel', '$row[id_barang]', '$row[nama_barang]', '$row[kategori]', '$row[jumlah_jual]', '$row[tanggal_jual]', '$row[disc]', '$row[harga_jual]')");
-						mysqli_query($link, "UPDATE barang SET jumlah_barang=jumlah_barang - '$b[jumlah_jual]' ");
+
+						mysqli_query($link, "UPDATE barang SET jumlah_barang= jumlah_barang -'$row[jumlah_jual]' WHERE id_barang='$row[id_barang]' ");
 						mysqli_query($link, "DELETE FROM transaksi_jual");
 						if (!$qsimpandetail) {
 							//flash('example_message', '<p>Transaksi gagal.</p>', 'w3-red' );

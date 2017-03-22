@@ -53,7 +53,7 @@ if (isset($_POST['simpan'])) {
 
 			while ($b = mysqli_fetch_array($sql_tmp)) {
 				$resDetail = mysqli_query($link, "INSERT INTO transaksi_beli_detail(id_beli, faktur, id_barang, nama_barang, tanggal_beli, harga_beli, jumlah_beli, total) VALUES(NULL, '$no_faktur', '$b[id_barang]','$b[nama_barang]','$b[tanggal_beli]', '$b[harga_beli]', '$b[jumlah_beli]', '$b[total]')");
-				mysqli_query($link, "UPDATE barang SET jumlah_barang=jumlah_barang + '$b[jumlah_beli]' ");
+				mysqli_query($link, "UPDATE barang SET jumlah_barang=jumlah_barang + '$b[jumlah_beli]' WHERE id_barang='$id_barang' ");
 				mysqli_query($link, "DELETE FROM transaksi_beli");
 				if (!$resDetail) {
 					rollback();
