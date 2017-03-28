@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+         <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -182,17 +182,17 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="hutang.php">
+                                    <a href="Hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="piutang.php">
+                                    <a href="Piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="biaya.php">
+                                    <a href="Biaya.php">
                                         <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
@@ -214,10 +214,10 @@
 
                     <div class="row" style="margin-bottom:5px;">
 
-                    <h1 align="center">HISTORY ANGSURAN HUTANG</h1>
+                    <h1 align="center">PIUTANG</h1>
 
                     <div class="col-md-3">
-                        <form method="POST" action="search-daftarangsuran.php">
+                    <form method="POST">
                         <div class="form-group">
                         <div class = "input-group">
                              <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
@@ -226,45 +226,41 @@
                              </span>
                         </div>
                          <p>--Cari Berdasarkan no.faktur--</p>
-                       </form>
-                    	<div class="container">
-                    		<table class="table table-bordered">
-                    			<thead>
-                    				<tr class="primary">
-                    					<th>No</th>
-                                        <th>ID Hutang</th>
+                    </form>
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="primary">
+                                        <th>No</th>
                                         <th>No Faktur</th>
-                                        <th>ID Penyuplai</th>
-                                        <th>Nama Penyuplai</th>
-                                        <th>Pembayaran Awal</th>
+                                        <th>ID Pelanggan</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Tanggal Jual</th>
                                         <th>Total Bayar</th>
-                                        <th>Uang Angsuran</th>
-                                        <th>Yang Harus Dibayar</th>
+                                        <th>Yang Dibayar</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
-                    				</tr>
-                    			</thead>
-                    			<tbody>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 <?php  
                                 include "koneksi.php";
 
                                 $no=1;
-                                $sql=mysqli_query($link, "SELECT * FROM history_hutang");
+                                $sql=mysqli_query($link, "SELECT * FROM penjualan WHERE status='PIUTANG' AND no_transaksi LIKE '%$_POST[kunci]%' ");
                                 while ($row=mysqli_fetch_array($sql)) {
                                 ?>
-                    				<tr>
-                    					<td><?= $no++ ?></td>
-                                        <td><?= $row['id_hutang'] ?></td>
-                                        <td><?= $row['faktur'] ?></td>
-                                        <td><?= $row['id_penyuplai'] ?></td>
-                                        <td><?= $row['nama_penyuplai']?></td>
-                                        <td><?= $row['uang_pembayaran']?></td>
-                                        <td><?= $row['total_bayar']?></td>
-                                        <td><?= $row['uang_angsuran']?></td>
-                                        <td><?= $row['harus_dibayar'] ?></td>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $row['no_transaksi'] ?></td>
+                                        <td><?= $row['id_pelanggan'] ?></td>
+                                        <td><?= $row['nama_pelanggan'] ?></td>
+                                        <td><?= $row['tanggal_jual'] ?></td>
+                                        <td><?= $row['total_bayar'] ?></td>
+                                        <td><?= $row['jumlah_bayar'] ?></td>
                                         <td><?= $row['status'] ?></td>
                                         <td>
-                                            <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $no ?>">Cicil</a>
+                                        <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $no ?>">Bayar</a>
                                             <!-- Modal -->
                                             <div id="modal<?= $no ?>" class="modal fade" role="dialog">
                                                 <div class="modal-dialog">
@@ -273,28 +269,29 @@
                                                  <!-- heading modal -->
                                                  <div class="modal-header">
                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title" align="center">Cicil Hutang</h4>
+                                                <h4 class="modal-title" align="center">Bayar Piutang</h4>
                                                 <input type="text" name="tgl_angsur" value="<?= $tanggal ?>" disabled>
                                                 </div>
                                                 <!-- body modal -->
 
-                                <form method="POST" action="proses-angsur.php">
+                                <form method="POST" action="proses-piutang.php">
                                                 <div class="modal-body">
                                                     <div class="row"><div class="col-md-6">
                                                     <input type="hidden" name="status" value="<?= $row['status'] ?>">
+                                                    <input type="hidden" name="tanggal_cicil" value="<?= $tanggal ?>">
                                                         <div class="form-group">
                                                         <span>No Faktur </span>
-                                                        <input type="text" class="form-control" name="faktur" value="<?= $row['faktur'] ?>" readonly>
-                                                        <span>ID Penyuplai</span>
-                                                        <input type="text" class="form-control" name="id_penyuplai" value="<?= $row['id_penyuplai'] ?>" readonly>
-                                                        <span>Nama Penyuplai</span>
-                                                        <input type="text" class="form-control" name="nama_penyuplai" value="<?= $row['nama_penyuplai'] ?>" readonly>
+                                                        <input type="text" class="form-control" name="no_transaksi" value="<?= $row['no_transaksi'] ?>" readonly>
+                                                        <span>ID Pelanggan</span>
+                                                        <input type="text" class="form-control" name="id_pelanggan" value="<?= $row['id_pelanggan'] ?>" readonly>
+                                                        <span>Nama Pelanggan</span>
+                                                        <input type="text" class="form-control" name="nama_pelanggan" value="<?= $row['nama_pelanggan'] ?>" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                         <span>Yang Dibayar</span>
-                                                        <input type="text" class="form-control" name="uang_pembayaran" value="<?= $row['uang_pembayaran'] ?>" readonly>
+                                                        <input type="text" class="form-control" name="pembayaran_awal" value="<?= $row['jumlah_bayar'] ?>" readonly>
                                                         <span>Total Bayar</span>
                                                         <input type="text" class="form-control" name="total_bayar" value="<?= $row['total_bayar'] ?>" readonly>
                                                         <span>Uang Angsuran</span>
@@ -305,7 +302,7 @@
                                                 </div>
                                                 <!-- footer modal -->
                                                 <div class="modal-footer">
-                                                <input type="submit" class="btn btn-info" name="simpan1" value="Simpan Transaksi">
+                                                <input type="submit" class="btn btn-info" name="simpan" value="Simpan Transaksi">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup Modal</button>
                                 </form>         
                                                 </div>
@@ -313,13 +310,12 @@
                                                 </div>
                                             </div>
                                         </td>
-                    				</tr>
+                                    </tr>
                                 <?php } ?>
-                    			</tbody>
-                    		</table>
-                    	</div>
-                    	<a href="#" class="btn btn-primary">Cetak</a>
-                        <a href="hutang.php" class="btn btn-default">Kembali</a>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="daftar-angsuran2.php" class="btn btn-warning">Daftar Angsuran</a>
                     </div>
                         
                       </section>
@@ -363,16 +359,16 @@
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
-	    <!--  WOW ANIMATION SCRIPTS -->
-	    <script src="js/wow.min.js"></script>
-	    <!-- EASY PIE CHART SCRIPTS -->
-	    <script src="js/jquery.easypiechart.min.js"></script>
-	    <!-- PRETTY PHOTO SCRIPTS -->
-	    <script src="js/jquery.prettyPhoto.js"></script>
-	    <!--  STYLE SWITCHER SCRIPTS -->
-	    <script src="js/styleSwitcher.js"></script>
-	    <!--  CUSTOM SCRIPTS -->
-	    <script src="js/custom.js"></script>
+        <!--  WOW ANIMATION SCRIPTS -->
+        <script src="js/wow.min.js"></script>
+        <!-- EASY PIE CHART SCRIPTS -->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!-- PRETTY PHOTO SCRIPTS -->
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <!--  STYLE SWITCHER SCRIPTS -->
+        <script src="js/styleSwitcher.js"></script>
+        <!--  CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">

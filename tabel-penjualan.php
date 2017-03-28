@@ -267,6 +267,7 @@
                                            <td>AKSI</td>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                     <?php  
                                     include "koneksi.php";
 
@@ -276,7 +277,6 @@
                                         $harga_disc = $row['harga_jual'] - (($row['harga_jual'] * $row['disc']) / 100);
                                         $total_bayar = $total_ = $harga_disc * $row['jumlah_jual'];
                                     ?>
-                                    <tbody>
                                         <tr>
                                            <td><?php $no++ ?></td>
                                            <td><?php echo $row['id_jual']; ?></td>
@@ -285,7 +285,7 @@
                                            </td>
                                            <td><?php echo $row['nama_barang']; ?></td>
                                            <td><?php echo $row['kategori']; ?></td> 
-                                           <td>Rp.<?php echo number_format($row['harga_jual'],0,'.',','); ?></td>
+                                           <td>Rp.<?php echo $row['harga_jual']; ?></td>
                                            <td><?php echo $row['tanggal_jual']; ?></td>
                                            <td><?php echo $row['jumlah_jual'] ; ?></td>
                                            <td><?php echo $row['disc']; ?>%</td>
@@ -293,8 +293,8 @@
                                            <a href="proses-deletetabelpenjualan.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                            </TD>
                                         </tr>
-                                    </tbody>
                                     <?php } ?>
+                                    </tbody>
                                     <tfoot>
                                     <form method="POST">
                                         <tr>
@@ -335,8 +335,8 @@
                                             <span>LUNAS</span>
                                         </div>
                                         <div class='col-md-6'>
-                                            <input type='radio' name='status' value='HUTANG' id="status">
-                                            <span>HUTANG</span>
+                                            <input type='radio' name='status' value='PIUTANG' id="status">
+                                            <span>PIUTANG</span>
                                         </div>
                                     </div>
                                     <div class="form-group">

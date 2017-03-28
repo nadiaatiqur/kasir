@@ -125,60 +125,62 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
+                <h1 align="center">Tabel Data Penjualan Kasir</h1><br><br>
                 	<div class="row">
                     <div class="col-xs-3">
-                    <form method="POST" action="">
+                    <form method="POST">
                     <div class="input-group">
                         <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat btn-primary"><i class="fa fa-search"></i></button>
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                      </div>
-                    </form>
+                     </form>
                     </div>
-                        <a href="tabel-pembelian.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
+                        <a href="tabel-penjualan.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
                 		<table class="table">
-                            <thead>
-                                <tr class="warning">
-                                     <th>#</th>
-                                    <th>ID BELI</th>
-                                    <th>NO FAKTUR</th>
-                                    <th>ID PENYUPLAI</th>
-                                    <th>NAMA PENYUPLAI</th>
-                                    <th>TANGGAL BELI</th>
-                                    <th>UANG PEMBAYARAN</th>
-                                    <th>TOTAL BAYAR</th>
-                                    <th>STATUS</th>
-                                    <TH>AKSI</TH>
-                                </tr>
-                            </thead>
+                			<thead>
+                				<tr class="warning">
+                					<th>No<span class="caret"></span></th>
+                                    <th>ID jual</th>
+                					<th>No.Transaksi</th>
+                					<th>ID Barang</th>
+                					<th>Nama Barang</th>
+                					<th>Kategori</th>
+                					<th>Jumlah Jual</th>
+                					<th>Tanggal Jual</th>
+                                    <th>Discount</th>
+                                    <th>Harga Jual</th>
+                                    <th>Aksi</th>
+                				</tr>
+                			</thead>
+                			<tbody>
                             <?php  
                             include "koneksi.php";
 
                             $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM pembelian");
+                          	$result=mysqli_query($link, "SELECT * FROM transaksi_jual_detail WHERE id_jual LIKE '%$_POST[kunci]%' OR no_transaksi LIKE '%$_POST[kunci]%' OR id_barang LIKE '%$_POST[kunci]%' OR nama_barang LIKE '%$_POST[kunci]%' 	OR kategori LIKE '%$_POST[kunci]%' ");
                             while ($row=mysqli_fetch_array($result)) {
-                                ?>
-                            <tbody>
-                                <tr>
-                                    <td><?= $no++; ?></td>
-                                   <td><?= $row['id_beli'];?></td>
-                                   <td><?= $row['faktur'];?></td>
-                                   <td><?= $row['id_penyuplai'];?></td>
-                                   <td><?= $row['nama_penyuplai'];?></td>
-                                   <td><?= $row['tanggal_beli'];?></td>
-                                   <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-                                   <td><?= number_format($row['sub_total']) ?></td>
-                                   <td><?= $row['status'] ?></td>
-                                    <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            ?>
+                				<tr>
+                					<td><?= $no++ ?></td>
+                					<td><?= $row['id_jual'] ?></td>
+                					<td><?= $row['no_transaksi'] ?></td>
+                					<td><?= $row['id_barang'] ?></td>
+                					<td><?= $row['nama_barang'] ?></td>
+                					<td><?= $row['kategori'] ?></td>
+                					<td><?= $row['jumlah_jual'] ?></td>
+                                    <td><?= $row['tanggal_jual'] ?></td>
+                                    <td><?= $row['disc'] ?></td>
+                                    <td><?= $row['harga_jual'] ?></td>
+                					<td><a href="proses-deletepenjualankasir.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                						<span class="glyphicon glyphicon-trash"></span></a>
+                					</td>
+                				</tr>
                             <?php } ?>
-                        </table><br>
-                        <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
+                			</tbody>
+                		</table><br>
+                        <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
                 	</div>
                 </div>
 

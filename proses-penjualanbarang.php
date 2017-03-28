@@ -46,7 +46,7 @@ if (isset($_POST['simpan'])) {
 			//echo $nama_pelanggan;
 
 			//apakah pembayaran sudah cukup
-			if ($total_bayar <= $jmlbayar || $status == "HUTANG" ) {
+			if ($total_bayar <= $jmlbayar || $status == "PIUTANG" ) {
 				//start transaction
 
 				//pembuatan header
@@ -59,7 +59,6 @@ if (isset($_POST['simpan'])) {
 				{
 					foreach ($chart as $row) {
 						$qsimpandetail = mysqli_query($link, "INSERT INTO transaksi_jual_detail(id_jual, no_transaksi, id_pelanggan, id_barang, nama_barang, kategori, jumlah_jual, tanggal_jual, disc, harga_jual) VALUES(null, '$no_transaksi', '$kode_pel', '$row[id_barang]', '$row[nama_barang]', '$row[kategori]', '$row[jumlah_jual]', '$row[tanggal_jual]', '$row[disc]', '$row[harga_jual]')");
-
 						mysqli_query($link, "UPDATE barang SET jumlah_barang= jumlah_barang -'$row[jumlah_jual]' WHERE id_barang='$row[id_barang]' ");
 						mysqli_query($link, "DELETE FROM transaksi_jual");
 						if (!$qsimpandetail) {

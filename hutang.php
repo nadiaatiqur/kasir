@@ -1,3 +1,4 @@
+<?php $tanggal=date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -216,51 +217,103 @@
                     <h1 align="center">HUTANG</h1>
 
                     <div class="col-md-3">
-                    	<label>Mulai Dengan</label>
-                    		<input type="date" class="form-control" name="">
-                    	<label>Sampai Dengan</label>
-                    		<input type="date" class="form-control" name="">
-                    	<label>Suplier</label>
-                    		<select class="form-control">
-                    			<option value="semua">semua</option>
-                    		</select><br><br>
+                    <form method="POST" action="search-hutang.php">
+                        <div class="form-group">
+                        <div class = "input-group">
+                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                             <span class = "input-group-btn">
+                                <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                             </span>
+                        </div>
+                         <p>--Cari Berdasarkan no.faktur--</p>
+                    </form>
                     	<div class="container">
                     		<table class="table table-bordered">
                     			<thead>
                     				<tr class="primary">
                     					<th>No</th>
-                    					<th>Faktur</th>
-                    					<th>Tanggal</th>
-                    					<th>Tempo</th>
-                    					<th>Jatuh Tempo</th>
-                    					<th>Kode Suplier</th>
-                    					<th>Nama Suplier</th>
-                    					<th>Hitung Awal</th>
-                    					<th>Telah Dibayar</th>
-                    					<th>Sisa Hutang</th>
-                    					<th>Keterangan</th>
-                    					<th>Operator</th>
+                    					<th>No Faktur</th>
+                                        <th>ID Penyuplai</th>
+                                        <th>Nama Penyuplai</th>
+                                        <th>Tanggal Pembelian</th>
+                                        <th>Yang Dibayar</th>
+                                        <th>Total Bayar</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                     				</tr>
                     			</thead>
                     			<tbody>
-                    				<tr>
-                    					<td>1</td>
-                    					<td>dfa</td>
-                    					<td>ds</td>
-                    					<td>dsf</td>
-                    					<td>sf</td>
-                    					<td>dsfa</td>
-                    					<td>df</td>
-                    					<td>dfs</td>
-                    					<td>dssad</td>
-                    					<td>afds</td>
-                    					<td>asdf</td>
-                    					<td>DSGSD</td>
-                    				</tr>
-                    			</tbody>
+                                <?php  
+                                include "koneksi.php";
+
+                                $no=1;
+                                $sql=mysqli_query($link, "SELECT * FROM pembelian WHERE status='HUTANG' ");
+                                while ($row=mysqli_fetch_array($sql)) {
+                                ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $row['faktur'] ?></td>
+                                        <td><?= $row['id_penyuplai'] ?></td>
+                                        <td><?= $row['nama_penyuplai'] ?></td>
+                                        <td><?= $row['tanggal_beli'] ?></td>
+                                        <td><?= $row['uang_pembayaran'] ?></td>
+                                        <td><?= $row['sub_total'] ?></td>
+                                        <td><?= $row['status'] ?></td>
+                                        <td>
+                                        <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $no ?>">Bayar</a>
+                                            <!-- Modal -->
+                                            <div id="modal<?= $no ?>" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                 <!-- konten modal-->
+                                                 <div class="modal-content">
+                                                 <!-- heading modal -->
+                                                 <div class="modal-header">
+                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Bayar Hutang</h4>
+                                                <input type="text" name="tgl_angsur" value="<?= $tanggal ?>" disabled>
+                                                </div>
+                                                <!-- body modal -->
+
+                                <form method="POST" action="proses-hutang.php">
+                                                <div class="modal-body">
+                                                    <div class="row"><div class="col-md-6">
+                                                    <input type="hidden" name="status" value="<?= $row['status'] ?>">
+                                                        <div class="form-group">
+                                                        <span>No Faktur </span>
+                                                        <input type="text" class="form-control" name="faktur" value="<?= $row['faktur'] ?>" readonly>
+                                                        <span>ID Penyuplai</span>
+                                                        <input type="text" class="form-control" name="id_penyuplai" value="<?= $row['id_penyuplai'] ?>" readonly>
+                                                        <span>Nama Penyuplai</span>
+                                                        <input type="text" class="form-control" name="nama_penyuplai" value="<?= $row['nama_penyuplai'] ?>" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                        <span>Yang Dibayar</span>
+                                                        <input type="text" class="form-control" name="uang_pembayaran" value="<?= $row['uang_pembayaran'] ?>" readonly>
+                                                        <span>Total Bayar</span>
+                                                        <input type="text" class="form-control" name="total_bayar" value="<?= $row['sub_total'] ?>" readonly>
+                                                        <span>Uang Angsuran</span>
+                                                        <input type="text" class="form-control" name="uang_angsuran" placeholder="Rp.">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <!-- footer modal -->
+                                                <div class="modal-footer">
+                                                <input type="submit" class="btn btn-info" name="simpan" value="Simpan Transaksi">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup Modal</button>
+                                </form>         
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
                     		</table>
                     	</div>
-                    	<a href="#" class="btn btn-primary">Bayar</a>
                     	<a href="daftar-angsuran.php" class="btn btn-warning">Daftar Angsuran</a>
                     </div>
                         

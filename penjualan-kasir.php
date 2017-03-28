@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -124,77 +124,64 @@
                 </header>
 
                 <div class="container">
-                <h1 align="center">PENJUALAN KASIR</h1>
-                	<div class="row">
-                		<div class="col-xs-2">
-                		<label>Tanggal</label>
-                			<input type="date" class="form-control" name="date">
-                		</div>
-                        <div class="col-xs-2">
-                        <label>Tunai/Kredit</label>
-                            <select class="form-control">
-                                <option class="form-control" value="Tunai">Tunai</option>
-                                <option class="form-control" value="1 Minggu">1 Minggu</option>
-                                <option class="form-control" value="2 Minggu">2 Minggu</option>
-                                <option class="form-control" value="3 Minggu">4 Minggu</option>
-                                <option class="form-control" value="1 Bulan">1 Bulan</option>
-                                <option class="form-control" value="Custom">Custom</option>
-                            </select>
-                        </div>
-                        <div class="col-xs-2">       
-                            <label>Kode Suplier</label>
-                           <div class="input-group">
-                              <input type="text" class="form-control">
-                              <span class="input-group-btn">
-                                <a href="input-suplaiyer.php" class="btn btn-primary" type="submit">+</a>
-                              </span>
-                            </div><br><br>
+                <h1 align="center">Tabel Data Penjualan Kasir</h1><br><br>
+                    <div class="row">
+                    <div class="col-xs-3">
+                    <form method="POST" action="search-penjualankasir.php">
+                    <div class="input-group">
+                        <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                     </div>
+                     </form>
                     </div>
-                	<table class="table table-striped table-bordered">
-						  	<thead>
-						  		<tr class="warning">
-						  					<th>Kode</th>
-						          			<th>Nama</th>
-						          			<th>Jumlah</th>
-						          			<th>Satuan</th>
-						          			<th>Harga Beli</th>
-						          			<th>Diskon</th>
-						          			<th>Netto</th>
-						          			<th>Total</th>
-						  		</tr>
-						  	</thead>
-						  	<tbody>
-                                <tr>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td>
-                                   <td>&nbsp</td> 
+                        <a href="tabel-penjualan.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
+                        <table class="table">
+                            <thead>
+                                <tr class="warning">
+                                    <th>No<span class="caret"></span></th>
+                                    <th>ID jual</th>
+                                    <th>No.Transaksi</th>
+                                    <th>ID Barang</th>
+                                    <th>Nama Barang</th>
+                                    <th>Kategori</th>
+                                    <th>Jumlah Jual</th>
+                                    <th>Tanggal Jual</th>
+                                    <th>Discount</th>
+                                    <th>Harga Jual</th>
+                                    <th>Aksi</th>
                                 </tr>
-						  	</tbody>
-						  </table><br><br><br>
-						  <div class="row">
-						  	<div class="col-xs-2">
-						  	<label>Subtotal</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Diskon</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Grand Total</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Final</label>
-						  		<input type="text" class="form-control" name="">
-						  	<label>Kembali</label>
-						  		<input type="text" class="form-control" name="">
-						  	</div>
-						  </div><br><br>
-						  <a href="#" type="button" class="btn btn-primary">Simpan</a>
-						  	<a href="#" type="button" class="btn btn-info">Cetak</a>
-						  	<a href="pembelian.php" type="button" class="btn btn-default">Keluar</a>
-                </div>
+                            </thead>
+                            <tbody>
+                            <?php  
+                            include "koneksi.php";
 
+                            $no=1;
+                            $result=mysqli_query($link, "SELECT * FROM transaksi_jual_detail");
+                            while ($row=mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $row['id_jual'] ?></td>
+                                    <td><?= $row['no_transaksi'] ?></td>
+                                    <td><?= $row['id_barang'] ?></td>
+                                    <td><?= $row['nama_barang'] ?></td>
+                                    <td><?= $row['kategori'] ?></td>
+                                    <td><?= $row['jumlah_jual'] ?></td>
+                                    <td><?= $row['tanggal_jual'] ?></td>
+                                    <td><?= $row['disc'] ?></td>
+                                    <td><?= $row['harga_jual'] ?></td>
+                                    <td><a  href="proses-deletepenjualankasir.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table><br>
+                        <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
+                    </div>
+                </div>
 
 
 <!-- jQuery 2.0.2 -->
@@ -225,16 +212,16 @@
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
-	    <!--  WOW ANIMATION SCRIPTS -->
-	    <script src="js/wow.min.js"></script>
-	    <!-- EASY PIE CHART SCRIPTS -->
-	    <script src="js/jquery.easypiechart.min.js"></script>
-	    <!-- PRETTY PHOTO SCRIPTS -->
-	    <script src="js/jquery.prettyPhoto.js"></script>
-	    <!--  STYLE SWITCHER SCRIPTS -->
-	    <script src="js/styleSwitcher.js"></script>
-	    <!--  CUSTOM SCRIPTS -->
-	    <script src="js/custom.js"></script>
+        <!--  WOW ANIMATION SCRIPTS -->
+        <script src="js/wow.min.js"></script>
+        <!-- EASY PIE CHART SCRIPTS -->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!-- PRETTY PHOTO SCRIPTS -->
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <!--  STYLE SWITCHER SCRIPTS -->
+        <script src="js/styleSwitcher.js"></script>
+        <!--  CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">

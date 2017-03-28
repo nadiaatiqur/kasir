@@ -131,7 +131,7 @@
                     <div class="input-group">
                         <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat btn-primary"><i class="fa fa-search"></i></button>
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                      </div>
                     </form>
@@ -147,6 +147,8 @@
                                     <th>NAMA PENYUPLAI</th>
                                     <th>TANGGAL BELI</th>
                                     <th>UANG PEMBAYARAN</th>
+                                    <th>TOTAL BAYAR</th>
+                                    <th>STATUS</th>
                                     <TH>AKSI</TH>
                 				</tr>
                 			</thead>
@@ -166,7 +168,9 @@
                                    <td><?= $row['nama_penyuplai'];?></td>
                                    <td><?= $row['tanggal_beli'];?></td>
                                    <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-                					<td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                                   <td><?= number_format($row['sub_total']) ?></td>
+                                   <td><?= $row['status'] ?></td>
+                					<td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
                 						<span class="glyphicon glyphicon-trash"></span>Hapus</a>
                 					</td>
                 				</tr>

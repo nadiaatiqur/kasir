@@ -1,3 +1,4 @@
+<?php  ?>
 <?php $tanggal=date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
@@ -217,7 +218,7 @@
                     <h1 align="center">HISTORY ANGSURAN HUTANG</h1>
 
                     <div class="col-md-3">
-                        <form method="POST" action="search-daftarangsuran.php">
+                        <form method="POST">
                         <div class="form-group">
                         <div class = "input-group">
                              <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
@@ -249,7 +250,7 @@
                                 include "koneksi.php";
 
                                 $no=1;
-                                $sql=mysqli_query($link, "SELECT * FROM history_hutang");
+                                $sql=mysqli_query($link, "SELECT * FROM history_hutang WHERE faktur LIKE '%$_POST[kunci]%'");
                                 while ($row=mysqli_fetch_array($sql)) {
                                 ?>
                     				<tr>

@@ -1,3 +1,4 @@
+<?php $tanggal=date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -216,39 +217,104 @@
                     <h1 align="center">HISTORY ANGSURAN PIUTANG</h1>
 
                     <div class="col-md-3">
-                        <label>Mulai Dengan</label>
-                            <input type="date" class="form-control" name="">
-                        <label>Sampai Dengan</label>
-                            <input type="date" class="form-control" name="">
-                        <label>Suplier</label>
-                            <select class="form-control">
-                                <option value="semua">semua</option>
-                            </select><br><br>
+                    <form method="POST" action="search-angsuran2.php">
+                        <div class="form-group">
+                        <div class = "input-group">
+                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                             <span class = "input-group-btn">
+                                <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
+                             </span>
+                        </div>
+                         <p>--Cari Berdasarkan no.faktur--</p>
+                    </form>
                         <div class="container">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr class="primary">
                                         <th>No</th>
                                         <th>Faktur</th>
-                                        <th>Tanggal</th>
-                                        <th>Faktur Hutang</th>
-                                        <th>Kode Pelanggan</th>
+                                        <th>ID Pelanggan</th>
                                         <th>Nama Pelanggan</th>
-                                        <th>Tunai</th>
-                                        <th>Operator</th>
+                                        <th>Tanggal cicil</th>
+                                        <th>Total Bayar</th>
+                                        <th>Uang Pembayaran Awal</th>
+                                        <th>Uang Angsuran</th>
+                                        <th>Yang Harus Dibayar</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php  
+                                include "koneksi.php";
+                                $no=1;
+                                $sql=mysqli_query($link, "SELECT * FROM history_piutang");
+                                while ($row=mysqli_fetch_array($sql)) {
+                                ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>dfa</td>
-                                        <td>ds</td>
-                                        <td>dsf</td>
-                                        <td>sf</td>
-                                        <td>dsfa</td>
-                                        <td>df</td>
-                                        <td>DSGSD</td>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $row['no_transaksi'] ?></td>
+                                        <td><?= $row['id_pelanggan'] ?></td>
+                                        <td><?= $row['nama_pelanggan'] ?></td>
+                                        <td><?= $row['tanggal_cicil'] ?></td>
+                                        <td><?= $row['total_bayar'] ?></td>
+                                        <td><?= $row['uang_pembayaran'] ?></td>
+                                        <td><?= $row['uang_angsuran'] ?></td>
+                                        <td><?= $row['harus_dibayar'] ?></td>
+                                        <td><?= $row['status'] ?></td>
+                                        <td>
+                                            <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $no ?>">Cicil</a>
+                                            <!-- Modal -->
+                                            <div id="modal<?= $no ?>" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                 <!-- konten modal-->
+                                                 <div class="modal-content">
+                                                 <!-- heading modal -->
+                                                 <div class="modal-header">
+                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" align="center">Bayar Ansuran Piutang</h4>
+                                                <input type="text" name="tgl_angsur" value="<?= $tanggal ?>" disabled>
+                                                </div>
+                                                <!-- body modal -->
+
+                                <form method="POST" action="proses-angsur2.php">
+                                                <div class="modal-body">
+                                                    <div class="row"><div class="col-md-6">
+                                                    <input type="hidden" name="status" value="<?= $row['status'] ?>">
+                                                    <input type="hidden" name="tanggal_cicil" value="<?= $tanggal ?>">
+                                                        <div class="form-group">
+                                                        <span>No Faktur </span>
+                                                        <input type="text" class="form-control" name="no_transaksi" value="<?= $row['no_transaksi'] ?>" readonly>
+                                                        <span>ID Pelanggan</span>
+                                                        <input type="text" class="form-control" name="id_pelanggan" value="<?= $row['id_pelanggan'] ?>" readonly>
+                                                        <span>Nama Pelanggan</span>
+                                                        <input type="text" class="form-control" name="nama_pelanggan" value="<?= $row['nama_pelanggan'] ?>" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                        <span>Yang Dibayar</span>
+                                                        <input type="text" class="form-control" name="pembayaran_awal" value="<?= $row['uang_pembayaran'] ?>" readonly>
+                                                        <span>Total Bayar</span>
+                                                        <input type="text" class="form-control" name="total_bayar" value="<?= $row['total_bayar'] ?>" readonly>
+                                                        <span>Uang Angsuran</span>
+                                                        <input type="text" class="form-control" name="uang_angsuran" placeholder="Rp.">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <!-- footer modal -->
+                                                <div class="modal-footer">
+                                                <input type="submit" class="btn btn-info" name="simpan2" value="Simpan Transaksi">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup Modal</button>
+                                </form>         
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>

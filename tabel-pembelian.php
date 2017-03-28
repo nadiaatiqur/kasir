@@ -300,8 +300,8 @@
                             ?>
                             <tfoot>
                             <tr>
-                            <td colspan='7'><b>TOTAL</td>
-                            <td colspan='2'>Rp.<?php echo number_format($q['SUM(total)'],0,',','.'); ?><input type="hidden" name="subtotal" value="<?php echo number_format($q['SUM(total)'],0,',','.'); ?>"></td>      
+                                <td colspan='7'><b>TOTAL</td>
+                                <td colspan='2'>Rp.<?php echo number_format($q['SUM(total)'],0,',','.'); ?><input type="hidden" name="subtotal" value="<?php echo $q['SUM(total)']; ?>"></td>      
                             </tr>
                             </tfoot>
                                     <?php } ?>
@@ -323,6 +323,16 @@
                                  <div class="form-group">
                                     <label for="user">Tanggal Beli :</label>
                                     <input type='text' name='tglbeli' class="form-control" value='<?php echo $tanggal= date("Y-m-d");?>' required>
+                                 </div>
+                                 <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input type="radio" name="status" value="LUNAS" checked>
+                                        <span>LUNAS</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="radio" name="status" value="HUTANG">
+                                        <span>HUTANG</span>
+                                    </div>
                                  </div>
                                  <div class="form-group">
                                     <input type='text' name='pembayaran' id='pembayaran' class="form-control" placeholder='Uang yang dibayarkan ...' required>
