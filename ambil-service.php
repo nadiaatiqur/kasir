@@ -164,28 +164,18 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Bayar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-money fa-lg"></i> <span>Kas</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
 

@@ -130,9 +130,88 @@
                             </ul>
                         </div>
                     </nav>
+                    </header>
+                    
+<div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
 
                     
-<h1 align="center">PELANGGAN</h1>
+                        <h1 align="center">PELANGGAN</h1>
 
     <div class="content">
             <div class="container-fluid">
@@ -193,10 +272,27 @@
                         <?php } ?>
                     </form>
                 </table>
-                <a href="tampilan.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
-
     </div>
 </div>
+
+
+                    </div>
+                </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 

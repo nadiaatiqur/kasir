@@ -43,18 +43,178 @@
 
           </style>
 </head>
-<body>
+<body class="skin-black">
 
 
 
-        <div class="content">
+       <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                Toko Laris
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-left">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                       <li class="dropdown users-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="barang.php">
+                                        <h5>Barang</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="suplier.php">
+                                        <h5>Suplier</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pelanggan.php">
+                                        <h5>Pelanggan</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="backoffice.php">
+                                        <h5>Backoffice</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li><!-- end user -->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user fa-lg"></i>
+                                <span>User <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Account</li>
+
+                                <li class="divider"></li>
+
+                                    <li>
+                                        <a href="user.php">
+                                        <i class="fa fa-user fa-fw pull-right"></i>
+                                            Profile
+                                        </a>
+                                        <a data-toggle="modal" href="#modal-user-settings">
+                                        <i class="fa fa-cog fa-fw pull-right"></i>
+                                            Settings
+                                        </a>
+                                        </li>
+
+                                        <li class="divider"></li>
+
+                                        <li>
+                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="laporan.php">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                     <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <a href="user.php" class="btn btn-info"><h4 class="title" class="active">Input User Profile</h4></a>
-                                <a href="daftar-user.php" class="btn btn-info"><h4 class="title">Daftar User Profile</h4></a>
+                                <a href="daftar-user.php" class="btn btn-info"><span class="glyphicon glyphicon-user"> DaftarUser</span></h4></a>
                             </div>
 
                             <div class="container">
@@ -62,11 +222,7 @@
                             <hr>
                           <div class="row">
                               <!-- left column -->
-                              <div class="col-md-3">
-                                <div class="text-center">
-                                  <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                                </div>
-                              </div>
+                              
                               
                               <!-- edit form column -->
                               <div class="col-md-9 personal-info">
@@ -76,7 +232,7 @@
                                   Isi kolom yang ada di bawah 
                                 </div>
                                 <h3>Personal info</h3>
-                                <table class="tabel table-bordered">
+                                <table class="tabel table-bordered col-md-8">
                                 <form class="form-horizontal" role="form">
                                 <tr>
                                 <th>
@@ -109,7 +265,7 @@
                                     </th>
                                     <th>
                                     <div class="col-lg-15">
-                                      <input class="form-control" type="text">
+                                      <textarea class="form-control" type="text"></textarea>
                                     </div>
                                   </div>
                                   </th>
@@ -143,25 +299,11 @@
                                     </th>
                                     </tr>
                                     <tr>
-                                    <div class="row">
-                                    <th>
-                                    <label class="col-md-3 control-label">Uploud Photo</label>
-                                    </th>
-                                    <th>
-                                    <input type="file">
-                                    </div>
-                                    </th>
-                                    </tr>
-                                    <tr>
                                     <td>
-                                  <div class="form-group">
-                                    <div class="col-md-8">
-                                      <button type="submit" name="input" class="btn btn-info">Daftarkan</button>
-                                    </div>
-                                  </div>
+                                    <button type="reset" class="btn btn-default">Cancel</button>
                                   </td>
                                   <td>
-                                    <input type="reset" class="btn btn-default btn-block" value="Cancel">
+                                   <button type="submit" name="input" class="btn btn-info">Daftarkan</button>
                                   </td>
                                   </tr>
                                 </form>
@@ -169,14 +311,6 @@
                           </div>
                           </table>
                         </div>
-                            
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
-                            </div>
                         </div>
                     </div>
 
@@ -184,6 +318,18 @@
             </div>
         </div>
 
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+                <div class="footer-main">
+                    Copyright &copy Director, 2014
+                </div>
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

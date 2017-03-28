@@ -90,75 +90,7 @@
                                 </li>
                             </ul>
                         </li><!-- end user -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks fa-lg"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-success" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-info" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-warning" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
+    
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -170,12 +102,6 @@
 
 
                                 <li class="divider"></li>
-
-                                <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
 
                                     <li>
                                         <a href="user.php">
@@ -200,7 +126,85 @@
                     </nav>
 
                     
-<h1 align="center">SUPLIER</h1>
+                    <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <h1 align="center">SUPLIER</h1>
 
     <div class="content">
             <div class="container-fluid">
@@ -250,17 +254,37 @@
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['rekening']; ?></td>
                             <td>
-                                <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">UPDATE</a>
-                                <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger">HAPUS</a>
+                                <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
                         </tr>
                         <?php } ?>
                     </form>
                 </table>
-                <a href="tampilan.html" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
 
     </div>
 </div>
+
+
+
+                                                </div>
+                                        </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 

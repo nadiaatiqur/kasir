@@ -1,7 +1,7 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -42,13 +42,9 @@
           <style type="text/css">
 
           </style>
-
 </head>
-<body>
-
-<div class="skin-black">
-   <!-- header logo: style can be found in header.less -->
-         <!-- header logo: style can be found in header.less -->
+<body class="skin-black">
+        <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 Toko Laris
@@ -87,29 +83,22 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="backoffice.php">
                                         <h5>Backoffice</h5>
                                     </a>
                                 </li>
                             </ul>
                         </li><!-- end user -->
-                        
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user"></i>
+                                <i class="fa fa-user fa-lg"></i>
                                 <span>User <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Account</li>
 
                                 <li class="divider"></li>
-
-                                    <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
 
                                     <li>
                                         <a href="user.php">
@@ -125,7 +114,7 @@
                                         <li class="divider"></li>
 
                                         <li>
-                                            <a href="#"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -133,8 +122,90 @@
                         </div>
                     </nav>
                 </header>
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
 
-        <div class="content">
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="laporan.php">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <div class="content">
             <div class="container-fluid">
                 <center><h4>Update User</h4></center>
                 <div class="row">
@@ -205,6 +276,19 @@
                             </div>
                         </div>
                     </form>
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+                <div class="footer-main">
+                    Copyright &copy Director, 2014
+                </div>
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
+
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

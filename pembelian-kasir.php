@@ -123,9 +123,87 @@
                     </nav>
                 </header>
 
-                <div class="container">
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <div class="container">
                 <h1 align="center">PEMBELIAN BARANG KASIR</h1>
-                	<div class="row">
+                    <div class="row">
                         <div class="col-md-2">
                         <div class="form-group">
                             <a href="tabel-pembelian.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i>Tambah</a>
@@ -145,22 +223,22 @@
                         <div class="col-md-4">
                             
                         </div>
-                	</div><br><br>
-                	<table class="table table-striped table-bordered">
-						  	<thead>
-						  		<tr class="warning">
+                    </div><br><br>
+                    <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr class="warning">
                                     <th>#</th>
-						  			<th>ID BELI</th>
-						          	<th>NO FAKTUR</th>
-						          	<th>ID BARANG</th>
+                                    <th>ID BELI</th>
+                                    <th>NO FAKTUR</th>
+                                    <th>ID BARANG</th>
                                     <th>NAMA BARANG</th>
-						          	<th>TANGGAL BELI</th>
+                                    <th>TANGGAL BELI</th>
                                     <TH>HARGA BELI</TH>
                                     <TH>JUMLAH BELI</TH>
-						          	<th>TOTAL</th>
+                                    <th>TOTAL</th>
                                     <TH>AKSI</TH>
-						  		</tr>
-						  	</thead>
+                                </tr>
+                            </thead>
                             <?php  
                             include "koneksi.php";
 
@@ -168,7 +246,7 @@
                             $result=mysqli_query($link, "SELECT * FROM transaksi_beli_detail");
                             while ($row=mysqli_fetch_array($result)) {
                                 ?>
-						  	<tbody>
+                            <tbody>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                    <td><?= $row['id_beli'];?></td>
@@ -181,12 +259,31 @@
                                    <td><?= $row['total'];?></td>
                                    <td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>HAPUS</a></td>
                                 </tr>
-						  	</tbody>
+                            </tbody>
                             <?php } ?>
-						  </table><br><br><br>
-                          <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
+                          </table>
                 </div>
 
+
+
+
+                                                </div>
+                                        </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 <!-- jQuery 2.0.2 -->

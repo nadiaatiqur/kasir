@@ -102,12 +102,6 @@
                                 <li class="divider"></li>
 
                                     <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
-
-                                    <li>
                                         <a href="user.php">
                                         <i class="fa fa-user fa-fw pull-right"></i>
                                             Profile
@@ -130,77 +124,175 @@
                     </nav>
                 </header>
 
-                <div class="container">
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <div class="container">
                 <h1 align="center">Import Data Supliyer</h1>
-                		<section class="content">
-                		<a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
-                		</section>
-                		<form class="form-inline" method="POST" action="">
+                    <section class="content">
+                    <a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
+                    </section>
+                    <form class="form-inline" method="POST" action="">
                             <div class="col-md-4">
                                 <input type="file" name="file" class="form-control" id="file" size="150">
                                 <p class="help-block">Hanya File Excel yang di Import.</p>
                             </div>
                             <input type="submit" class="btn btn-info" name="" value="Upload">
                         </form><br><br>
-                		<table class="table table-bordered">
-                		<thead>
-                			<tr class="danger">
-                				<th>Kode</th>
+                    <table class="table table-bordered">
+                    <thead>
+                      <tr class="danger">
+                        <th>Kode</th>
                                 <th>Nama Barang</th>
-                				<th>Supliyer</th>
-                				<th>Alamat</th>
-                				<th>Telepon</th>
-                				<th>Kontak</th>
-                				<th>Email</th>
+                        <th>Supliyer</th>
+                        <th>Alamat</th>
+                        <th>Telepon</th>
+                        <th>Kontak</th>
+                        <th>Email</th>
                                 <th>Keterangan</th>
-                			</tr>
-                		</thead>
-                		<tbody>
-                			<tr>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
-                				<td>&nbsp</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
                                 <td>&nbsp</td>
-                			</tr>
-                		</tbody>
-                		</table>
-                		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
+                      </tr>
+                    </tbody>
+                    </table>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
 
-							  <!-- Modal -->
-							 <div class="modal fade" id="myModal" role="dialog">
-							 <div class="modal-dialog">
-							 <!-- Modal content-->
-							  <div class="modal-content">
-							  <div class="modal-header">
-							  <button type="button" class="close" data-dismiss="modal">&times;</button><br>
-							  </div>
-							  <div class="modal-body">
+                <!-- Modal -->
+               <div class="modal fade" id="myModal" role="dialog">
+               <div class="modal-dialog">
+               <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                </div>
+                <div class="modal-body">
 
-							   <p> <img src="download.png">
-							   Apakah anda yakin untuk melakukan proses import data ?</p>
-							   </div>
-							    <div class="modal-footer">
-							    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-							    <button type="button" class="btn btn-info" data-dismiss="#">Yes</button>
-							    </div> 
-							    </div>
-							   </div>
-							   </div>
-							   <div class="col-md-8">
-                		<p>
-                			<h4>Proses Import Data Excel</h4>
-                			<h4>1. Buat dan simpanlah template file excel untuk di copy paste data anda</h4>
-                			<h4>2. Buka file excel anda yang sudah ada data yang akan di import</h4>
-                			<h4>3. Pilih sheet yang berisi data anda</h4>
-                			<h4>4. Pastikan semua data berada pada filed atau urutan yang benar</h4>
-                			<h4>5. Klik proses untuk mulai import anda</h4>
-                		</p>
-                		</div>
-                				<a href="backoffice.php" type="button" class="btn btn-primary btn-lg">Keluar</a>
+                 <p> <img src="download.png">
+                 Apakah anda yakin untuk melakukan proses import data ?</p>
+                 </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                  <button type="button" class="btn btn-info" data-dismiss="#">Yes</button>
+                  </div> 
+                  </div>
+                 </div>
+                 </div>
+                 <div class="col-md-8">
+                    <p>
+                      <h4>Proses Import Data Excel</h4>
+                      <h4>1. Buat dan simpanlah template file excel untuk di copy paste data anda</h4>
+                      <h4>2. Buka file excel anda yang sudah ada data yang akan di import</h4>
+                      <h4>3. Pilih sheet yang berisi data anda</h4>
+                      <h4>4. Pastikan semua data berada pada filed atau urutan yang benar</h4>
+                      <h4>5. Klik proses untuk mulai import anda</h4>
+                    </p>
+                    </div>
+
+
+
+                                                </div>
+                                        </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
+                				
                 				
 
         <!-- jQuery 2.0.2 -->

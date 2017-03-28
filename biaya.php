@@ -195,12 +195,6 @@
                                         <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="laporan.php">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
-                                    </a>
-                                </li>
-
                             </ul>
                         </section>
                         <!-- /.sidebar -->

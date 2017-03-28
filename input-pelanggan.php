@@ -44,70 +44,260 @@
           </style>
 
 </head>
-<body>
+<body class="skin-black">
 
+    <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                Toko Laris
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-left">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                       <li class="dropdown users-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-users fa-lg"></i>
+                                <span>MASTER<i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="barang.php">
+                                        <h5>Barang</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="suplier.php">
+                                        <h5>Suplier</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pelanggan.php">
+                                        <h5>Pelanggan</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="backoffice.php">
+                                        <h5>Backoffice</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li><!-- end user -->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user fa-lg"></i>
+                                <span>User <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Account</li>
 
-        <div class="content">
-            <div class="container-fluid">
-            <center><h1 for="user">Input Pelanggan</h1></center>
-                <div class="row">
-                    <div class="col-md-3">
-                    </div>
-                    <div class="col-md-6">
-                        
-                        <div class="row">
-                            <form method="POST" action="proses-inputpelanggan.php">
-                            <div class="col-md-12">
+                                <li class="divider"></li>
+
+                                    <li>
+                                        <a href="user.php">
+                                        <i class="fa fa-user fa-fw pull-right"></i>
+                                            Profile
+                                        </a>
+                                        <a data-toggle="modal" href="#modal-user-settings">
+                                        <i class="fa fa-cog fa-fw pull-right"></i>
+                                            Settings
+                                        </a>
+                                        </li>
+
+                                        <li class="divider"></li>
+
+                                        <li>
+                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p>Hello, Jane</p>
+
+                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                </div>
+                            </div>
+                            <!-- search form -->
+                            <form action="#" method="get" class="sidebar-form">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu">
+                                <li class="active">
+                                    <a href="tampilan.html">
+                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pembelian.php">
+                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="penjualan.php">
+                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="service.php">
+                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="hutang.php">
+                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="piutang.php">
+                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="biaya.php">
+                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <aside class="right-side">
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row" style="margin-bottom:5px;">
+
+                    <h1 align="center">Input Pelanggan</h1>
+
+                    <div class="container-fluid">
+                    <form method="POST" action="proses-inputpelanggan.php">
+                    <table class="table">
+                        <tr>
+                            <td>
+                            <div class="col-md-4">
                                 <div class="form-group">
                                 <label for="user">Nama</label>
                                 <input type="text" class="form-control" name="nama" placeholder="Nama">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Username</label>
                                     <input type="text" class="form-control" name="username" placeholder="Username">
                                 </div>  
                             </div>
-                            <div class="col-md-6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                             </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Telepon</label>
                                     <input type="text" class="form-control" name="telpon" placeholder="Telepon">
                                 </div>  
                             </div>
-                            <div class="col-md-6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Alamat</label>
                                     <input type="text" class="form-control" name="alamat" placeholder="Alamat">
                                 </div>
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                            </div> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="user">Status</label>
                                     <select class="form-control" name="level">
                                         <option>Pelanggan</option>
                                     </select>
                                 </div>
-                            </div>    
-                        </div><br>
-                        <div>
-                            <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
-                           <a href="pelanggan.php" class="btn btn-default btn-lg">Keluar</a>
-                        </div>
-                        </form>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="submit" name="input" class="btn btn-info btn-lg">Simpan</button>
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
                     </div>
 
+
+                    </div>
+                </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
+        
 <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
