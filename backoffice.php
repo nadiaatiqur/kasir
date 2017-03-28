@@ -208,7 +208,7 @@
                                             </div>
                                             <!-- body modal -->
                                             <div class="modal-body">
-                                                <p>Cetak data versi Excel <a href="table-suplaiyer.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                                <p>Cetak data versi Excel <a href="table-suplaiyer.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="laporan-suplaiyer.php" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
                                             </div>
                                             <!-- footer modal -->
                                             <div class="modal-footer">
@@ -258,7 +258,7 @@
                                             </div>
                                             <!-- body modal -->
                                             <div class="modal-body">
-                                                <p>Cetak data versi Excel <a href="table-pelanggan.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="#" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
+                                                <p>Cetak data versi Excel <a href="table-pelanggan.php" type="button" class="btn btn-primary btn-block">KLIK DISINI</a> <br>Cetak data versi PDF  <a href="laporan-pelanggan.php" type="button" class="btn btn-danger btn-block">KLIK DISINI</a></p>
                                             </div>
                                             <!-- footer modal -->
                                             <div class="modal-footer">
