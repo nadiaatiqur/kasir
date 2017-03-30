@@ -247,6 +247,7 @@
                                    <td><?= $row['tanggal_beli'];?></td>
                                    <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                    <td><?= number_format($row['sub_total']) ?></td>
                                    <td><?= $row['status'] ?></td>
                 					<td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
@@ -255,11 +256,16 @@
                 				</tr>
                 			</tbody>
 =======
+=======
+>>>>>>> Stashed changes
                           <td><a href="proses-deletepembeliankasir.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-trash"></span>Hapus</a>
                           </td>
                         </tr>
                       </tbody>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                             <?php } ?>
                     </table>

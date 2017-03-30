@@ -215,6 +215,7 @@
                      </form>
                     </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         <a href="tabel-penjualan.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
                 		<table class="table">
                 			<thead>
@@ -261,6 +262,8 @@
                         <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
                 	</div>
 =======
+=======
+>>>>>>> Stashed changes
                         <a href="#" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
                     <table class="table">
                       <thead>
@@ -309,6 +312,9 @@
                         </select>
                         </div>
                   </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 </div>
 

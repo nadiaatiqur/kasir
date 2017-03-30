@@ -217,15 +217,21 @@
                     </div>
                         <a href="tabel-pembelian.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 		<table class="table">
                             <thead>
                                 <tr class="warning">
                                      <th>#</th>
 =======
+=======
+>>>>>>> Stashed changes
                     <table class="table">
                       <thead>
                         <tr class="warning">
                            <th>#</th>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                                     <th>ID BELI</th>
                                     <th>NO FAKTUR</th>
@@ -237,8 +243,13 @@
                                     <th>STATUS</th>
                                     <TH>AKSI</TH>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                 </tr>
                             </thead>
+=======
+                        </tr>
+                      </thead>
+>>>>>>> Stashed changes
 =======
                         </tr>
                       </thead>
@@ -251,8 +262,13 @@
                             while ($row=mysqli_fetch_array($result)) {
                                 ?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                             <tbody>
                                 <tr>
+=======
+                      <tbody>
+                        <tr>
+>>>>>>> Stashed changes
 =======
                       <tbody>
                         <tr>
@@ -265,6 +281,7 @@
                                    <td><?= $row['tanggal_beli'];?></td>
                                    <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                    <td><?= number_format($row['sub_total']) ?></td>
                                    <td><?= $row['status'] ?></td>
                                     <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
@@ -274,6 +291,15 @@
                             </tbody>
                             <?php } ?>
                         </table><br>
+=======
+                          <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                            <?php } ?>
+                    </table><br>
+>>>>>>> Stashed changes
 =======
                           <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-trash"></span>Hapus</a>
