@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -196,6 +196,11 @@
                                         <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="laporan.php">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
 
                             </ul>
                         </section>
@@ -212,7 +217,7 @@
                     <h1 align="center">HISTORY ANGSURAN HUTANG</h1>
 
                     <div class="col-md-3">
-                        <form method="POST" action="search-daftarangsuran.php">
+                        <form method="POST">
                         <div class="form-group">
                         <div class = "input-group">
                              <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
@@ -221,12 +226,22 @@
                              </span>
                         </div>
                          <p>--Cari Berdasarkan no.faktur--</p>
-                       </form>
-                    	<div class="container">
-                    		<table class="table table-bordered">
-                    			<thead>
-                    				<tr class="primary">
-                    					<th>No</th>
+                        <?php 
+                        if (isset($_POST['submit'])) {
+                            include "koneksi.php";
+                            $no=1;
+                            $akbp=mysqli_query($link, "SELECT * FROM history_hutang WHERE faktur='$_POST[kunci]'");
+                            $result= mysqli_fetch_array($akbp); 
+                            $faktur1=$result['faktur'];
+                        }?>
+                        <?php
+                        if (empty($result)) {
+                        ?>
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="primary">
+                                        <th>No</th>
                                         <th>ID Hutang</th>
                                         <th>No Faktur</th>
                                         <th>ID Penyuplai</th>
@@ -237,18 +252,40 @@
                                         <th>Yang Harus Dibayar</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
-                    				</tr>
-                    			</thead>
-                    			<tbody>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <?php } else {
+                        ?>
+                       </form>
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="primary">
+                                        <th>No</th>
+                                        <th>ID Hutang</th>
+                                        <th>No Faktur</th>
+                                        <th>ID Penyuplai</th>
+                                        <th>Nama Penyuplai</th>
+                                        <th>Pembayaran Awal</th>
+                                        <th>Total Bayar</th>
+                                        <th>Uang Angsuran</th>
+                                        <th>Yang Harus Dibayar</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 <?php  
                                 include "koneksi.php";
 
                                 $no=1;
-                                $sql=mysqli_query($link, "SELECT * FROM history_hutang");
+                                $sql=mysqli_query($link, "SELECT * FROM history_hutang WHERE faktur='$_POST[kunci]' ");
                                 while ($row=mysqli_fetch_array($sql)) {
                                 ?>
-                    				<tr>
-                    					<td><?= $no++ ?></td>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
                                         <td><?= $row['id_hutang'] ?></td>
                                         <td><?= $row['faktur'] ?></td>
                                         <td><?= $row['id_penyuplai'] ?></td>
@@ -308,12 +345,22 @@
                                                 </div>
                                             </div>
                                         </td>
-                    				</tr>
+                                    </tr>
                                 <?php } ?>
-                    			</tbody>
-                    		</table>
-                    	</div>
-                    	<a href="#" class="btn btn-primary">Cetak</a>
+                                </tbody>
+                                <?php
+                                include "koneksi.php";
+                                $qtmp=mysqli_query($link, "SELECT SUM(uang_angsuran) FROM history_hutang WHERE faktur='$_POST[kunci]' GROUP BY faktur "); 
+                                $res=mysqli_fetch_array($qtmp);
+                                ?>
+                                <tfoot>
+                                    <td colspan="7">Total Keseluruhan Uang Angsuran</td>
+                                    <td colspan="5" align="center">Rp.<?= number_format($res['SUM(uang_angsuran)']) ?></td>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <a href="rekam-jejak-cicilhutang.php?id=<?= $faktur1 ?>" class="btn btn-primary">Cetak</a>
+                        <?php } ?>
                         <a href="hutang.php" class="btn btn-default">Kembali</a>
                     </div>
                         
@@ -358,16 +405,16 @@
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
-	    <!--  WOW ANIMATION SCRIPTS -->
-	    <script src="js/wow.min.js"></script>
-	    <!-- EASY PIE CHART SCRIPTS -->
-	    <script src="js/jquery.easypiechart.min.js"></script>
-	    <!-- PRETTY PHOTO SCRIPTS -->
-	    <script src="js/jquery.prettyPhoto.js"></script>
-	    <!--  STYLE SWITCHER SCRIPTS -->
-	    <script src="js/styleSwitcher.js"></script>
-	    <!--  CUSTOM SCRIPTS -->
-	    <script src="js/custom.js"></script>
+        <!--  WOW ANIMATION SCRIPTS -->
+        <script src="js/wow.min.js"></script>
+        <!-- EASY PIE CHART SCRIPTS -->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!-- PRETTY PHOTO SCRIPTS -->
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <!--  STYLE SWITCHER SCRIPTS -->
+        <script src="js/styleSwitcher.js"></script>
+        <!--  CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">
