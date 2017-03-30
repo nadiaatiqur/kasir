@@ -103,85 +103,7 @@
     }
     </style>
 </head>
-<body class="skin-black">
-       <!-- header logo: style can be found in header.less -->
-        <header class="header">
-            <a href="index.html" class="logo">
-                Toko Laris
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-left">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                       <li class="dropdown users-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
-                                <span>MASTER<i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="barang.php">
-                                        <h5>Barang</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="suplier.php">
-                                        <h5>Suplier</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pelanggan.php">
-                                        <h5>Pelanggan</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="backoffice.php">
-                                        <h5>Backoffice</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li><!-- end user -->
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user fa-lg"></i>
-                                <span>User <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Account</li>
-
-                                <li class="divider"></li>
-
-                                    <li>
-                                        <a href="user.php">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
-
-                                        <li class="divider"></li>
-
-                                        <li>
-                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
+<body>
 
                     
 
@@ -221,7 +143,7 @@
                                 <form method="POST" action="jual-barang.php">
                                     <div class="form-group">
                                         <label>ID BARANG</label> :<?php echo $result['id_barang'];?><input type="hidden" class="form-control" name='id_barang' value="<?php echo $result['id_barang'];?>">
-                                    </div>  
+                                    </div>   
                                     <div class="form-group">
                                         <label>NAMA BARANG</label> :<?php echo $result['nama_barang'];?><input type="hidden" class="form-control" name="nama_barang" value="<?php echo $result['nama_barang'];?>">
                                     </div>  
@@ -329,11 +251,12 @@
                                         </div>
                                         <div class='col-md-6'>
                                             <input type='radio' name='status' value='PIUTANG' id="status">
-                                            <span>PIUTANG</span>
+                                            <span>PIUTANG</span> <br><br>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="form-control btn btn-info" name="simpan" value="Simpan Transaksi">
+                                    <div>
+                                        <input type="submit" class="btn btn-info" name="simpan" value="Simpan Transaksi">
+                                        <a href="petugas.php" class="btn btn-default">Keluar</a>
                                     </div>
                                 </form>
                                 </div>
