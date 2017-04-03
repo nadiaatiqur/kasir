@@ -9,7 +9,7 @@ if ($sql) {
 	$data=mysqli_fetch_array($sql);
 	$_SESSION['user']=$data['username'];
 	$_SESSION['password']=$data['password'];
-	header("location:tampilan.html");
+	header("location:master/tampilan.php");
 }else{
 	echo "Gagal".mysqli_error($link);
 
