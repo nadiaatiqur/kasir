@@ -54,7 +54,7 @@
 <body class="skin-black">
  <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="tampilan.php" class="logo">
                 Toko Laris
             </a>
             <!-- Header Navbar: style can be found in header.less -->
