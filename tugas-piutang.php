@@ -1,3 +1,4 @@
+<?php $tanggal=date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +83,7 @@
                                 </thead>
                                 <tbody>
                                 <?php  
-                                include "koneksi.php";
+                                 include "master/koneksi.php";
 
                                 $no=1;
                                 $sql=mysqli_query($link, "SELECT * FROM penjualan WHERE status='PIUTANG' ");
@@ -154,6 +155,7 @@
                             </table>
                         </div>
                         <a href="daftar-angsuran2.php" class="btn btn-warning">Daftar Angsuran</a>
+                        <a href="petugas.php" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i>back</a>
                     </div>
 
 

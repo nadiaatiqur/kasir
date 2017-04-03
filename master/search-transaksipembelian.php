@@ -45,155 +45,12 @@
           </style>
 </head>
 <body class="skin-black">
-<!-- header logo: style can be found in header.less -->
-        <header class="header">
-            <a href="index.html" class="logo">
-                Toko Laris
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-left">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                       <li class="dropdown users-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
-                                <span>MASTER<i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="barang.php">
-                                        <h5>Barang</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="suplier.php">
-                                        <h5>Suplier</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pelanggan.php">
-                                        <h5>Pelanggan</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="backoffice.php">
-                                        <h5>Backoffice</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li><!-- end user -->
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user fa-lg"></i>
-                                <span>User <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Account</li>
-
-                                <li class="divider"></li>
-
-                                    <li>
-                                        <a href="user.php">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
-
-                                        <li class="divider"></li>
-
-                                        <li>
-                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
-                                </div>
-                                <div class="pull-left info">
-                                    <p>Hello, Jane</p>
-
-                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                                </div>
-                            </div>
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="tampilan.html">
-                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pembelian.php">
-                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="penjualan.php">
-                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="service.php">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="hutang.php">
-                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="piutang.php">
-                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="biaya.php">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
+<?php include 'nav-bar.php'; ?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include 'side-bar.php'; ?>
+    </aside>
 
                     <aside class="right-side">
 
@@ -216,122 +73,50 @@
                     </form>
                     </div>
                         <a href="tabel-pembelian.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 		<table class="table">
                             <thead>
                                 <tr class="warning">
-                                     <th>#</th>
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     <table class="table">
                       <thead>
                         <tr class="warning">
                            <th>#</th>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-                                    <th>ID BELI</th>
-                                    <th>NO FAKTUR</th>
-                                    <th>ID PENYUPLAI</th>
-                                    <th>NAMA PENYUPLAI</th>
-                                    <th>TANGGAL BELI</th>
-                                    <th>UANG PEMBAYARAN</th>
-                                    <th>TOTAL BAYAR</th>
-                                    <th>STATUS</th>
-                                    <TH>AKSI</TH>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                </tr>
-                            </thead>
-=======
+                           <th>ID BELI</th>
+                           <th>NO FAKTUR</th>
+                           <th>ID PENYUPLAI</th>
+                           <th>NAMA PENYUPLAI</th>
+                           <th>TANGGAL BELI</th>
+                           <th>UANG PEMBAYARAN</th>
+                           <th>TOTAL BAYAR</th>
+                           <th>STATUS</th>
+                           <TH>AKSI</TH>
                         </tr>
-                      </thead>
->>>>>>> Stashed changes
-=======
-                        </tr>
-                      </thead>
->>>>>>> Stashed changes
-=======
-                        </tr>
-                      </thead>
->>>>>>> Stashed changes
-                            <?php  
-                            include "koneksi.php";
+                    </thead>   
+                    <?php  
+                    include "koneksi.php";
 
-                            $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM pembelian");
-                            while ($row=mysqli_fetch_array($result)) {
-                                ?>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                            <tbody>
-                                <tr>
-=======
-                      <tbody>
+                    $no=1;
+                    $result=mysqli_query($link, "SELECT * FROM pembelian");
+                    while ($row=mysqli_fetch_array($result)) {
+                    ?>
+                    <tbody>
                         <tr>
->>>>>>> Stashed changes
-=======
-                      <tbody>
-                        <tr>
->>>>>>> Stashed changes
-=======
-                      <tbody>
-                        <tr>
->>>>>>> Stashed changes
-                                    <td><?= $no++; ?></td>
-                                   <td><?= $row['id_beli'];?></td>
-                                   <td><?= $row['faktur'];?></td>
-                                   <td><?= $row['id_penyuplai'];?></td>
-                                   <td><?= $row['nama_penyuplai'];?></td>
-                                   <td><?= $row['tanggal_beli'];?></td>
-                                   <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                   <td><?= number_format($row['sub_total']) ?></td>
-                                   <td><?= $row['status'] ?></td>
-                                    <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <?php } ?>
-                        </table><br>
-=======
-=======
->>>>>>> Stashed changes
-                          <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                          </td>
+                            <td><?= $no++; ?></td>
+                            <td><?= $row['id_beli'];?></td>
+                            <td><?= $row['faktur'];?></td>
+                            <td><?= $row['id_penyuplai'];?></td>
+                            <td><?= $row['nama_penyuplai'];?></td>
+                            <td><?= $row['tanggal_beli'];?></td>
+                            <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
+                            <td><?= number_format($row['sub_total'],0,',','.') ?></td>
+                            <td><?= $row['status'] ?></td>
+                            <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
                         </tr>
-                      </tbody>
-                            <?php } ?>
+                    </tbody>
+                    <?php } ?>
                     </table><br>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-                          <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                            <?php } ?>
-                    </table><br>
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-                        <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
+                    <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
                   </div>
                 </div>
 

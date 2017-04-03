@@ -10,7 +10,7 @@ if (isset($_POST['input'])) {
 	$rekening=$_POST['rekening'];
 
 	$sql=mysqli_query($link, "INSERT INTO penyuplai(id_penyuplai, nama_penyuplai, alamat, telpon, kontak, email, rekening) VALUES (null, '$suplier', '$alamat', '$telpon', '$kontak', '$email', '$rekening' )");
-	if ($sql) {
+	if (!empty($sql)) {
 		header("location: suplier.php");
 	}else {
 		echo "Error :".mysqli_error($link);

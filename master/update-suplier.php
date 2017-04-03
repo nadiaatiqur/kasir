@@ -44,14 +44,21 @@
           </style>
 
 </head>
-<body>
+<body class="skin-black">
+<?php include 'nav-bar.php'; ?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include "side-bar.php"; ?>
+     </aside>
 
+<aside class="right-side">
 
         <div class="content">
             <div class="container-fluid">
             <h1 for="user" align="center">UPDATE SUPLIER</h1><br><br>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
                     <form method="POST" action="proses-updatesuplier.php">
@@ -107,7 +114,7 @@
                             </div>
                         </div><br>
                         <div>
-                            <input type="submit" name="update" class="btn btn-info btn-lg" value="UPDATE">
+                            <button type="submit" name="update" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
                             <a href="suplier.php" class="btn btn-default btn-lg">Keluar</a>
                         </div>
                     </form>

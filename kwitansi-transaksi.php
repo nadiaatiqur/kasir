@@ -103,7 +103,7 @@
     </style>
 </head>
 <body class="skin-black">
-<?php include 'nav-bar.php'; ?>
+
                 <div class="content">
                 	<div class="container">
                 	<h1><center>Kwitansi Penjualan</center></h1>
@@ -114,7 +114,7 @@
                 		<div class="row">
                 		<input type="hidden" name="id" value="<?= $_GET['id']?>">
                 		<?php  
-                		include "koneksi.php";
+                		include "master/koneksi.php";
 
                 		$id=$_GET['id'];
                 		$res=mysqli_query($link, "SELECT * FROM penjualan WHERE no_transaksi='$id' ");
@@ -185,7 +185,7 @@
 	                			</thead>
                                 <tbody>
                 				<?php  
-                				include "koneksi.php";
+                				include "master/koneksi.php";
 
                 				$id=$_GET['id'];
                 				$no=1;
@@ -214,8 +214,7 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <a href="penjualan.php" class="btn btn-danger"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
-                        <a href="tabel-penjualan.php" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>Transaksi Baru</a>
+                        <a href="tabel-petugas.php" class="btn btn-danger"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
                         <a href="cetakan-penjualan.php?id_transaksi=<?php echo $id ;?>" onclick="return confirm ('Cetak <?php echo $id;?> ?');"title="Cetak" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Cetak</a>
                     </div>
                 </div>

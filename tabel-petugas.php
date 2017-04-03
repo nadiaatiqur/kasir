@@ -112,7 +112,7 @@
                     <div class="container">
                     <h1 align="center">Data Penjualan</h1>
                         <div align="left" class='w3-container w3-small w3-pale-green w3-leftbar w3-border-green'>
-                        <a href="penjualan.php" class="btn btn-danger"><i class="glyphicon glyphicon-share-alt"></i>back</a>
+                        <a href="petugas.php" class="btn btn-danger"><i class="glyphicon glyphicon-share-alt"></i>back</a>
                             <h4 style='margin-bottom:0;padding-bottom:0;'>Form Transaksi Penjualan</h4>
                             <p style='margin-top:0;padding-top:0;'><i>Input Data Penjualan Barang</i></p>
                         </div>
@@ -129,7 +129,8 @@
                                         <!--ini untuk scrip cari-->
                                 <?php 
                                 if (isset($_POST['submit'])) {
-                                include "koneksi.php";
+                                include "master/koneksi.php";
+
                                 $id_barang=$_POST['id_barang'];
                                 $result= mysqli_fetch_array(mysqli_query($link, "SELECT * FROM barang WHERE id_barang='$id_barang'")); 
                                 }?>
@@ -184,7 +185,7 @@
                                     </thead>
                                     <tbody>
                                     <?php  
-                                    include "koneksi.php";
+                                     include "master/koneksi.php";
 
                                     $no=1;
                                     $res=mysqli_query($link, "SELECT * FROM transaksi_jual");
@@ -205,7 +206,7 @@
                                            <td><?php echo $row['jumlah_jual'] ; ?></td>
                                            <td><?php echo $row['disc']; ?>%</td>
                                            <TD>
-                                           <a href="proses-deletetabelpenjualan.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                                           <a href="master/proses-deletetabelpenjualan.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                            </TD>
                                         </tr>
                                     <?php } ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -45,160 +45,19 @@
 </head>
 <body>
 <body class="skin-black">
-	<header class="header">
-            <a href="index.html" class="logo">
-                Toko Laris
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-left">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                        
-                       <li class="dropdown users-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
-                                <span>MASTER<i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="barang.php">
-                                        <h5>Barang</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="suplier.php">
-                                        <h5>Suplier</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pelanggan.php">
-                                        <h5>Pelanggan</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Backoffice</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li><!-- end user -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks fa-lg"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-success" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-info" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-warning" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user fa-lg"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Account</li>
+<?php include "nav-bar.php"; ?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include "side-bar.php"; ?>
+     </aside>
 
+<aside class="right-side">
 
-                                <li class="divider"></li>
+<!-- Main content -->
+<section class="content">
 
-                                <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
-
-                                        <li class="divider"></li>
-
-                                        <li>
-                                            <a href="#"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-
-                    
+<div class="row" style="margin-bottom:5px;">
 <h1 align="center">SUPLIER</h1>
 
     <div class="content">
@@ -236,9 +95,9 @@
                         include "koneksi.php";
 
                         $no=1;
-						$key=$_POST['key'];
-						$result=mysqli_query($link, "SELECT * FROM penyuplai WHERE id_penyuplai LIKE '%$key%' or nama_penyuplai LIKE '%$key%' ");
-						while ($row=mysqli_fetch_array($result)) {
+                        $key=$_POST['key'];
+                        $result=mysqli_query($link, "SELECT * FROM penyuplai WHERE id_penyuplai LIKE '%$key%' or nama_penyuplai LIKE '%$key%' ");
+                        while ($row=mysqli_fetch_array($result)) {
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
@@ -250,16 +109,37 @@
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['rekening']; ?></td>
                             <td>
-                                <a href="update-suplier.php?id=<?php echo $row['id_barang'];?>" class="btn btn-info">UPDATE</a><a href="#" class="btn btn-danger">HAPUS</a>
+                                <a href="update-suplier.php?id=<?php echo $row['id_penyuplai'];?>" class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="proses-deletesuplaiyer.php?id=<?php echo $row['id_penyuplai'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
                         </tr>
                         <?php } ?>
                     </form>
                 </table>
-                <a href="suplier.php" type="submit" class="btn btn-primary btn-lg-4">Keluar</a>
 
     </div>
 </div>
+
+
+
+                                                </div>
+                                        </section>
+
+
+
+                      </div>
+
+                        
+                      </section>
+                  </div>
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+               
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
 
 
 

@@ -53,14 +53,6 @@
           </style>
 </head>
 <body class="skin-black">
-<?php include 'nav-bar.php'; ?>
-<div class="wrapper row-offcanvas row-offcanvas-left">
-<!-- Left side column. contains the logo and sidebar -->
-    <aside class="left-side sidebar-offcanvas">
-        <?php include 'side-bar.php'; ?>
-    </aside>
-
-                    <aside class="right-side">
 
                 <!-- Main content -->
                 <section class="content">
@@ -73,15 +65,15 @@
                     <form method="POST">
                         <div class="form-group">
                         <div class = "input-group">
-                             <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
+                             <input type="text" class="form-control input-lg" placeholder="cari barang" name="kunci">
                              <span class = "input-group-btn">
                                 <input type="submit" name="submit" class= "btn btn-info btn-lg" value="Cari">
                              </span>
                         </div>
                          <p>--Cari Berdasarkan no.faktur--</p>
                          <?php 
+                        include "master/koneksi.php";
                         if (isset($_POST['submit'])) {
-                            include "koneksi.php";
                             $no=1;
                             $akbp=mysqli_query($link, "SELECT * FROM history_piutang WHERE no_transaksi='$_POST[kunci]'");
                             $result= mysqli_fetch_array($akbp); 
@@ -131,7 +123,7 @@
                                 </thead>
                                 <tbody>
                                 <?php  
-                                include "koneksi.php";
+                                include "master/koneksi.php";
                                 $no=1;
                                 $sql=mysqli_query($link, "SELECT * FROM history_piutang WHERE no_transaksi='$_POST[kunci]' ");
                                 while ($row=mysqli_fetch_array($sql)) {
@@ -166,7 +158,7 @@
                                                 <div class="modal-body">
                                                     <div class="row"><div class="col-md-6">
                                                     <input type="hidden" name="status" value="<?= $row['status'] ?>">
-                                                    <input type="hidden" name="tanggal_cicil" value="<?= $tanggal ?>">
+                                                    <input type="hidden" name="tanggal_cicil" value="<?php echo $tanggal=date("Y-m-d"); ?>" >
                                                         <div class="form-group">
                                                         <span>No Faktur </span>
                                                         <input type="text" class="form-control" name="no_transaksi" value="<?= $row['no_transaksi'] ?>" readonly>
@@ -202,7 +194,7 @@
                                 <?php } ?>
                                 </tbody>
                                 <?php
-                                include "koneksi.php";
+                                include "master/koneksi.php";
                                 $qtmp=mysqli_query($link, "SELECT SUM(uang_angsuran) FROM history_piutang WHERE no_transaksi='$_POST[kunci]' GROUP BY no_transaksi "); 
                                 $res=mysqli_fetch_array($qtmp);
                                 ?>
@@ -214,7 +206,7 @@
                         </div>
                         <a href="rekam-jejak-cicilpiutang.php?id=<?= $faktur1 ?>" class="btn btn-primary">Cetak</a>
                         <?php } ?>
-                        <a href="piutang.php" class="btn btn-default">Kembali</a>
+                        <a href="tugas-piutang.php" class="btn btn-default">Kembali</a>
                     </div>
                         
                       </section>
@@ -222,10 +214,6 @@
               </div>
               <!-- row end -->
                 </section><!-- /.content -->
-                <div class="footer-main">
-                    Copyright &copy Director, 2014
-                </div>
-            </aside><!-- /.right-side -->
 
         </div><!-- ./wrapper -->
 
@@ -296,43 +284,6 @@
                 checkboxClass: 'icheckbox_flat-grey',
                 radioClass: 'iradio_flat-grey'
             });
-</script>
-<script type="text/javascript">
-    $(function() {
-                "use strict";
-                //BAR CHART
-                var data = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
-
-            });
-            // Chart.defaults.global.responsive = true;
 </script>
 </body>
 </html>
