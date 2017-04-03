@@ -1,0 +1,19 @@
+.style {
+  background-size: cover;
+  background: url(css/image);
+}
+.glyphicon {
+  font-size: 100px;
+}
+.btn {
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: #67cb89;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
