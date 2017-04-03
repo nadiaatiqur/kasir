@@ -196,6 +196,11 @@
                                         <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="laporan.php">
+                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
+                                    </a>
+                                </li>
 
                             </ul>
                         </section>
@@ -212,7 +217,7 @@
                     <h1 align="center">HISTORY ANGSURAN PIUTANG</h1>
 
                     <div class="col-md-3">
-                    <form method="POST" action="search-angsuran2.php">
+                    <form method="POST">
                         <div class="form-group">
                         <div class = "input-group">
                              <input type="text" class="form-control input-lg"" placeholder="cari barang" name="kunci">
@@ -221,6 +226,38 @@
                              </span>
                         </div>
                          <p>--Cari Berdasarkan no.faktur--</p>
+                         <?php 
+                        if (isset($_POST['submit'])) {
+                            include "koneksi.php";
+                            $no=1;
+                            $akbp=mysqli_query($link, "SELECT * FROM history_piutang WHERE no_transaksi='$_POST[kunci]'");
+                            $result= mysqli_fetch_array($akbp); 
+                            $faktur1=$result['no_transaksi'];
+                        }?>
+                        <?php
+                        if (empty($result)) {
+                        ?>
+                        <div class="container">
+                            <table class="table table-bordered">
+                                 <thead>
+                                    <tr class="primary">
+                                        <th>No</th>
+                                        <th>Faktur</th>
+                                        <th>ID Pelanggan</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Tanggal cicil</th>
+                                        <th>Total Bayar</th>
+                                        <th>Uang Pembayaran Awal</th>
+                                        <th>Uang Angsuran</th>
+                                        <th>Yang Harus Dibayar</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <?php } else {
+                        ?>
                     </form>
                         <div class="container">
                             <table class="table table-bordered">
@@ -243,7 +280,7 @@
                                 <?php  
                                 include "koneksi.php";
                                 $no=1;
-                                $sql=mysqli_query($link, "SELECT * FROM history_piutang");
+                                $sql=mysqli_query($link, "SELECT * FROM history_piutang WHERE no_transaksi='$_POST[kunci]' ");
                                 while ($row=mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
@@ -311,9 +348,19 @@
                                     </tr>
                                 <?php } ?>
                                 </tbody>
+                                <?php
+                                include "koneksi.php";
+                                $qtmp=mysqli_query($link, "SELECT SUM(uang_angsuran) FROM history_piutang WHERE no_transaksi='$_POST[kunci]' GROUP BY no_transaksi "); 
+                                $res=mysqli_fetch_array($qtmp);
+                                ?>
+                                <tfoot>
+                                    <td colspan="7">Total Keseluruhan Uang Angsuran</td>
+                                    <td colspan="5" align="center">Rp.<?= number_format($res['SUM(uang_angsuran)']) ?></td>
+                                </tfoot>
                             </table>
                         </div>
-                        <a href="#" class="btn btn-primary">Cetak</a>
+                        <a href="rekam-jejak-cicilpiutang.php?id=<?= $faktur1 ?>" class="btn btn-primary">Cetak</a>
+                        <?php } ?>
                         <a href="piutang.php" class="btn btn-default">Kembali</a>
                     </div>
                         
