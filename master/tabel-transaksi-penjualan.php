@@ -1,4 +1,3 @@
-<?php  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,114 +202,126 @@
                     <div class="row" style="margin-bottom:5px;">
 
                     <div class="container">
-                <h1 align="center">Tabel Data Transaksi Pembelian</h1><br><br>
+                <h1 align="center">Tabel Data Transaksi Penjualan</h1><br><br>
                   <div class="row">
                     <div class="col-xs-3">
-                    <form method="POST" action="">
+                    <form method="POST" action="search-transaksipenjualan.php">
                     <div class="input-group">
                         <input type="text" name="kunci" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat btn-primary"><i class="fa fa-search"></i></button>
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                      </div>
-                    </form>
+                     </form>
                     </div>
-                        <a href="tabel-pembelian.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+                        <a href="tabel-penjualan.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
                 		<table class="table">
-                            <thead>
-                                <tr class="warning">
-                                     <th>#</th>
-=======
-=======
->>>>>>> Stashed changes
-                    <table class="table">
-                      <thead>
-                        <tr class="warning">
-                           <th>#</th>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-                                    <th>ID BELI</th>
-                                    <th>NO FAKTUR</th>
-                                    <th>ID PENYUPLAI</th>
-                                    <th>NAMA PENYUPLAI</th>
-                                    <th>TANGGAL BELI</th>
-                                    <th>UANG PEMBAYARAN</th>
-                                    <th>TOTAL BAYAR</th>
-                                    <th>STATUS</th>
-                                    <TH>AKSI</TH>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                </tr>
-                            </thead>
-=======
-                        </tr>
-                      </thead>
->>>>>>> Stashed changes
-=======
-                        </tr>
-                      </thead>
->>>>>>> Stashed changes
+                			<thead>
+                				<tr class="warning">
+                					<th>No<span class="caret"></span></th>
+                                    <th>ID jual</th>
+                					<th>No.Transaksi</th>
+                                    <th>ID Pelanggan</th>
+                					<th>Nama Pelanggan</th>
+                					<th>Tanggal Jual</th>
+                					<th>Total Bayar</th>
+                					<th>Jumlah Bayar</th>
+                                    <th>Potongan</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                				</tr>
+                			</thead>
+                			<tbody>
                             <?php  
                             include "koneksi.php";
 
                             $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM pembelian");
+                            $result=mysqli_query($link, "SELECT * FROM penjualan");
                             while ($row=mysqli_fetch_array($result)) {
-                                ?>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                            <tbody>
+                            ?>
+                				<tr>
+                					<td><?= $no++ ?></td>
+                					<td><?= $row['id_jual'] ?></td>
+                					<td><?= $row['no_transaksi'] ?></td>
+                					<td><?= $row['id_pelanggan'] ?></td>
+                					<td><?= $row['nama_pelanggan'] ?></td>
+                                    <td><?= $row['tanggal_jual'] ?></td>
+                                    <td><?= $row['total_bayar'] ?></td>
+                                    <td><?= $row['jumlah_bayar'] ?></td>
+                                    <td><?= $row['potongan'] ?></td>
+                                    <td><?= $row['status'] ?></td>
+                					<td><a href="proses-deletetransaksipenjualan.php?id=<?php echo $row['id_jual']; ?>" onclick="return confirm ('Hapus <?php echo $row['nama_pelanggan'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash"></span></a>
+                					</td>
+                				</tr>
+                            <?php } ?>
+                			</tbody>
+                		</table><br>
+                        <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
+                	</div>
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+                        <a href="#" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
+                    <table class="table">
+                      <thead>
+                        <tr class="warning">
+                          <th>No<span class="caret"></span></th>
+                          <th>No.Faktur</th>
+                          <th>Nama Toko</th>
+                          <th>Tanggal Beli</th>
+                          <th>Nama Kasir</th>
+                          <th>Petugas</th>
+                          <th>Total</th>
+                          <th>#</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>16918</td>
+                          <td>sujai</td>
+                          <td>12092017</td>
+                          <td>mumun</td>
+                          <td>mimiim</td>
+                          <td>fdes</td>
+                          <td><a href="#" type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span></a>
+                          </td>
+                        </tr>
                                 <tr>
-=======
-                      <tbody>
-                        <tr>
->>>>>>> Stashed changes
-=======
-                      <tbody>
-                        <tr>
->>>>>>> Stashed changes
-                                    <td><?= $no++; ?></td>
-                                   <td><?= $row['id_beli'];?></td>
-                                   <td><?= $row['faktur'];?></td>
-                                   <td><?= $row['id_penyuplai'];?></td>
-                                   <td><?= $row['nama_penyuplai'];?></td>
-                                   <td><?= $row['tanggal_beli'];?></td>
-                                   <td><?php echo number_format($row['uang_pembayaran'],0,',','.');?></td>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                   <td><?= number_format($row['sub_total']) ?></td>
-                                   <td><?= $row['status'] ?></td>
-                                    <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                                    <td>2</td>
+                                    <td>16918</td>
+                                    <td>sujai</td>
+                                    <td>12092017</td>
+                                    <td>mumun</td>
+                                    <td>mimiim</td>
+                                    <td>fdes</td>
+                                    <td><a href="#" type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
-                            </tbody>
-                            <?php } ?>
-                        </table><br>
-=======
-                          <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                          </td>
-                        </tr>
                       </tbody>
-                            <?php } ?>
                     </table><br>
->>>>>>> Stashed changes
-=======
-                          <td><a href="proses-deletetransaksipembelian.php?id=<?php echo $row['id_beli'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_penyuplai'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span>Hapus</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                            <?php } ?>
-                    </table><br>
->>>>>>> Stashed changes
-                        <a href="Pembelian.php" class="btn btn-default">KELUAR</a>
+                        <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="jhgh">ajkj</option>
+                            <option value="jhgjh">hgkj</option>
+                        </select>
+                        </div>
                   </div>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                 </div>
 
 

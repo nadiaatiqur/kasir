@@ -41,42 +41,53 @@
           <![endif]-->
 
           <style type="text/css">
+          .btn-own {
+            color: black;
+            background-color: rgba(255,255,255,0.5);
+            border: 2px solid black;
+            padding: 10px;
+            transition: all 0.2s ease-in-out;
+          }
+          .btn:hover {
+            background-color: #3e8e41;
+            border:2px solid #5c5c5c;
+            color: black;
+            }
+            .btn:active {
+              background-color: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
 
           </style>
 </head>
-<body class="body">
-
-<div class="content">
+<body style="background: url(image.jpg);background-size: cover;">
+<div class="content" style="background: url(image.jpg); background-size: cover;">
 	<div class="container">
-		<h1 align="center">Halaman Petugas</h1><br><br>
+    <a href="index.html" class="btn btn-primary btn-lg" type="button">Keluar</a>
+		<h1 align="center">Halaman Petugas</h1><br><br><br><br>
 		<div class="col-md-3"></div>
-		<div class="col-md-3">
+		<div class="col-md-6">
 		<table class="table">
 			<tr>
 			<td>
-			<a href="tabel-petugas.php" class="btn btn-primary">
+			<a href="tabel-petugas.php" class="btn btn-own">
 				<span class="glyphicon glyphicon-shopping-cart"></span>
 				Penjualan
 			</a>
 			</td>
 			<td>
-			<a href="tabel-penampung.php" class="btn btn-warning">
-				<span class="glyphicon glyphicon-file"></span>
-				Tabel
-			</a>
-			</td>
-			<td>
-			<a href="#" class="btn btn-success">
+			<a href="tugas-piutang.php" class="btn btn-own">
 				<span class="glyphicon glyphicon-briefcase"></span>
-				 Piutang
+				  Piutang
 			</a>
 			</td>
 			</tr>
 		</div>
 	</div>	
 </div>
-
-
+<div>
+</div>  
  <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
