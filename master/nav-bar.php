@@ -114,7 +114,7 @@
                                         <li class="divider"></li>
 
                                         <li>
-                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                            <a href="cek-out.php"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
                                         </li>
                                     </ul>
                                 </li>

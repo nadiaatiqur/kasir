@@ -1,3 +1,12 @@
+<?php  
+session_start();
+if (!isset($_SESSION['username'])) {
+    die("Anda belum login");
+}
+if ($_SESSION['level']!="petugas") {
+    die("Anda bukan petugas");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +73,8 @@
 <body style="background: url(image.jpg);background-size: cover;">
 <div class="content" style="background: url(image.jpg); background-size: cover;">
 	<div class="container">
-    <a href="index.html" class="btn btn-primary btn-lg" type="button">Keluar</a>
+    <a href="cek-out.php" class="btn btn-primary btn-lg" type="button">Keluar</a>
+    
 		<h1 align="center">Halaman Petugas</h1><br><br><br><br>
 		<div class="col-md-4"></div>
 			<a href="tabel-petugas.php" class="btn btn-own">
