@@ -1,4 +1,12 @@
-<?php  ?>
+<?php  
+session_start();
+if (!isset($_SESSION['username'])) {
+    die("Anda belum login");
+}
+if ($_SESSION['level']!="admin") {
+    die("Anda bukan admin");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +54,14 @@
 </head>
 <body class="skin-black">
 <?php include 'nav-bar.php'; ?>
-                <div class="container">
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include 'side-bar.php'; ?>
+    </aside>
+
+    <aside class="right-side">
+        <div class="container">
                 <h1 align="center">Tabel Data Transaksi Penjualan</h1><br><br>
                     <div class="row">
                     <div class="col-xs-3">
@@ -105,7 +120,7 @@
                         <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
                     </div>
                 </div>
-
+    </aside>
 
 <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

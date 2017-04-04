@@ -1,3 +1,12 @@
+<?php  
+session_start();
+if (!isset($_SESSION['username'])) {
+    die("Anda belum login");
+}
+if ($_SESSION['level']!="admin") {
+    die("Anda bukan admin");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,7 +131,7 @@
                                         <li class="divider"></li>
 
                                         <li>
-                                            <a href="index.html"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
+                                            <a href="cek-out.php"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -159,7 +168,7 @@
                             <!-- sidebar menu: : style can be found in sidebar.less -->
                             <ul class="sidebar-menu">
                                 <li class="active">
-                                    <a href="tampilan.html">
+                                    <a href="tampilan.php">
                                         <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
                                     </a>
                                 </li>

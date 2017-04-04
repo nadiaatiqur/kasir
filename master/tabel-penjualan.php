@@ -1,3 +1,12 @@
+<?php  
+session_start();
+if (!isset($_SESSION['username'])) {
+    die("Anda belum login");
+}
+if ($_SESSION['level']!="admin") {
+    die("Anda bukan admin");
+}
+?>
 <?php $tanggal= date("Y-m-d"); ?>
 <!DOCTYPE html>
 <html>
@@ -105,6 +114,12 @@
 </head>
 <body class="skin-black">
 <?php include 'nav-bar.php'; ?>
+     <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+        <aside class="left-side sidebar-offcanvas">
+            <?php include"side-bar.php"; ?>
+        </aside>
+        <aside class="right-side">
                     <div class="content">
                     <div class="container">
                     <h1 align="center">Data Penjualan</h1>

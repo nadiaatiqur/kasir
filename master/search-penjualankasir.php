@@ -1,4 +1,12 @@
-<?php  ?>
+<?php  
+session_start();
+if (!isset($_SESSION['username'])) {
+    die("Anda belum login");
+}
+if ($_SESSION['level']!="admin") {
+    die("Anda bukan admin");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +54,17 @@
 </head>
 <body class="skin-black">
 <?php include 'nav-bar.php'; ?>
-                <div class="container">
+
+                <div class="wrapper row-offcanvas row-offcanvas-left">
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="left-side sidebar-offcanvas">
+                        <?php include"side-bar.php"; ?>
+                    </aside>
+
+                <aside class="right-side">
+                    <div class="container">
                 <h1 align="center">Tabel Data Penjualan Kasir</h1><br><br>
-                	<div class="row">
+                    <div class="row">
                     <div class="col-xs-3">
                     <form method="POST">
                     <div class="input-group">
@@ -60,51 +76,53 @@
                      </form>
                     </div>
                         <a href="tabel-penjualan.php" class="btn btn-primary">Tambah <span class="fa fa-file"></span></a><br><br>
-                		<table class="table">
-                			<thead>
-                				<tr class="warning">
-                					<th>No<span class="caret"></span></th>
+                        <table class="table">
+                            <thead>
+                                <tr class="warning">
+                                    <th>No<span class="caret"></span></th>
                                     <th>ID jual</th>
-                					<th>No.Transaksi</th>
-                					<th>ID Barang</th>
-                					<th>Nama Barang</th>
-                					<th>Kategori</th>
-                					<th>Jumlah Jual</th>
-                					<th>Tanggal Jual</th>
+                                    <th>No.Transaksi</th>
+                                    <th>ID Barang</th>
+                                    <th>Nama Barang</th>
+                                    <th>Kategori</th>
+                                    <th>Jumlah Jual</th>
+                                    <th>Tanggal Jual</th>
                                     <th>Discount</th>
                                     <th>Harga Jual</th>
                                     <th>Aksi</th>
-                				</tr>
-                			</thead>
-                			<tbody>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <?php  
                             include "koneksi.php";
 
                             $no=1;
-                          	$result=mysqli_query($link, "SELECT * FROM transaksi_jual_detail WHERE id_jual LIKE '%$_POST[kunci]%' OR no_transaksi LIKE '%$_POST[kunci]%' OR id_barang LIKE '%$_POST[kunci]%' OR nama_barang LIKE '%$_POST[kunci]%' 	OR kategori LIKE '%$_POST[kunci]%' ");
+                            $result=mysqli_query($link, "SELECT * FROM transaksi_jual_detail WHERE id_jual LIKE '%$_POST[kunci]%' OR no_transaksi LIKE '%$_POST[kunci]%' OR id_barang LIKE '%$_POST[kunci]%' OR nama_barang LIKE '%$_POST[kunci]%'  OR kategori LIKE '%$_POST[kunci]%' ");
                             while ($row=mysqli_fetch_array($result)) {
                             ?>
-                				<tr>
-                					<td><?= $no++ ?></td>
-                					<td><?= $row['id_jual'] ?></td>
-                					<td><?= $row['no_transaksi'] ?></td>
-                					<td><?= $row['id_barang'] ?></td>
-                					<td><?= $row['nama_barang'] ?></td>
-                					<td><?= $row['kategori'] ?></td>
-                					<td><?= $row['jumlah_jual'] ?></td>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $row['id_jual'] ?></td>
+                                    <td><?= $row['no_transaksi'] ?></td>
+                                    <td><?= $row['id_barang'] ?></td>
+                                    <td><?= $row['nama_barang'] ?></td>
+                                    <td><?= $row['kategori'] ?></td>
+                                    <td><?= $row['jumlah_jual'] ?></td>
                                     <td><?= $row['tanggal_jual'] ?></td>
                                     <td><?= $row['disc'] ?></td>
                                     <td><?= $row['harga_jual'] ?></td>
-                					<td><a href="proses-deletepenjualankasir.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
-                						<span class="glyphicon glyphicon-trash"></span></a>
-                					</td>
-                				</tr>
+                                    <td><a href="proses-deletepenjualankasir.php?id=<?php echo $row['id_jual'];?>" onclick="return confirm ('Hapus <?php echo $row['nama_barang'];?> ?');"title="Hapus" type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
+                                </tr>
                             <?php } ?>
-                			</tbody>
-                		</table><br>
+                            </tbody>
+                        </table><br>
                         <a href="Penjualan.php" class="btn btn-default">KELUAR</a>
-                	</div>
+                    </div>
                 </div>
+                </aside>
+                
 
 
 <!-- jQuery 2.0.2 -->
