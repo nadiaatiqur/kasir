@@ -176,12 +176,6 @@
                                         <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="service.php">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
@@ -190,16 +184,6 @@
                                 <li>
                                     <a href="piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="biaya.php">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="laporan.php">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
                                     </a>
                                 </li>
 

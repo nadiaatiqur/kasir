@@ -1,0 +1,63 @@
+Text
+
+black
+ 
+btn
+ 
+Font Size: 
+28px
+  bold   italic
+Size
+Vertical Size: 
+32px
+Horizontal Size: 
+76px
+Border
+Border Radius: 
+42px
+Border Size: 
+6px
+  Box Shadow   /   inset
+Vertical Position: 
+11px
+Horizontal Position: 
+12px
+Blur Radius: 
+28px
+Spread Radius: 
+7px
+  Text Shadow
+Vertical Position: 
+6px
+Horizontal Position: 
+10px
+Blur Radius: 
+1px
+ <a href="#" class="btn">black</a>
+<style type="text/css">
+.btn {
+	-moz-box-shadow: 12px 11px 28px 7px #276873;
+	-webkit-box-shadow: 12px 11px 28px 7px #276873;
+	box-shadow: 12px 11px 28px 7px #276873;
+	background-color:#599bb3;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:6px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:28px;
+	font-weight:bold;
+	padding:32px 76px;
+	text-decoration:none;
+	text-shadow:10px 6px 1px #3d768a;
+}
+.btn:hover {
+	background-color:#408c99;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+</style>

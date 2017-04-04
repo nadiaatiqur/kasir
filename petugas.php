@@ -50,7 +50,7 @@
           }
           .btn:hover {
             background-color: #3e8e41;
-            border:2px solid #5c5c5c;
+            border:2px solid #67cb89 ;
             color: black;
             }
             .btn:active {
@@ -66,25 +66,16 @@
 	<div class="container">
     <a href="index.html" class="btn btn-primary btn-lg" type="button">Keluar</a>
 		<h1 align="center">Halaman Petugas</h1><br><br><br><br>
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
-		<table class="table">
-			<tr>
-			<td>
+		<div class="col-md-4"></div>
 			<a href="tabel-petugas.php" class="btn btn-own">
 				<span class="glyphicon glyphicon-shopping-cart"></span>
 				Penjualan
 			</a>
-			</td>
-			<td>
 			<a href="tugas-piutang.php" class="btn btn-own">
 				<span class="glyphicon glyphicon-briefcase"></span>
 				  Piutang
 			</a>
-			</td>
-			</tr>
 		</div>
-	</div>	
 </div>
 <div>
 </div>  

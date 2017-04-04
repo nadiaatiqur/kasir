@@ -174,12 +174,6 @@
                                         <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="service.php">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="hutang.php">
                                         <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
@@ -188,16 +182,6 @@
                                 <li>
                                     <a href="piutang.php">
                                         <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="biaya.php">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="laporan.php">
-                                        <i class="fa fa-file-o fa-lg"></i> <span>Laporan</span>
                                     </a>
                                 </li>
 
@@ -217,7 +201,7 @@
             <div id="home-sec">
         <div class="overlay">            
             <div class="container">
-              	    <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+              	    <div class="col-lg-11 col-md-11 col-sm-11 text-center">
                         <a href="tabel-penjualan.php" class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".1s">
                             <i class="fa fa-briefcase icon-round icon-round-active"></i>
                             <h3 class="wow bounceIn animated" data-wow-duration="1s" data-wow-delay=".2s">Penjualan Kasir</h3>
