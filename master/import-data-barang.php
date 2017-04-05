@@ -47,114 +47,43 @@ if ($_SESSION['level']!="admin") {
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
           <![endif]-->
-
-          <style type="text/css">
-
-          </style>
+  <style type="text/css">
+    .panel-heading a{float: right;}
+    #importFrm{margin-bottom: 20px;display: none;}
+    #importFrm input[type=file] {display: inline;}
+  </style>
 </head>
 <body class="skin-black">
-<!-- header logo: style can be found in header.less -->
-        <header class="header">
-            <a href="index.html" class="logo">
-                Toko Laris
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-left">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                       <li class="dropdown users-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
-                                <span>MASTER<i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="barang.php">
-                                        <h5>Barang</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="suplier.php">
-                                        <h5>Suplier</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pelanggan.php">
-                                        <h5>Pelanggan</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Backoffice</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li><!-- end user -->
-                       
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user"></i>
-                                <span>User <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Account</li>
+<?php include 'nav-bar.php'; ?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include "side-bar.php"; ?>
+    </aside>
 
-                                <li class="divider"></li>
-
-                                    <li>
-                                        <a href="login.php">
-                                            <i class="fa fa-lock fa-fw pull-right"></i>Login
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="user.php">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
-
-                                        <li class="divider"></li>
-
-                                        <li>
-                                            <a href="#"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-
-                <div class="container">
-                <h1 align="center">Import Data Barang</h1>
-                		<section class="content">
-                		  <a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
-                		</section>
-                		<form class="form-inline" enctype="multipart/form-data" method="POST" action="importbarang-proses.php">
-                    		<div class="col-md-4">
-                        		<input type="file" id="filebarang" name="filebarang" class="form-control" size="150">
-                                <p class="help-block">Hanya File Excel yang di Import.</p>
-                    		</div>
-                            <input type="submit" class="btn btn-info" name="submit" value="Upload">
-                		</form><br><br>
-                		<table class="table table-striped table-bordered">
-                		<thead>
-                			<tr class="danger">
-                				<TH>ID BARANG</TH>
+    <aside class="right-side">
+        <div class="container">
+            <h2>Import Import Data Barang CSV</h2>
+            <?php if(!empty($statusMsg)){
+                echo '<div class="alert '.$statusMsgClass.'">'.$statusMsg.'</div>';
+            } ?>
+            <section class="content">
+                <a href="tambah-data-barang.php" type="button" class="btn btn-warning">Buat Template</a>
+            </section>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Members list
+                    <a href="javascript:void(0);" onclick="$('#importFrm').slideToggle();">Import Members</a>
+                </div>
+                <div class="panel-body">
+                    <form action="importData.php" method="post" enctype="multipart/form-data" id="importFrm">
+                        <input type="file" name="file" />
+                        <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                    </form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="danger">
+                                <TH>ID BARANG</TH>
                                 <TH>NAMA BARANG</TH>
                                 <TH>KATEGORI</TH>
                                 <TH>JUMLAH</TH>
@@ -162,62 +91,39 @@ if ($_SESSION['level']!="admin") {
                                 <TH>SPESIFIKASI</TH>
                                 <TH>HARGA BELI</TH>
                                 <TH>HARGA JUAL</TH>
-                			</tr>
-                		</thead>
-                        <?php  
-                        include "koneksi.php";
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            include "koneksi.php";
 
-                        $result=mysqli_query($link, "SELECT * FROM barang");
-                        while ($row=mysqli_fetch_array($result)) {
-                        ?>
-                		<tbody>
-                			<tr>
-                				<td><?php echo $row['id_barang']; ?></td>
-                                <td><?php echo $row['nama_barang']; ?></td>
-                                <td><?php echo $row['kategori']; ?></td>
-                                <td><?php echo $row['jumlah_barang']; ?></td>
-                                <td><?php echo $row['satuan']; ?></td>
-                                <td><?php echo $row['spesifikasi']; ?></td>
-                                <td><?php echo $row['harga_beli']; ?></td>
-                                <td><?php echo $row['harga_jual']; ?></td>
-                			</tr>
-                		</tbody>
-                        <?php } ?>
-                		</table>
-                		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
-
-							  <!-- Modal -->
-							 <div class="modal fade" id="myModal" role="dialog">
-							 <div class="modal-dialog">
-							 <!-- Modal content-->
-							  <div class="modal-content">
-							  <div class="modal-header">
-							  <button type="button" class="close" data-dismiss="modal">&times;</button><br>
-							  </div>
-							  <div class="modal-body">
-
-							   <p> <img src="download.png">
-							   Apakah anda yakin untuk melakukan proses import data ?</p>
-							   </div>
-							    <div class="modal-footer">
-							    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-							    <button type="button" class="btn btn-info" data-dismiss="#">Yes</button>
-							    </div> 
-							    </div>
-							   </div>
-							   </div>
-							   <div class="col-md-8">
-                		<p>
-                			<h4>Proses Import Data Excel</h4>
-                			<h4>1. Buat dan simpanlah template file excel untuk di copy paste data anda</h4>
-                			<h4>2. Buka file excel anda yang sudah ada data yang akan di import</h4>
-                			<h4>3. Pilih sheet yang berisi data anda</h4>
-                			<h4>4. Pastikan semua data berada pada filed atau urutan yang benar</h4>
-                			<h4>5. Klik proses untuk mulai import anda</h4>
-                		</p>
-                		</div>
-                				<a href="backoffice.php" type="button" class="btn btn-primary btn-lg">Keluar</a>
-                				
+                            $result=mysqli_query($link, "SELECT * FROM barang ORDER BY id_barang");
+                            if($sma=mysqli_num_rows($result) > 0){ 
+                                while($row = mysqli_fetch_array($result)){
+                            ?>
+                            <tr>
+                              <td><?php echo $row['id_barang']; ?></td>
+                              <td><?php echo $row['nama_barang']; ?></td>
+                              <td><?php echo $row['kategori']; ?></td>
+                              <td><?php echo $row['jumlah_barang']; ?></td>
+                              <td><?php echo $row['satuan']; ?></td>
+                              <td><?php echo $row['spesifikasi']; ?></td>
+                              <td><?php echo $row['harga_beli']; ?></td>
+                              <td><?php echo $row['harga_jual']; ?></td>
+                            </tr>
+                            <?php } }else{ ?>
+                            <tr><td colspan="5">No member(s) found.....</td></tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <?php include '1.php'; ?>
+        </div>
+        <a href="backoffice.php" type="button" class="btn btn-primary btn-lg">Keluar</a>
+    </aside>
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -246,71 +152,5 @@ if ($_SESSION['level']!="admin") {
 
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
-
-        <!-- Director for demo purposes -->
-        <script type="text/javascript">
-            $('input').on('ifChecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().addClass('highlight');
-                $(this).parents('li').addClass("task-done");
-                console.log('ok');
-            });
-            $('input').on('ifUnchecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().removeClass('highlight');
-                $(this).parents('li').removeClass("task-done");
-                console.log('not');
-            });
-
-        </script>
-        <script>
-            $('#noti-box').slimScroll({
-                height: '400px',
-                size: '5px',
-                BorderRadius: '5px'
-            });
-
-            $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
-                checkboxClass: 'icheckbox_flat-grey',
-                radioClass: 'iradio_flat-grey'
-            });
-</script>
-<script type="text/javascript">
-    $(function() {
-                "use strict";
-                //BAR CHART
-                var data = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
-
-            });
-            // Chart.defaults.global.responsive = true;
-</script>                
 </body>
 </html>

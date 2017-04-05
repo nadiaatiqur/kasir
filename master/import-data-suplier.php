@@ -48,259 +48,88 @@ if ($_SESSION['level']!="admin") {
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
           <![endif]-->
 
-          <style type="text/css">
-
-          </style>
+<style type="text/css">
+    .panel-heading a{float: right;}
+    #importFrm{margin-bottom: 20px;display: none;}
+    #importFrm input[type=file] {display: inline;}
+</style>
 </head>
 <body class="skin-black">
-<!-- header logo: style can be found in header.less -->
-        <header class="header">
-            <a href="index.html" class="logo">
-                Toko Laris
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-left">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                       <li class="dropdown users-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-users fa-lg"></i>
-                                <span>MASTER<i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="barang.php">
-                                        <h5>Barang</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="suplier.php">
-                                        <h5>Suplier</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pelanggan.php">
-                                        <h5>Pelanggan</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <h5>Backoffice</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li><!-- end user -->
-                       
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user"></i>
-                                <span>User <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Account</li>
+<?php include 'nav-bar.php'; ?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <?php include 'side-bar.php'; ?>
+    </aside>
 
-                                <li class="divider"></li>
-
-                                    <li>
-                                        <a href="user.php">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
-
-                                        <li class="divider"></li>
-
-                                        <li>
-                                            <a href="#"><i class="fa fa-unlock-alt fa-fw pull-right"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-
-                <div class="wrapper row-offcanvas row-offcanvas-left">
-                    <!-- Left side column. contains the logo and sidebar -->
-                    <aside class="left-side sidebar-offcanvas">
-                        <!-- sidebar: style can be found in sidebar.less -->
-                        <section class="sidebar">
-                            <!-- Sidebar user panel -->
-                            <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
-                                </div>
-                                <div class="pull-left info">
-                                    <p>Hello, Jane</p>
-
-                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                                </div>
-                            </div>
-                            <!-- search form -->
-                            <form action="#" method="get" class="sidebar-form">
-                                <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                    <span class="input-group-btn">
-                                        <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
-                            <!-- /.search form -->
-                            <!-- sidebar menu: : style can be found in sidebar.less -->
-                            <ul class="sidebar-menu">
-                                <li class="active">
-                                    <a href="tampilan.html">
-                                        <i class="fa fa-truck fa-lg"></i> <span>TRANSAKSI</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pembelian.php">
-                                        <i class="fa fa-shopping-cart fa-lg"></i> <span>Pembelian</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="penjualan.php">
-                                        <i class="fa fa-suitcase fa-lg"></i> <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="service.php">
-                                        <i class="fa fa-gear fa-lg"></i> <span>Service</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="hutang.php">
-                                        <i class="fa fa-mail-forward fa-lg"></i> <span>Hutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="piutang.php">
-                                        <i class="fa fa-mail-reply fa-lg"></i> <span>Piutang</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="biaya.php">
-                                        <i class="fa fa-credit-card fa-lg"></i> <span>Biaya</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </section>
-                        <!-- /.sidebar -->
-                    </aside>
-
-                    <aside class="right-side">
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <div class="row" style="margin-bottom:5px;">
-
-                    <div class="container">
-                <h1 align="center">Import Data Supliyer</h1>
-                    <section class="content">
-                    <a href="#" type="button" class="btn btn-warning btn-lg">Buat Template</a>
-                    </section>
-                    <form class="form-inline" method="POST" action="">
-                            <div class="col-md-4">
-                                <input type="file" name="file" class="form-control" id="file" size="150">
-                                <p class="help-block">Hanya File Excel yang di Import.</p>
-                            </div>
-                            <input type="submit" class="btn btn-info" name="" value="Upload">
-                        </form><br><br>
-                    <table class="table table-bordered">
-                    <thead>
-                      <tr class="danger">
-                        <th>Kode</th>
-                                <th>Nama Barang</th>
-                        <th>Supliyer</th>
-                        <th>Alamat</th>
-                        <th>Telepon</th>
-                        <th>Kontak</th>
-                        <th>Email</th>
-                                <th>Keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                                <td>&nbsp</td>
-                      </tr>
-                    </tbody>
-                    </table>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Proses</button>
-
-                <!-- Modal -->
-               <div class="modal fade" id="myModal" role="dialog">
-               <div class="modal-dialog">
-               <!-- Modal content-->
-                <div class="modal-content">
-                <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+    <aside class="right-side">
+    <!-- Main content -->
+        <div class="container">
+            <h2>Import Import Data Suplier CSV</h2>
+            <?php if(!empty($statusMsg)){
+                echo '<div class="alert '.$statusMsgClass.'">'.$statusMsg.'</div>';
+            } ?>
+            <section class="content">
+                <a href="tambah-data-penyuplai.php" type="button" class="btn btn-warning">Buat Template</a>
+            </section>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Members list
+                    <a href="javascript:void(0);" onclick="$('#importFrm').slideToggle();">Import Members</a>
                 </div>
-                <div class="modal-body">
-
-                 <p> <img src="download.png">
-                 Apakah anda yakin untuk melakukan proses import data ?</p>
-                 </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-info" data-dismiss="#">Yes</button>
-                  </div> 
-                  </div>
-                 </div>
-                 </div>
-                 <div class="col-md-8">
-                    <p>
-                      <h4>Proses Import Data Excel</h4>
-                      <h4>1. Buat dan simpanlah template file excel untuk di copy paste data anda</h4>
-                      <h4>2. Buka file excel anda yang sudah ada data yang akan di import</h4>
-                      <h4>3. Pilih sheet yang berisi data anda</h4>
-                      <h4>4. Pastikan semua data berada pada filed atau urutan yang benar</h4>
-                      <h4>5. Klik proses untuk mulai import anda</h4>
-                    </p>
-                    </div>
-
-
-
-                                                </div>
-                                        </section>
-
-
-
-                      </div>
-
-                        
-                      </section>
-                  </div>
-              </div>
-              <!-- row end -->
-                </section><!-- /.content -->
-               
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
+                <div class="panel-body">
+                    <form action="importData3.php" method="post" enctype="multipart/form-data" id="importFrm">
+                        <input type="file" name="file" />
+                        <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                    </form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="danger">
+                                <th>#</th>
+                                <th>ID PENYUPLAI</th>
+                                <th>NAMA PENYUPLAI</th>
+                                <th>ALAMAT</th>
+                                <th>TELEPON</th>
+                                <th>KONTAK</th>
+                                <th>EMAIL</th>
+                                <th>REKENING</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            include "koneksi.php";
+                            $no=1;
+                            $result=mysqli_query($link, "SELECT * FROM penyuplai ORDER BY id_penyuplai ");
+                            if($sma=mysqli_num_rows($result) > 0){ 
+                                while($row = mysqli_fetch_array($result)){
+                            ?>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= $row['id_penyuplai'] ?></td>
+                                <td><?= $row['nama_penyuplai'] ?></td>
+                                <td><?= $row['alamat'] ?></td>
+                                <td><?= $row['telpon'] ?></td>
+                                <td><?= $row['kontak'] ?></td>
+                                <td><?= $row['email'] ?></td>
+                                <td><?= $row['rekening'] ?></td>
+                            </tr>
+                            <?php } }else{ ?>
+                            <tr><td colspan="5">No member(s) found.....</td></tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            
+        </div>
+        <div class="col-md-4">
+            <a href="backoffice.php" type="button" class="btn btn-primary btn-lg">Keluar</a>
+        </div>
+        <?php include '1.php'; ?>
+    </aside><!-- /.right-side -->
+</div><!-- ./wrapper -->
                 				
                 				
 
