@@ -7,10 +7,10 @@ if ($_SESSION['level']!="admin") {
     die("Anda bukan admin");
 }
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <title>Toko Laris</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -53,85 +53,72 @@ if ($_SESSION['level']!="admin") {
           </style>
 </head>
 <body class="skin-black">
+
 <?php include 'nav-bar.php'; ?>
+
 <div class="wrapper row-offcanvas row-offcanvas-left">
 <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
         <?php include 'side-bar.php'; ?>
     </aside>
-
-                    <aside class="right-side">
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <div class="row" style="margin-bottom:5px;">
-
-                    <h1 align="center">DAFTAR USER</h1>
-
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                         <a href="tambah-user.php" class="btn btn-lg btn-info"><i class="glyphicon glyphicon-plus"></i> Tambah User</a>
-                    </div><br><br>
-                    <div class="card">
-                        <table class="table table-striped table-bordered">
-                        <form method="POST" action="">
-                            <tr>
-                                <th>NO</th>
-                                <th>ID PENGGUA</th>
-                                <th>NAMA PENGGUNA</th>
-                                <th>USERNAME</th>
-                                <th>PASSWORD</th>
-                                <th>ALAMAT</th>
-                                <th>NO.TELFON</th>
-                                <th>STATUS</th>
-                                <th>OPSI</th>
-                            </tr>
-                            <?php 
-                            echo "<br>"; 
-                            include "koneksi.php";
-
-                            $no=1;
-                            $result=mysqli_query($link, "SELECT * FROM user");
-                            while ($row=mysqli_fetch_array($result)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $row['id_user']; ?></td>
-                                <td><?php echo $row['nama_pengguna'] ?></td>
-                                <td><?php echo $row['username'] ?></td>
-                                <td><?php echo $row['password']; ?></td>
-                                <td><?php echo $row['alamat']; ?></td>
-                                <td><?php echo $row['telpon']; ?></td>
-                                <td><?php echo $row['level']; ?></td>
-                                <td>
-                                <a href="update-user.php?id=<?php echo $row['id_user'];?>" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="proses-deleteuser.php?id=<?php echo $row['id_user'];?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </form>
-                        </table>
-                        <a href="user.php" class="btn btn-info"> Kembali </a>
-                      </div>
-                    </div>
-                        
-                      </section>
-                  </div>
-              </div>
-              <!-- row end -->
-                </section><!-- /.content -->
-                <div class="footer-main">
-                    Copyright &copy Director, 2014
-                </div>
-            </aside><!-- /.right-side -->
-
-        </div><!-- ./wrapper -->
-
-
-
+    <aside class="right-side">
+    	<section class="content">
+    		<div class="row">
+	    		<div class="content">
+	    			<div class="container-fluid">
+            			<center><h1 for="user">Input User</h1></center>
+	    				<div class="row">
+		    					<form method="POST" action="proses-tambahuser.php">
+		    					<div class="col-md-2"></div>
+		    					<div class="col-md-8">
+			    					<div class="form-group">
+			    						<label for="user">Nama Pengguna</label>
+			    						<input type="text" name="nama_pengguna" placeholder="Nama Pengguna" class="form-control">
+			    					</div>
+			    					<div class="form-group">
+			    						<label for="user">Alamat</label>
+			    						<textarea class="form-control" name="alamat"></textarea>
+			    					</div>
+			    					<div class="form-group">
+			    						<label for="user">No.Telepon</label>
+			    						<input type="text" name="telpon" placeholder="No.Telepon" class="form-control">
+			    					</div>
+			    					<div class="form-group">
+			    						<label for="user">Level User</label>
+			    						<select class="form-control" name="level">
+			    							<option>----</option>
+			    							<option>admin</option>
+			    							<option>petugas</option>
+			    							<option>pelanggan</option>
+			    						</select>
+			    					</div>
+			    					<div class="row">
+			    						<div class="col-md-6">
+			    							<div class="form-group">
+				    							<label for="user">Username</label>
+				    							<input type="text" name="username" placeholder="username" class="form-control">
+			    							</div>
+			    						</div>
+			    						<div class="col-md-6">
+			    							<div class="form-group">
+			    								<label for="user">Password</label>
+			    								<input type="password" name="password" placeholder="password" class="form-control">
+			    							</div>
+			    						</div>
+			    					</div>
+			    					<div class="form-group">
+			    						<button class="form-control btn btn-primary" name="kirim"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+			    					</div>
+		    					</form>
+	    				</div>
+	    			</div>
+	    			<a href="daftar-user.php" class="btn btn-default">BACK</a>
+	    			</div>
+	    		</div>		
+	    	</div>
+    	</section>
+    </aside>
+</div>
 <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -188,43 +175,5 @@ if ($_SESSION['level']!="admin") {
                 radioClass: 'iradio_flat-grey'
             });
 </script>
-<script type="text/javascript">
-    $(function() {
-                "use strict";
-                //BAR CHART
-                var data = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
-
-            });
-            // Chart.defaults.global.responsive = true;
-</script>
 </body>
-
 </html>

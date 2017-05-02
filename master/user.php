@@ -77,12 +77,16 @@ if ($_SESSION['level']!="admin") {
                             </div>
 
                             <div class="container">
-                            <h1 align="center">Edit Profile</h1>
+                            <h1 align="center">Profile</h1>
                             <hr>
                           <div class="row">
                               <!-- left column -->
+                              <?php
+                              include 'koneksi.php';
                               
-                              
+                              $result=mysqli_query($link, "SELECT * FROM user WHERE level='admin' ");
+                              $p=mysqli_fetch_array($result);
+                              ?>
                               <!-- edit form column -->
                               <div class="col-md-9 personal-info">
                                 <div class="alert alert-info alert-dismissable">
@@ -100,7 +104,7 @@ if ($_SESSION['level']!="admin") {
                                 </th>
                                 <th>
                                     <div class="col-lg-15">
-                                      <input class="form-control" type="text">
+                                      <input class="form-control" type="text" value="<?= $p['username'] ?>">
                                     </div>
                                   </div>
                                   </th>
@@ -112,7 +116,7 @@ if ($_SESSION['level']!="admin") {
                                     </th>
                                     <th>
                                     <div class="col-lg-15">
-                                      <input class="form-control" type="text">
+                                      <input class="form-control" type="text" value="<?= $p['telpon'] ?>">
                                       </th>
                                     </div>
                                   </div>
@@ -124,7 +128,7 @@ if ($_SESSION['level']!="admin") {
                                     </th>
                                     <th>
                                     <div class="col-lg-15">
-                                      <textarea class="form-control" type="text"></textarea>
+                                      <textarea class="form-control" type="text"><?= $p['alamat'] ?></textarea>
                                     </div>
                                   </div>
                                   </th>
@@ -137,6 +141,7 @@ if ($_SESSION['level']!="admin") {
                                   <th>
                                   <div class="col-md-">
                                   <select class="form-control" name="level">
+                                  <option><?= $p['level'] ?></option>
                                   <option>admin</option>
                                   <option>petugas</option>
                                   <option>pelanggan</option>
@@ -152,19 +157,11 @@ if ($_SESSION['level']!="admin") {
                                     </th>
                                     <th>
                                     <div class="col-md-20">
-                                      <input class="form-control" type="password">
+                                      <input class="form-control" type="text" value="<?= $p['password'] ?>">
                                     </div>
                                     </div>
                                     </th>
                                     </tr>
-                                    <tr>
-                                    <td>
-                                    <button type="reset" class="btn btn-default btn-block">Cancel</button>
-                                  </td>
-                                  <td>
-                                   <button type="submit" name="input" class="btn btn-info btn-block"><span class="glyphicon glyphicon-floppy-disk"></span></button>
-                                  </td>
-                                  </tr>
                                 </form>
                               </div>
                           </div>
@@ -245,43 +242,6 @@ if ($_SESSION['level']!="admin") {
                 checkboxClass: 'icheckbox_flat-grey',
                 radioClass: 'iradio_flat-grey'
             });
-</script>
-<script type="text/javascript">
-    $(function() {
-                "use strict";
-                //BAR CHART
-                var data = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
-
-            });
-            // Chart.defaults.global.responsive = true;
 </script>
 </body>
 </html>

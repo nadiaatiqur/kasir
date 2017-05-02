@@ -75,7 +75,6 @@ if ($_SESSION['level']!="admin") {
                         
                     </div>
                     <div class="col-md-6">
-                    <a href="daftar-user.php" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
                         <form method="POST" action="proses-update.php">
                         <input type="hidden" name="id" value="<?=$_GET['id']?>">
                              <?php  
@@ -125,6 +124,7 @@ if ($_SESSION['level']!="admin") {
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="level">
+                                            <option><?php echo $row['level']; ?></option>
                                             <option>admin</option>
                                             <option>petugas</option>
                                             <option>pelanggan</option>
@@ -141,6 +141,7 @@ if ($_SESSION['level']!="admin") {
                     </form>
                         
                       </section>
+                      <a href="daftar-user.php" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-share-alt"></span>Back</a>
                   </div>
               </div>
               <!-- row end -->
